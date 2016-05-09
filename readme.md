@@ -34,3 +34,10 @@ Code
 ----
 
 Der Code ist grausam und generiert einen Haufen Variablen/Arrays in PHP aus denen dann "on the fly" ein Javascript Code erzeugt wird. Das geht sicher besser (JSON erzeugen in PHP und wieder ins Javascript einladen) und Fehlertoleranter - aber es ist die erste Version, die erstmal "läuft".
+
+Lizenz
+------
+
+@author    Caspar Armster
+@copyright 2016 Caspar Armster, Freifunk Hennef
+@license   Licensed under GPLv3
