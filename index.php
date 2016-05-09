@@ -209,18 +209,22 @@ EOT;
 					$router_tmp[$i]['version'] = "Alle";
 					$router_tmp[$i]['modell'] = strtoupper(substr($files['beta']['factory'][$i], $pos_hersteller+2, stripos($files['beta']['factory'][$i], ".", $pos_hersteller+2)-$pos_hersteller-2));
 				}
-				$router[$i]['hersteller'] = $router_tmp[$i]['hersteller'];
-				$router[$i]['version'] = $router_tmp[$i]['version'];
-				$router[$i]['modell'] = $router_tmp[$i]['modell'];
-				$router[$i]['betafactory'] = 1;
-				$router[$i]['betasysupgrade'] = 0;
-				$router[$i]['brokenfactory'] = 0;
-				$router[$i]['brokensysupgrade'] = 0;
-				$router[$i]['experimentalfactory'] = 0;
-				$router[$i]['experimentalsysupgrade'] = 0;
-				$router[$i]['stablefactory'] = 0;
-				$router[$i]['stablesysupgrade'] = 0;
-				$router[$i]['betafactorylink'] = $firmware_download_path."beta/factory/".$files['beta']['factory'][$i];
+				if(isset($router_tmp[$i]['hersteller']) != true) {
+					echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten!");
+				} else {
+					$router[$i]['hersteller'] = $router_tmp[$i]['hersteller'];
+					$router[$i]['version'] = $router_tmp[$i]['version'];
+					$router[$i]['modell'] = $router_tmp[$i]['modell'];
+					$router[$i]['betafactory'] = 1;
+					$router[$i]['betasysupgrade'] = 0;
+					$router[$i]['brokenfactory'] = 0;
+					$router[$i]['brokensysupgrade'] = 0;
+					$router[$i]['experimentalfactory'] = 0;
+					$router[$i]['experimentalsysupgrade'] = 0;
+					$router[$i]['stablefactory'] = 0;
+					$router[$i]['stablesysupgrade'] = 0;
+					$router[$i]['betafactorylink'] = $firmware_download_path."beta/factory/".$files['beta']['factory'][$i];
+				}
 			}
 		}
 		$router_tmp = array();
@@ -296,27 +300,31 @@ EOT;
 					$router_tmp[$i]['version'] = "Alle";
 					$router_tmp[$i]['modell'] = strtoupper(substr($files['beta']['sysupgrade'][$i], $pos_hersteller+2, stripos($files['beta']['sysupgrade'][$i], ".", $pos_hersteller+2)-$pos_hersteller-13));
 				}
-				$router_neu = 1;
-				for( $j=0; $j<count($router); $j++) {
-					if((strcasecmp($router[$j]['hersteller'], $router_tmp[$i]['hersteller']) == 0) && (strcasecmp($router[$j]['modell'], $router_tmp[$i]['modell']) == 0) && (strcasecmp($router[$j]['version'], $router_tmp[$i]['version']) == 0)) {
+				if(isset($router_tmp[$i]['hersteller']) != true) {
+					echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten!");
+				} else {
+					$router_neu = 1;
+					for( $j=0; $j<count($router); $j++) {
+						if((strcasecmp($router[$j]['hersteller'], $router_tmp[$i]['hersteller']) == 0) && (strcasecmp($router[$j]['modell'], $router_tmp[$i]['modell']) == 0) && (strcasecmp($router[$j]['version'], $router_tmp[$i]['version']) == 0)) {
+							$router[$j]['betasysupgrade'] = 1;
+							$router[$j]['betasysupgradelink'] = $firmware_download_path."beta/sysupgrade/".$files['beta']['sysupgrade'][$i];
+							$router_neu = 0;
+						}
+					} 
+					if($router_neu == 1) {
+						$router[$j]['hersteller'] = $router_tmp[$i]['hersteller'];
+						$router[$j]['version'] = $router_tmp[$i]['version'];
+						$router[$j]['modell'] = $router_tmp[$i]['modell'];
+						$router[$j]['betafactory'] = 0;
 						$router[$j]['betasysupgrade'] = 1;
+						$router[$j]['brokenfactory'] = 0;
+						$router[$j]['brokensysupgrade'] = 0;
+						$router[$j]['experimentalfactory'] = 0;
+						$router[$j]['experimentalsysupgrade'] = 0;
+						$router[$j]['stablefactory'] = 0;
+						$router[$j]['stablesysupgrade'] = 0;
 						$router[$j]['betasysupgradelink'] = $firmware_download_path."beta/sysupgrade/".$files['beta']['sysupgrade'][$i];
-						$router_neu = 0;
 					}
-				} 
-				if($router_neu == 1) {
-					$router[$j]['hersteller'] = $router_tmp[$i]['hersteller'];
-					$router[$j]['version'] = $router_tmp[$i]['version'];
-					$router[$j]['modell'] = $router_tmp[$i]['modell'];
-					$router[$j]['betafactory'] = 0;
-					$router[$j]['betasysupgrade'] = 1;
-					$router[$j]['brokenfactory'] = 0;
-					$router[$j]['brokensysupgrade'] = 0;
-					$router[$j]['experimentalfactory'] = 0;
-					$router[$j]['experimentalsysupgrade'] = 0;
-					$router[$j]['stablefactory'] = 0;
-					$router[$j]['stablesysupgrade'] = 0;
-					$router[$j]['betasysupgradelink'] = $firmware_download_path."beta/sysupgrade/".$files['beta']['sysupgrade'][$i];
 				}
 			}
 		}
@@ -393,27 +401,31 @@ EOT;
 					$router_tmp[$i]['version'] = "Alle";
 					$router_tmp[$i]['modell'] = strtoupper(substr($files['broken']['factory'][$i], $pos_hersteller+4, stripos($files['broken']['factory'][$i], ".", $pos_hersteller+2)-$pos_hersteller-4));
 				}
-				$router_neu = 1;
-				for( $j=0; $j<count($router); $j++) {
-					if((strcasecmp($router[$j]['hersteller'], $router_tmp[$i]['hersteller']) == 0) && (strcasecmp($router[$j]['modell'], $router_tmp[$i]['modell']) == 0) && (strcasecmp($router[$j]['version'], $router_tmp[$i]['version']) == 0)) {
+				if(isset($router_tmp[$i]['hersteller']) != true) {
+					echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten!");
+				} else {
+					$router_neu = 1;
+					for( $j=0; $j<count($router); $j++) {
+						if((strcasecmp($router[$j]['hersteller'], $router_tmp[$i]['hersteller']) == 0) && (strcasecmp($router[$j]['modell'], $router_tmp[$i]['modell']) == 0) && (strcasecmp($router[$j]['version'], $router_tmp[$i]['version']) == 0)) {
+							$router[$j]['brokenfactory'] = 1;
+							$router[$j]['brokenfactorylink'] = $firmware_download_path."broken/factory/".$files['broken']['factory'][$i];
+							$router_neu = 0;
+						}
+					} 
+					if($router_neu == 1) {
+						$router[$j]['hersteller'] = $router_tmp[$i]['hersteller'];
+						$router[$j]['version'] = $router_tmp[$i]['version'];
+						$router[$j]['modell'] = $router_tmp[$i]['modell'];
+						$router[$j]['betafactory'] = 0;
+						$router[$j]['betasysupgrade'] = 0;
 						$router[$j]['brokenfactory'] = 1;
+						$router[$j]['brokensysupgrade'] = 0;
+						$router[$j]['experimentalfactory'] = 0;
+						$router[$j]['experimentalsysupgrade'] = 0;
+						$router[$j]['stablefactory'] = 0;
+						$router[$j]['stablesysupgrade'] = 0;
 						$router[$j]['brokenfactorylink'] = $firmware_download_path."broken/factory/".$files['broken']['factory'][$i];
-						$router_neu = 0;
 					}
-				} 
-				if($router_neu == 1) {
-					$router[$j]['hersteller'] = $router_tmp[$i]['hersteller'];
-					$router[$j]['version'] = $router_tmp[$i]['version'];
-					$router[$j]['modell'] = $router_tmp[$i]['modell'];
-					$router[$j]['betafactory'] = 0;
-					$router[$j]['betasysupgrade'] = 0;
-					$router[$j]['brokenfactory'] = 1;
-					$router[$j]['brokensysupgrade'] = 0;
-					$router[$j]['experimentalfactory'] = 0;
-					$router[$j]['experimentalsysupgrade'] = 0;
-					$router[$j]['stablefactory'] = 0;
-					$router[$j]['stablesysupgrade'] = 0;
-					$router[$j]['brokenfactorylink'] = $firmware_download_path."broken/factory/".$files['broken']['factory'][$i];
 				}
 			}
 		}
@@ -490,27 +502,31 @@ EOT;
 					$router_tmp[$i]['version'] = "Alle";
 					$router_tmp[$i]['modell'] = strtoupper(substr($files['broken']['sysupgrade'][$i], $pos_hersteller+4, stripos($files['broken']['sysupgrade'][$i], ".", $pos_hersteller+2)-$pos_hersteller-15));
 				}
-				$router_neu = 1;
-				for( $j=0; $j<count($router); $j++) {
-					if((strcasecmp($router[$j]['hersteller'], $router_tmp[$i]['hersteller']) == 0) && (strcasecmp($router[$j]['modell'], $router_tmp[$i]['modell']) == 0) && (strcasecmp($router[$j]['version'], $router_tmp[$i]['version']) == 0)) {
+				if(isset($router_tmp[$i]['hersteller']) != true) {
+					echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten!");
+				} else {
+					$router_neu = 1;
+					for( $j=0; $j<count($router); $j++) {
+						if((strcasecmp($router[$j]['hersteller'], $router_tmp[$i]['hersteller']) == 0) && (strcasecmp($router[$j]['modell'], $router_tmp[$i]['modell']) == 0) && (strcasecmp($router[$j]['version'], $router_tmp[$i]['version']) == 0)) {
+							$router[$j]['brokensysupgrade'] = 1;
+							$router[$j]['brokensysupgradelink'] = $firmware_download_path."broken/sysupgrade/".$files['broken']['sysupgrade'][$i];
+							$router_neu = 0;
+						}
+					} 
+					if($router_neu == 1) {
+						$router[$j]['hersteller'] = $router_tmp[$i]['hersteller'];
+						$router[$j]['version'] = $router_tmp[$i]['version'];
+						$router[$j]['modell'] = $router_tmp[$i]['modell'];
+						$router[$j]['betafactory'] = 0;
+						$router[$j]['betasysupgrade'] = 0;
+						$router[$j]['brokenfactory'] = 0;
 						$router[$j]['brokensysupgrade'] = 1;
+						$router[$j]['experimentalfactory'] = 0;
+						$router[$j]['experimentalsysupgrade'] = 0;
+						$router[$j]['stablefactory'] = 0;
+						$router[$j]['stablesysupgrade'] = 0;
 						$router[$j]['brokensysupgradelink'] = $firmware_download_path."broken/sysupgrade/".$files['broken']['sysupgrade'][$i];
-						$router_neu = 0;
 					}
-				} 
-				if($router_neu == 1) {
-					$router[$j]['hersteller'] = $router_tmp[$i]['hersteller'];
-					$router[$j]['version'] = $router_tmp[$i]['version'];
-					$router[$j]['modell'] = $router_tmp[$i]['modell'];
-					$router[$j]['betafactory'] = 0;
-					$router[$j]['betasysupgrade'] = 0;
-					$router[$j]['brokenfactory'] = 0;
-					$router[$j]['brokensysupgrade'] = 1;
-					$router[$j]['experimentalfactory'] = 0;
-					$router[$j]['experimentalsysupgrade'] = 0;
-					$router[$j]['stablefactory'] = 0;
-					$router[$j]['stablesysupgrade'] = 0;
-					$router[$j]['brokensysupgradelink'] = $firmware_download_path."broken/sysupgrade/".$files['broken']['sysupgrade'][$i];
 				}
 			}
 		}
@@ -587,27 +603,31 @@ EOT;
 					$router_tmp[$i]['version'] = "Alle";
 					$router_tmp[$i]['modell'] = strtoupper(substr($files['experimental']['factory'][$i], $pos_hersteller+1, stripos($files['experimental']['factory'][$i], ".", $pos_hersteller+2)-$pos_hersteller-1));
 				}
-				$router_neu = 1;
-				for( $j=0; $j<count($router); $j++) {
-					if((strcasecmp($router[$j]['hersteller'], $router_tmp[$i]['hersteller']) == 0) && (strcasecmp($router[$j]['modell'], $router_tmp[$i]['modell']) == 0) && (strcasecmp($router[$j]['version'], $router_tmp[$i]['version']) == 0)) {
+				if(isset($router_tmp[$i]['hersteller']) != true) {
+					echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten!");
+				} else {
+					$router_neu = 1;
+					for( $j=0; $j<count($router); $j++) {
+						if((strcasecmp($router[$j]['hersteller'], $router_tmp[$i]['hersteller']) == 0) && (strcasecmp($router[$j]['modell'], $router_tmp[$i]['modell']) == 0) && (strcasecmp($router[$j]['version'], $router_tmp[$i]['version']) == 0)) {
+							$router[$j]['experimentalfactory'] = 1;
+							$router[$j]['experimentalfactorylink'] = $firmware_download_path."experimental/factory/".$files['experimental']['factory'][$i];
+							$router_neu = 0;
+						}
+					} 
+					if($router_neu == 1) {
+						$router[$j]['hersteller'] = $router_tmp[$i]['hersteller'];
+						$router[$j]['version'] = $router_tmp[$i]['version'];
+						$router[$j]['modell'] = $router_tmp[$i]['modell'];
+						$router[$j]['betafactory'] = 0;
+						$router[$j]['betasysupgrade'] = 0;
+						$router[$j]['brokenfactory'] = 0;
+						$router[$j]['brokensysupgrade'] = 0;
 						$router[$j]['experimentalfactory'] = 1;
+						$router[$j]['experimentalsysupgrade'] = 0;
+						$router[$j]['stablefactory'] = 0;
+						$router[$j]['stablesysupgrade'] = 0;
 						$router[$j]['experimentalfactorylink'] = $firmware_download_path."experimental/factory/".$files['experimental']['factory'][$i];
-						$router_neu = 0;
 					}
-				} 
-				if($router_neu == 1) {
-					$router[$j]['hersteller'] = $router_tmp[$i]['hersteller'];
-					$router[$j]['version'] = $router_tmp[$i]['version'];
-					$router[$j]['modell'] = $router_tmp[$i]['modell'];
-					$router[$j]['betafactory'] = 0;
-					$router[$j]['betasysupgrade'] = 0;
-					$router[$j]['brokenfactory'] = 0;
-					$router[$j]['brokensysupgrade'] = 0;
-					$router[$j]['experimentalfactory'] = 1;
-					$router[$j]['experimentalsysupgrade'] = 0;
-					$router[$j]['stablefactory'] = 0;
-					$router[$j]['stablesysupgrade'] = 0;
-					$router[$j]['experimentalfactorylink'] = $firmware_download_path."experimental/factory/".$files['experimental']['factory'][$i];
 				}
 			}
 		}
@@ -684,27 +704,31 @@ EOT;
 					$router_tmp[$i]['version'] = "Alle";
 					$router_tmp[$i]['modell'] = strtoupper(substr($files['experimental']['sysupgrade'][$i], $pos_hersteller+1, stripos($files['experimental']['sysupgrade'][$i], ".", $pos_hersteller+2)-$pos_hersteller-12));
 				}
-				$router_neu = 1;
-				for( $j=0; $j<count($router); $j++) {
-					if((strcasecmp($router[$j]['hersteller'], $router_tmp[$i]['hersteller']) == 0) && (strcasecmp($router[$j]['modell'], $router_tmp[$i]['modell']) == 0) && (strcasecmp($router[$j]['version'], $router_tmp[$i]['version']) == 0)) {
+				if(isset($router_tmp[$i]['hersteller']) != true) {
+					echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten!");
+				} else {
+					$router_neu = 1;
+					for( $j=0; $j<count($router); $j++) {
+						if((strcasecmp($router[$j]['hersteller'], $router_tmp[$i]['hersteller']) == 0) && (strcasecmp($router[$j]['modell'], $router_tmp[$i]['modell']) == 0) && (strcasecmp($router[$j]['version'], $router_tmp[$i]['version']) == 0)) {
+							$router[$j]['experimentalsysupgrade'] = 1;
+							$router[$j]['experimentalsysupgradelink'] = $firmware_download_path."experimental/sysupgrade/".$files['experimental']['sysupgrade'][$i];
+							$router_neu = 0;
+						}
+					} 
+					if($router_neu == 1) {
+						$router[$j]['hersteller'] = $router_tmp[$i]['hersteller'];
+						$router[$j]['version'] = $router_tmp[$i]['version'];
+						$router[$j]['modell'] = $router_tmp[$i]['modell'];
+						$router[$j]['betafactory'] = 0;
+						$router[$j]['betasysupgrade'] = 0;
+						$router[$j]['brokenfactory'] = 0;
+						$router[$j]['brokensysupgrade'] = 0;
+						$router[$j]['experimentalfactory'] = 0;
 						$router[$j]['experimentalsysupgrade'] = 1;
+						$router[$j]['stablefactory'] = 0;
+						$router[$j]['stablesysupgrade'] = 0;
 						$router[$j]['experimentalsysupgradelink'] = $firmware_download_path."experimental/sysupgrade/".$files['experimental']['sysupgrade'][$i];
-						$router_neu = 0;
 					}
-				} 
-				if($router_neu == 1) {
-					$router[$j]['hersteller'] = $router_tmp[$i]['hersteller'];
-					$router[$j]['version'] = $router_tmp[$i]['version'];
-					$router[$j]['modell'] = $router_tmp[$i]['modell'];
-					$router[$j]['betafactory'] = 0;
-					$router[$j]['betasysupgrade'] = 0;
-					$router[$j]['brokenfactory'] = 0;
-					$router[$j]['brokensysupgrade'] = 0;
-					$router[$j]['experimentalfactory'] = 0;
-					$router[$j]['experimentalsysupgrade'] = 1;
-					$router[$j]['stablefactory'] = 0;
-					$router[$j]['stablesysupgrade'] = 0;
-					$router[$j]['experimentalsysupgradelink'] = $firmware_download_path."experimental/sysupgrade/".$files['experimental']['sysupgrade'][$i];
 				}
 			}
 		}
@@ -781,27 +805,31 @@ EOT;
 					$router_tmp[$i]['version'] = "Alle";
 					$router_tmp[$i]['modell'] = strtoupper(substr($files['stable']['factory'][$i], $pos_hersteller+4, stripos($files['stable']['factory'][$i], ".", $pos_hersteller+2)-$pos_hersteller-4));
 				}
-				$router_neu = 1;
-				for( $j=0; $j<count($router); $j++) {
-					if((strcasecmp($router[$j]['hersteller'], $router_tmp[$i]['hersteller']) == 0) && (strcasecmp($router[$j]['modell'], $router_tmp[$i]['modell']) == 0) && (strcasecmp($router[$j]['version'], $router_tmp[$i]['version']) == 0)) {
+				if(isset($router_tmp[$i]['hersteller']) != true) {
+					echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten!");
+				} else {
+					$router_neu = 1;
+					for( $j=0; $j<count($router); $j++) {
+						if((strcasecmp($router[$j]['hersteller'], $router_tmp[$i]['hersteller']) == 0) && (strcasecmp($router[$j]['modell'], $router_tmp[$i]['modell']) == 0) && (strcasecmp($router[$j]['version'], $router_tmp[$i]['version']) == 0)) {
+							$router[$j]['stablefactory'] = 1;
+							$router[$j]['stablefactorylink'] = $firmware_download_path."stable/factory/".$files['stable']['factory'][$i];
+							$router_neu = 0;
+						}
+					} 
+					if($router_neu == 1) {
+						$router[$j]['hersteller'] = $router_tmp[$i]['hersteller'];
+						$router[$j]['version'] = $router_tmp[$i]['version'];
+						$router[$j]['modell'] = $router_tmp[$i]['modell'];
+						$router[$j]['betafactory'] = 0;
+						$router[$j]['betasysupgrade'] = 0;
+						$router[$j]['brokenfactory'] = 0;
+						$router[$j]['brokensysupgrade'] = 0;
+						$router[$j]['experimentalfactory'] = 0;
+						$router[$j]['experimentalsysupgrade'] = 0;
 						$router[$j]['stablefactory'] = 1;
+						$router[$j]['stablesysupgrade'] = 0;
 						$router[$j]['stablefactorylink'] = $firmware_download_path."stable/factory/".$files['stable']['factory'][$i];
-						$router_neu = 0;
 					}
-				} 
-				if($router_neu == 1) {
-					$router[$j]['hersteller'] = $router_tmp[$i]['hersteller'];
-					$router[$j]['version'] = $router_tmp[$i]['version'];
-					$router[$j]['modell'] = $router_tmp[$i]['modell'];
-					$router[$j]['betafactory'] = 0;
-					$router[$j]['betasysupgrade'] = 0;
-					$router[$j]['brokenfactory'] = 0;
-					$router[$j]['brokensysupgrade'] = 0;
-					$router[$j]['experimentalfactory'] = 0;
-					$router[$j]['experimentalsysupgrade'] = 0;
-					$router[$j]['stablefactory'] = 1;
-					$router[$j]['stablesysupgrade'] = 0;
-					$router[$j]['stablefactorylink'] = $firmware_download_path."stable/factory/".$files['stable']['factory'][$i];
 				}
 			}
 		}
@@ -879,35 +907,37 @@ EOT;
 					$router_tmp[$i]['version'] = "Alle";
 					$router_tmp[$i]['modell'] = strtoupper(substr($files['stable']['sysupgrade'][$i], $pos_hersteller+4, stripos($files['stable']['sysupgrade'][$i], ".", $pos_hersteller+2)-$pos_hersteller-15));
 				}
-				$router_neu = 1;
-				//echo("Hersteller: ".$router_tmp[$i]['hersteller']." Modell: ".$router_tmp[$i]['modell']." Version: ".$router_tmp[$i]['version']."<br />");
-				for( $j=0; $j<count($router); $j++) {
-					if((strcasecmp($router[$j]['hersteller'], $router_tmp[$i]['hersteller']) == 0) && (strcasecmp($router[$j]['modell'], $router_tmp[$i]['modell']) == 0) && (strcasecmp($router[$j]['version'], $router_tmp[$i]['version']) == 0)) {
+				if(isset($router_tmp[$i]['hersteller']) != true) {
+					echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten!");
+				} else {
+					$router_neu = 1;
+					//echo("Hersteller: ".$router_tmp[$i]['hersteller']." Modell: ".$router_tmp[$i]['modell']." Version: ".$router_tmp[$i]['version']."<br />");
+					for( $j=0; $j<count($router); $j++) {
+						if((strcasecmp($router[$j]['hersteller'], $router_tmp[$i]['hersteller']) == 0) && (strcasecmp($router[$j]['modell'], $router_tmp[$i]['modell']) == 0) && (strcasecmp($router[$j]['version'], $router_tmp[$i]['version']) == 0)) {
+							$router[$j]['stablesysupgrade'] = 1;
+							$router[$j]['stablesysupgradelink'] = $firmware_download_path."stable/sysupgrade/".$files['stable']['sysupgrade'][$i];
+							$router_neu = 0;
+						}
+					} 
+					if($router_neu == 1) {
+						$router[$j]['hersteller'] = $router_tmp[$i]['hersteller'];
+						$router[$j]['version'] = $router_tmp[$i]['version'];
+						$router[$j]['modell'] = $router_tmp[$i]['modell'];
+						$router[$j]['betafactory'] = 0;
+						$router[$j]['betasysupgrade'] = 0;
+						$router[$j]['brokenfactory'] = 0;
+						$router[$j]['brokensysupgrade'] = 0;
+						$router[$j]['experimentalfactory'] = 0;
+						$router[$j]['experimentalsysupgrade'] = 0;
+						$router[$j]['stablefactory'] = 0;
 						$router[$j]['stablesysupgrade'] = 1;
 						$router[$j]['stablesysupgradelink'] = $firmware_download_path."stable/sysupgrade/".$files['stable']['sysupgrade'][$i];
-						$router_neu = 0;
 					}
-				} 
-				if($router_neu == 1) {
-					$router[$j]['hersteller'] = $router_tmp[$i]['hersteller'];
-					$router[$j]['version'] = $router_tmp[$i]['version'];
-					$router[$j]['modell'] = $router_tmp[$i]['modell'];
-					$router[$j]['betafactory'] = 0;
-					$router[$j]['betasysupgrade'] = 0;
-					$router[$j]['brokenfactory'] = 0;
-					$router[$j]['brokensysupgrade'] = 0;
-					$router[$j]['experimentalfactory'] = 0;
-					$router[$j]['experimentalsysupgrade'] = 0;
-					$router[$j]['stablefactory'] = 0;
-					$router[$j]['stablesysupgrade'] = 1;
-					$router[$j]['stablesysupgradelink'] = $firmware_download_path."stable/sysupgrade/".$files['stable']['sysupgrade'][$i];
 				}
 			}
 		}
-		//print_r($router);
-		//echo("i: ".$i." j: ".$j."<br />");
 	} catch(Exception $e) {
-		echo("Fehler: ".$e);
+		echo("Fehler: ".$e->getMessage());
 		die();
 	}
 
@@ -916,6 +946,10 @@ EOT;
 function populateA(s1,s2){
 	var s1 = document.getElementById(s1);
 	var s2 = document.getElementById(s2);
+	var s3 = document.getElementById("slct3");
+	var s4 = document.getElementById("slct4");
+	var s5 = document.getElementById("slct5");
+	var s6 = document.getElementById("slct6");
 	s2.innerHTML = "";
 EOT;
 	for( $i=0; $i<count($hersteller); $i++) {
@@ -948,10 +982,30 @@ EOT;
 		newOption.innerHTML = pair[1];
 		s2.options.add(newOption);
 	}
+	while(s3.length > 1) {
+		s3.remove(s3.length-1);
+	}
+	while(s4.length > 1) {
+		s4.remove(s4.length-1);
+	}
+	while(s5.length > 1) {
+		s5.remove(s5.length-1);
+	}
+	s6.href = "#";
+	s6.className = s6.className.replace( /(?:^|\s)disabled(?!\S)/g , '' );
+	s6.className = s6.className.replace( /(?:^|\s)btn-primary(?!\S)/g , '' );
+	s6.className = s6.className.replace( /(?:^|\s)btn-danger(?!\S)/g , '' );
+	s6.className = s6.className.replace( /(?:^|\s)btn-warning(?!\S)/g , '' );
+	s6.className = s6.className.replace( /(?:^|\s)btn-success(?!\S)/g , '' );
+	s6.className += " btn-primary disabled";
+	s6.innerHTML = "Download Firmware";
 }
 function populateB(s1,s2){
 	var s1 = document.getElementById(s1);
 	var s2 = document.getElementById(s2);
+	var s4 = document.getElementById("slct4");
+	var s5 = document.getElementById("slct5");
+	var s6 = document.getElementById("slct6");
 	s2.innerHTML = "";
 EOT;
 	$i=0;
@@ -981,10 +1035,26 @@ EOT;
 		newOption.innerHTML = pair[1];
 		s2.options.add(newOption);
 	}
+	while(s4.length > 1) {
+		s4.remove(s4.length-1);
+	}
+	while(s5.length > 1) {
+		s5.remove(s5.length-1);
+	}
+	s6.href = "#";
+	s6.className = s6.className.replace( /(?:^|\s)disabled(?!\S)/g , '' );
+	s6.className = s6.className.replace( /(?:^|\s)btn-primary(?!\S)/g , '' );
+	s6.className = s6.className.replace( /(?:^|\s)btn-danger(?!\S)/g , '' );
+	s6.className = s6.className.replace( /(?:^|\s)btn-warning(?!\S)/g , '' );
+	s6.className = s6.className.replace( /(?:^|\s)btn-success(?!\S)/g , '' );
+	s6.className += " btn-primary disabled";
+	s6.innerHTML = "Download Firmware";
 }
 function populateC(s1,s2){
 	var s1 = document.getElementById(s1);
 	var s2 = document.getElementById(s2);
+	var s5 = document.getElementById("slct5");
+	var s6 = document.getElementById("slct6");
 	s2.innerHTML = "";
 EOT;
 	$i=0;
@@ -1009,10 +1079,22 @@ EOT;
 		newOption.innerHTML = pair[1];
 		s2.options.add(newOption);
 	}
+	while(s5.length > 1) {
+		s5.remove(s5.length-1);
+	}
+	s6.href = "#";
+	s6.className = s6.className.replace( /(?:^|\s)disabled(?!\S)/g , '' );
+	s6.className = s6.className.replace( /(?:^|\s)btn-primary(?!\S)/g , '' );
+	s6.className = s6.className.replace( /(?:^|\s)btn-danger(?!\S)/g , '' );
+	s6.className = s6.className.replace( /(?:^|\s)btn-warning(?!\S)/g , '' );
+	s6.className = s6.className.replace( /(?:^|\s)btn-success(?!\S)/g , '' );
+	s6.className += " btn-primary disabled";
+	s6.innerHTML = "Download Firmware";
 }
 function populateD(s1,s2){
 	var s1 = document.getElementById(s1);
 	var s2 = document.getElementById(s2);
+	var s6 = document.getElementById("slct6");
 	s2.innerHTML = "";
 EOT;
 	$i=0;
@@ -1059,6 +1141,14 @@ EOT;
 		newOption.innerHTML = pair[1];
 		s2.options.add(newOption);
 	}
+	s6.href = "#";
+	s6.className = s6.className.replace( /(?:^|\s)disabled(?!\S)/g , '' );
+	s6.className = s6.className.replace( /(?:^|\s)btn-primary(?!\S)/g , '' );
+	s6.className = s6.className.replace( /(?:^|\s)btn-danger(?!\S)/g , '' );
+	s6.className = s6.className.replace( /(?:^|\s)btn-warning(?!\S)/g , '' );
+	s6.className = s6.className.replace( /(?:^|\s)btn-success(?!\S)/g , '' );
+	s6.className += " btn-primary disabled";
+	s6.innerHTML = "Download Firmware";
 }
 function populateE(s1,s2){
 	var s1 = document.getElementById(s1);
@@ -1139,7 +1229,7 @@ EOT;
                     Freifunk Hennef Firmware
                 </h2>
                 <p>
-                    Auf dieser Seite können Sie die passende Firmware für ihren Router auswählen und herunterladen!
+                    Auf dieser Seite können Sie die passende Firmware für ihren Router in Hennef auswählen und herunterladen!
                 </p>
                 <p>
                     <a class="btn btn-primary btn-large" href="http://www.freifunk-hennef.de/">Zurück zur Startseite</a>
@@ -1160,7 +1250,7 @@ EOT;
 					Legen Sie anschließend fest, ob sie den Router zum ersten Mal mit einer Freifunk Firmware flashen und welches Entwicklungsstadium die Firmware haben soll.
                 </div>
                 <div class="panel-footer">
-					Bitte wählen Sie nur "stable" im Entwicklungsstadium aus, wenn Sie nicht genau wissen was Sie sonst erwartet!
+					Bitte wählen Sie "stable" im Entwicklungsstadium aus, wenn Sie nicht genau wissen was Sie sonst erwartet!
                 </div>
             </div>
 		</div>
@@ -1170,7 +1260,7 @@ EOT;
 			<div class="panel panel-primary">
 				<div class="panel-heading">
                     <h3 class="panel-title">
-						Router Hersteller:
+						Router Hersteller
 					</h3>
                 </div>
                 <div class="panel-body">
@@ -1191,7 +1281,7 @@ EOT;
 			<div class="panel panel-primary">
 				<div class="panel-heading">
                     <h3 class="panel-title">
-						Router Modell:
+						Router Modell
 					</h3>
                 </div>
                 <div class="panel-body">
@@ -1205,7 +1295,7 @@ EOT;
 			<div class="panel panel-primary">
 				<div class="panel-heading">
                     <h3 class="panel-title">
-						Router Version:
+						Router Version
 					</h3>
                 </div>
                 <div class="panel-body">
@@ -1221,7 +1311,7 @@ EOT;
 			<div class="panel panel-primary">
 				<div class="panel-heading">
                     <h3 class="panel-title">
-						Firmware Erstinstallation:
+						Firmware Erstinstallation
 					</h3>
                 </div>
                 <div class="panel-body">
@@ -1235,7 +1325,7 @@ EOT;
 			<div class="panel panel-primary">
 				<div class="panel-heading">
                     <h3 class="panel-title">
-						Firmware Entwicklungsstadium:
+						Firmware Entwicklungsstadium
 					</h3>
                 </div>
                 <div class="panel-body">
@@ -1249,7 +1339,7 @@ EOT;
 			<div class="panel panel-primary">
 				<div class="panel-heading">
                     <h3 class="panel-title">
-						Firmware Download:
+						Firmware Download
 					</h3>
                 </div>
                 <div class="panel-body">
