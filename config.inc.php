@@ -6,7 +6,7 @@
 * 
 */
 
-	$firmware_download_path = "firmware/";
+	$firmware_download_path = "../firmware/";
 
 	$variante['beta']['factory'] = 0;
 	$variante['beta']['sysupgrade'] = 0;
