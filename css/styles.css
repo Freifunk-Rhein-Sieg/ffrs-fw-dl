@@ -5,5 +5,12 @@
 * 
 */
 .panel-footer {
-  font-size: 80%;
+	font-size: 80%;
+}
+.btn-primary {
+  background-color: #dc0067 !important;
+  border-color: #cc0057 !important;
+}
+.panel-primary > .panel-heading {
+  background-color: #000000 !important;
 }
