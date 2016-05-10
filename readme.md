@@ -4,7 +4,7 @@ Freifunk Hennef Firmware Downloader
 Beschreibung
 ------------
 
-Der Freifunk Hennef Firmware Downloader soll es Laien ermöglichen schneller schneller und sicherer die zu ihrem Router passende Firmware zu finden. Der Freifunker kann nach einander aus autoamtisch generierten Listen seinen Router auswählen: Hersteller -> Modell -> Version und dann festlegen ob es eine Erstinstallation ist oder nicht, sowie am Ende wählen welches Entwicklungsstadium die Firmware haben soll. Dabei wird automatisch gewarnt (Download Button verändert die Farbe) falls nicht "stable" ausgewählt wird.
+Der Freifunk Hennef Firmware Downloader soll es Laien ermöglichen schneller und sicherer die zu ihrem Router passende Firmware zu finden. Der Freifunker kann nacheinander aus automatisch generierten Listen seinen Router auswählen: Hersteller -> Modell -> Version und dann festlegen ob es eine Erstinstallation ist oder nicht, sowie am Ende wählen welches Entwicklungsstadium die Firmware haben soll. Dabei wird automatisch gewarnt (Download Button verändert die Farbe) falls nicht "stable" ausgewählt wird.
 
 Technik
 -------
