@@ -49,7 +49,7 @@ function populateA(s1,s2){
 EOT;
 	for( $i=0; $i<count($hersteller); $i++) {
 		echo("\nif(s1.value == \"".$hersteller[$i]."\"){\n");
-		echo("var optionArray = [\"|\"");
+		echo("var optionArray = [\"|Modell auswählen\"");
 		$j=0;
 		while( $j<count($router) ) {
 			if($router[$j]->hersteller == $hersteller[$i]) {
@@ -110,7 +110,7 @@ EOT;
 	$i=0;
 	while( $i<count($router) ) {
 		echo("\nif(s1.value == \"".$router[$i]->modell."\"){\n");
-		echo("var optionArray = [\"|\"");
+		echo("var optionArray = [\"|Version auswählen\"");
 		echo(",\"".$i."|".$router[$i]->version."\"");
 		if( $i<count($router)-1 ) {
 			while($router[$i]->modell == $router[$i+1]->modell) {
@@ -165,7 +165,7 @@ EOT;
 		echo("\nif(s1.value == \"".$i."\"){\n");
 		echo("var newImageFront = \"".$router[$i]->imagefront."\";\n");
 		echo("var newImageBack = \"".$router[$i]->imageback."\";\n");
-		echo("var optionArray = [\"|\"");
+		echo("var optionArray = [\"|Erstinstallation?\"");
 		if( ($router[$i]->betafactory == 1) || ($router[$i]->brokenfactory == 1) || ($router[$i]->experimentalfactory == 1) || ($router[$i]->stablefactory == 1) ) {
 			echo(",\"".$i."J|Ja\"");
 		}
@@ -207,7 +207,7 @@ EOT;
 	$i=0;
 	while( $i<count($router) ) {
 		echo("\nif(s1.value == \"".$i."J\"){\n");
-		echo("var optionArray = [\"|\"");
+		echo("var optionArray = [\"|Entwicklungsstadium?\"");
 		if( ($router[$i]->betafactory == 1) ) {
 			echo(",\"".$i."Jbeta|Beta\"");
 		}
@@ -223,7 +223,7 @@ EOT;
 		echo("];\n");
 		echo("}\n");
 		echo("\nif(s1.value == \"".$i."N\"){\n");
-		echo("var optionArray = [\"|\"");
+		echo("var optionArray = [\"|Entwicklungsstadium?\"");
 		if( ($router[$i]->betasysupgrade == 1) ) {
 			echo(",\"".$i."Nbeta|Beta\"");
 		}
@@ -372,7 +372,7 @@ EOT;
                 </div>
                 <div class="panel-body">
                     <select id="slct1" name="slct1" onchange="populateA(this.id,'slct2')">
-						<option value=""></option>
+						<option value="">Hersteller auswählen</option>
 EOT;
 	for( $i=0; $i<count($hersteller); $i++) {
 		echo("<option value=\"".$hersteller[$i]."\">".$hersteller[$i]."</option>");

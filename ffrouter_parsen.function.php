@@ -159,6 +159,11 @@ if($variante['stable']['factory'] == 1) {
 }
 if($variante['beta']['factory'] == 1) {
 	for( $i=0; $i<count($files['beta']['factory']); $i++) {
+		if($pos = stripos($files['beta']['factory'][$i], "8devices", $pos_hersteller-2) !== false) {
+			$router_tmp[$i]['hersteller'] = "8devices";
+			$router_tmp[$i]['version'] = "Alle";
+			$router_tmp[$i]['modell'] = strtoupper(substr($files['beta']['factory'][$i], $pos_hersteller+7, strlen($files['beta']['factory'][$i])-$pos_hersteller-11));
+		}
 		if($pos = stripos($files['beta']['factory'][$i], "alfa", $pos_hersteller-2) !== false) {
 			$router_tmp[$i]['hersteller'] = "Alfa";
 			$router_tmp[$i]['version'] = "Alle";
@@ -193,6 +198,11 @@ if($variante['beta']['factory'] == 1) {
 			$router_tmp[$i]['hersteller'] = "Linksys";
 			$router_tmp[$i]['version'] = "Alle";
 			$router_tmp[$i]['modell'] = strtoupper(substr($files['beta']['factory'][$i], $pos_hersteller+6, strlen($files['beta']['factory'][$i])-$pos_hersteller-10));
+		}
+		if($pos = stripos($files['broken']['factory'][$i], "meraki", $pos_hersteller-2) !== false) {
+			$router_tmp[$i]['hersteller'] = "Meraki";
+			$router_tmp[$i]['version'] = "Alle";
+			$router_tmp[$i]['modell'] = strtoupper(substr($files['broken']['factory'][$i], $pos_hersteller+5, strlen($files['broken']['factory'][$i])-$pos_hersteller-9));
 		}
 		if($pos = stripos($files['beta']['factory'][$i], "netgear", $pos_hersteller-2) !== false) {
 			$router_tmp[$i]['hersteller'] = "Netgear";
@@ -244,6 +254,11 @@ if($variante['beta']['factory'] == 1) {
 $router_tmp = array();
 if($variante['beta']['sysupgrade'] == 1) {
 	for( $i=0; $i<count($files['beta']['sysupgrade']); $i++) {
+		if($pos = stripos($files['beta']['sysupgrade'][$i], "8devices", $pos_hersteller-2) !== false) {
+			$router_tmp[$i]['hersteller'] = "8devices";
+			$router_tmp[$i]['version'] = "Alle";
+			$router_tmp[$i]['modell'] = strtoupper(substr($files['beta']['sysupgrade'][$i], $pos_hersteller+7, strlen($files['beta']['sysupgrade'][$i])-$pos_hersteller-22));
+		}
 		if($pos = stripos($files['beta']['sysupgrade'][$i], "alfa", $pos_hersteller-2) !== false) {
 			$router_tmp[$i]['hersteller'] = "Alfa";
 			$router_tmp[$i]['version'] = "Alle";
@@ -278,6 +293,11 @@ if($variante['beta']['sysupgrade'] == 1) {
 			$router_tmp[$i]['hersteller'] = "Linksys";
 			$router_tmp[$i]['version'] = "Alle";
 			$router_tmp[$i]['modell'] = strtoupper(substr($files['beta']['sysupgrade'][$i], $pos_hersteller+6, strlen($files['beta']['sysupgrade'][$i])-$pos_hersteller-21));
+		}
+		if($pos = stripos($files['beta']['sysupgrade'][$i], "meraki", $pos_hersteller-2) !== false) {
+			$router_tmp[$i]['hersteller'] = "Meraki";
+			$router_tmp[$i]['version'] = "Alle";
+			$router_tmp[$i]['modell'] = strtoupper(substr($files['beta']['sysupgrade'][$i], $pos_hersteller+5, strlen($files['beta']['sysupgrade'][$i])-$pos_hersteller-20));
 		}
 		if($pos = stripos($files['beta']['sysupgrade'][$i], "netgear", $pos_hersteller-2) !== false) {
 			$router_tmp[$i]['hersteller'] = "Netgear";
@@ -339,6 +359,11 @@ if($variante['beta']['sysupgrade'] == 1) {
 $router_tmp = array();
 if($variante['broken']['factory'] == 1) {
 	for( $i=0; $i<count($files['broken']['factory']); $i++) {
+		if($pos = stripos($files['broken']['factory'][$i], "8devices", $pos_hersteller-2) !== false) {
+			$router_tmp[$i]['hersteller'] = "8devices";
+			$router_tmp[$i]['version'] = "Alle";
+			$router_tmp[$i]['modell'] = strtoupper(substr($files['broken']['factory'][$i], $pos_hersteller+9, strlen($files['broken']['factory'][$i])-$pos_hersteller-13));
+		}
 		if($pos = stripos($files['broken']['factory'][$i], "alfa", $pos_hersteller-2) !== false) {
 			$router_tmp[$i]['hersteller'] = "Alfa";
 			$router_tmp[$i]['version'] = "Alle";
@@ -373,6 +398,11 @@ if($variante['broken']['factory'] == 1) {
 			$router_tmp[$i]['hersteller'] = "Linksys";
 			$router_tmp[$i]['version'] = "Alle";
 			$router_tmp[$i]['modell'] = strtoupper(substr($files['broken']['factory'][$i], $pos_hersteller+8, strlen($files['broken']['factory'][$i])-$pos_hersteller-12));
+		}
+		if($pos = stripos($files['broken']['factory'][$i], "meraki", $pos_hersteller-2) !== false) {
+			$router_tmp[$i]['hersteller'] = "Meraki";
+			$router_tmp[$i]['version'] = "Alle";
+			$router_tmp[$i]['modell'] = strtoupper(substr($files['broken']['factory'][$i], $pos_hersteller+7, strlen($files['broken']['factory'][$i])-$pos_hersteller-11));
 		}
 		if($pos = stripos($files['broken']['factory'][$i], "netgear", $pos_hersteller-2) !== false) {
 			$router_tmp[$i]['hersteller'] = "Netgear";
@@ -434,6 +464,11 @@ if($variante['broken']['factory'] == 1) {
 $router_tmp = array();
 if($variante['broken']['sysupgrade'] == 1) {
 	for( $i=0; $i<count($files['broken']['sysupgrade']); $i++) {
+		if($pos = stripos($files['broken']['sysupgrade'][$i], "8devices", $pos_hersteller-2) !== false) {
+			$router_tmp[$i]['hersteller'] = "8devices";
+			$router_tmp[$i]['version'] = "Alle";
+			$router_tmp[$i]['modell'] = strtoupper(substr($files['broken']['sysupgrade'][$i], $pos_hersteller+9, strlen($files['broken']['sysupgrade'][$i])-$pos_hersteller-24));
+		}
 		if($pos = stripos($files['broken']['sysupgrade'][$i], "alfa", $pos_hersteller-2) !== false) {
 			$router_tmp[$i]['hersteller'] = "Alfa";
 			$router_tmp[$i]['version'] = "Alle";
@@ -468,6 +503,11 @@ if($variante['broken']['sysupgrade'] == 1) {
 			$router_tmp[$i]['hersteller'] = "Linksys";
 			$router_tmp[$i]['version'] = "Alle";
 			$router_tmp[$i]['modell'] = strtoupper(substr($files['broken']['sysupgrade'][$i], $pos_hersteller+8, strlen($files['broken']['sysupgrade'][$i])-$pos_hersteller-23));
+		}
+		if($pos = stripos($files['broken']['sysupgrade'][$i], "meraki", $pos_hersteller-2) !== false) {
+			$router_tmp[$i]['hersteller'] = "Meraki";
+			$router_tmp[$i]['version'] = "Alle";
+			$router_tmp[$i]['modell'] = strtoupper(substr($files['broken']['sysupgrade'][$i], $pos_hersteller+7, strlen($files['broken']['sysupgrade'][$i])-$pos_hersteller-22));
 		}
 		if($pos = stripos($files['broken']['sysupgrade'][$i], "netgear", $pos_hersteller-2) !== false) {
 			$router_tmp[$i]['hersteller'] = "Netgear";
@@ -529,6 +569,11 @@ if($variante['broken']['sysupgrade'] == 1) {
 $router_tmp = array();
 if($variante['experimental']['factory'] == 1) {
 	for( $i=0; $i<count($files['experimental']['factory']); $i++) {
+		if($pos = stripos($files['experimental']['factory'][$i], "8devices", $pos_hersteller-3) !== false) {
+			$router_tmp[$i]['hersteller'] = "8devices";
+			$router_tmp[$i]['version'] = "Alle";
+			$router_tmp[$i]['modell'] = strtoupper(substr($files['experimental']['factory'][$i], $pos_hersteller+6, strlen($files['experimental']['factory'][$i])-$pos_hersteller-10));
+		}
 		if($pos = stripos($files['experimental']['factory'][$i], "alfa", $pos_hersteller-3) !== false) {
 			$router_tmp[$i]['hersteller'] = "Alfa";
 			$router_tmp[$i]['version'] = "Alle";
@@ -563,6 +608,11 @@ if($variante['experimental']['factory'] == 1) {
 			$router_tmp[$i]['hersteller'] = "Linksys";
 			$router_tmp[$i]['version'] = "Alle";
 			$router_tmp[$i]['modell'] = strtoupper(substr($files['experimental']['factory'][$i], $pos_hersteller+5, strlen($files['experimental']['factory'][$i])-$pos_hersteller-9));
+		}
+		if($pos = stripos($files['experimental']['factory'][$i], "meraki", $pos_hersteller-3) !== false) {
+			$router_tmp[$i]['hersteller'] = "Meraki";
+			$router_tmp[$i]['version'] = "Alle";
+			$router_tmp[$i]['modell'] = strtoupper(substr($files['experimental']['factory'][$i], $pos_hersteller+4, strlen($files['experimental']['factory'][$i])-$pos_hersteller-8));
 		}
 		if($pos = stripos($files['experimental']['factory'][$i], "netgear", $pos_hersteller-3) !== false) {
 			$router_tmp[$i]['hersteller'] = "Netgear";
@@ -624,6 +674,11 @@ if($variante['experimental']['factory'] == 1) {
 $router_tmp = array();
 if($variante['experimental']['sysupgrade'] == 1) {
 	for( $i=0; $i<count($files['experimental']['sysupgrade']); $i++) {
+		if($pos = stripos($files['experimental']['sysupgrade'][$i], "8devices", $pos_hersteller-3) !== false) {
+			$router_tmp[$i]['hersteller'] = "8devices";
+			$router_tmp[$i]['version'] = "Alle";
+			$router_tmp[$i]['modell'] = strtoupper(substr($files['experimental']['sysupgrade'][$i], $pos_hersteller+6, strlen($files['experimental']['sysupgrade'][$i])-$pos_hersteller-21));
+		}
 		if($pos = stripos($files['experimental']['sysupgrade'][$i], "alfa", $pos_hersteller-3) !== false) {
 			$router_tmp[$i]['hersteller'] = "Alfa";
 			$router_tmp[$i]['version'] = "Alle";
@@ -658,6 +713,11 @@ if($variante['experimental']['sysupgrade'] == 1) {
 			$router_tmp[$i]['hersteller'] = "Linksys";
 			$router_tmp[$i]['version'] = "Alle";
 			$router_tmp[$i]['modell'] = strtoupper(substr($files['experimental']['sysupgrade'][$i], $pos_hersteller+5, strlen($files['experimental']['sysupgrade'][$i])-$pos_hersteller-20));
+		}
+		if($pos = stripos($files['experimental']['sysupgrade'][$i], "meraki", $pos_hersteller-3) !== false) {
+			$router_tmp[$i]['hersteller'] = "Meraki";
+			$router_tmp[$i]['version'] = "Alle";
+			$router_tmp[$i]['modell'] = strtoupper(substr($files['experimental']['sysupgrade'][$i], $pos_hersteller+4, strlen($files['experimental']['sysupgrade'][$i])-$pos_hersteller-19));
 		}
 		if($pos = stripos($files['experimental']['sysupgrade'][$i], "netgear", $pos_hersteller-3) !== false) {
 			$router_tmp[$i]['hersteller'] = "Netgear";
@@ -719,6 +779,11 @@ if($variante['experimental']['sysupgrade'] == 1) {
 $router_tmp = array();
 if($variante['stable']['factory'] == 1) {
 	for( $i=0; $i<count($files['stable']['factory']); $i++) {
+		if($pos = stripos($files['stable']['factory'][$i], "8devices", $pos_hersteller) !== false) {
+			$router_tmp[$i]['hersteller'] = "8devices";
+			$router_tmp[$i]['version'] = "Alle";
+			$router_tmp[$i]['modell'] = strtoupper(substr($files['stable']['factory'][$i], $pos_hersteller+9, strlen($files['stable']['factory'][$i])-$pos_hersteller-13));
+		}
 		if($pos = stripos($files['stable']['factory'][$i], "alfa", $pos_hersteller) !== false) {
 			$router_tmp[$i]['hersteller'] = "Alfa";
 			$router_tmp[$i]['version'] = "Alle";
@@ -753,6 +818,11 @@ if($variante['stable']['factory'] == 1) {
 			$router_tmp[$i]['hersteller'] = "Linksys";
 			$router_tmp[$i]['version'] = "Alle";
 			$router_tmp[$i]['modell'] = strtoupper(substr($files['stable']['factory'][$i], $pos_hersteller+8, strlen($files['stable']['factory'][$i])-$pos_hersteller-12));
+		}
+		if($pos = stripos($files['stable']['factory'][$i], "meraki", $pos_hersteller) !== false) {
+			$router_tmp[$i]['hersteller'] = "Meraki";
+			$router_tmp[$i]['version'] = "Alle";
+			$router_tmp[$i]['modell'] = strtoupper(substr($files['stable']['factory'][$i], $pos_hersteller+7, strlen($files['stable']['factory'][$i])-$pos_hersteller-11));
 		}
 		if($pos = stripos($files['stable']['factory'][$i], "netgear", $pos_hersteller) !== false) {
 			$router_tmp[$i]['hersteller'] = "Netgear";
@@ -815,6 +885,11 @@ if($variante['stable']['factory'] == 1) {
 $router_tmp = array();
 if($variante['stable']['sysupgrade'] == 1) {
 	for( $i=0; $i<count($files['stable']['sysupgrade']); $i++) {
+		if($pos = stripos($files['stable']['sysupgrade'][$i], "8devices", $pos_hersteller) !== false) {
+			$router_tmp[$i]['hersteller'] = "8devices";
+			$router_tmp[$i]['version'] = "Alle";
+			$router_tmp[$i]['modell'] = strtoupper(substr($files['stable']['sysupgrade'][$i], $pos_hersteller+9, strlen($files['stable']['sysupgrade'][$i])-$pos_hersteller-24));
+		}
 		if($pos = stripos($files['stable']['sysupgrade'][$i], "alfa", $pos_hersteller) !== false) {
 			$router_tmp[$i]['hersteller'] = "Alfa";
 			$router_tmp[$i]['version'] = "Alle";
@@ -849,6 +924,11 @@ if($variante['stable']['sysupgrade'] == 1) {
 			$router_tmp[$i]['hersteller'] = "Linksys";
 			$router_tmp[$i]['version'] = "Alle";
 			$router_tmp[$i]['modell'] = strtoupper(substr($files['stable']['sysupgrade'][$i], $pos_hersteller+8, strlen($files['stable']['sysupgrade'][$i])-$pos_hersteller-23));
+		}
+		if($pos = stripos($files['stable']['sysupgrade'][$i], "meraki", $pos_hersteller) !== false) {
+			$router_tmp[$i]['hersteller'] = "Meraki";
+			$router_tmp[$i]['version'] = "Alle";
+			$router_tmp[$i]['modell'] = strtoupper(substr($files['stable']['sysupgrade'][$i], $pos_hersteller+7, strlen($files['stable']['sysupgrade'][$i])-$pos_hersteller-22));
 		}
 		if($pos = stripos($files['stable']['sysupgrade'][$i], "netgear", $pos_hersteller) !== false) {
 			$router_tmp[$i]['hersteller'] = "Netgear";
