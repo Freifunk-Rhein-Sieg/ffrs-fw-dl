@@ -13,6 +13,7 @@ Der Freifunk Hennef Firmware Downloader scannt das in der config.inc.php angegeb
 
 Bisher werden Router der folgenden Hersteller automatisch erkannt:
 
+- 8devices
 - Alfa
 - Allnet
 - Buffalo
@@ -20,6 +21,7 @@ Bisher werden Router der folgenden Hersteller automatisch erkannt:
 - GL-Inet
 - LeMaker
 - Linksys
+- Meraki
 - Netgear
 - Onion
 - Raspberry Pi
@@ -35,14 +37,30 @@ Bilder
 
 Die Bilder der Router kommen von Daniel Krah und sind lizensiert unter einer Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz (CC-BY NC SA).
 
+Installation
+------------
+
+Den Freifunk Hennef Firmware Downloader in ein eigenes Unterverzeichnis des Webservers packen, auf dem auch die Firmwares liegen. In der config.inc.php werden dann diverse Variablen gesetzt:
+
+$firmware_download_path = Pfad zum Hauptverzeichnis der Firmware
+$entwicklung = Entwicklungsstufen der Firmware (beta/broken/experimental/stable) - (sollte man in Ruhe lassen normalerweise)
+$installation = Art der Installation (factory/sysupgrade) - (sollte man in Ruhe lassen normalerweise)
+$anzahl_hersteller = Anzahl der supporteten Hersteller
+$hersteller = Array mit Informationen zu den Herstellern
+-> name = Name des Herstellers
+-> filename = Name des Herstellers wie er in den Dateinamen der Firmware auftaucht
+-> offset_modell = Offset für das Parsen des Modells im Dateinamen der Firmware
+-> offset_version = Offset für das Parsen der Version im Dateinamen der Firmware
+$offset_sysupgrade = Offset für "-sysupgrade" im Dateinamen der Firmware
+
 Code
 ----
 
-Der Code ist grausam und generiert einen Haufen Variablen/Arrays in PHP aus denen dann "on the fly" ein Javascript Code erzeugt wird. Das geht sicher besser (JSON erzeugen in PHP und wieder ins Javascript einladen) und Fehlertoleranter - aber es ist die erste Version, die erstmal "läuft". Mittlerweile existiert wenigstens eine ffrouter Klasse, die über die ganzen Eigenschaften (Hersteller, Modell, etc.) verfügt und der Großteil des PHP Codes ist ausgelagert.
+Der Code ist nun halbwegs aufgeräumt und generiert aus dem PHP heraus "on the fly" einen Javascript Code. Das geht sicher noch besser (JSON erzeugen in PHP und wieder ins Javascript einladen), aber so läuft es erstmal. Mittlerweile existiert eine ffrouter Klasse, die über die ganzen Eigenschaften (Hersteller, Modell, etc.) verfügt und der Großteil des PHP Codes ist ausgelagert.
 
 Lizenz
 ------
 
-@author    Caspar Armster
-@copyright 2016 Caspar Armster, Freifunk Hennef
-@license   Licensed under GPLv3
+author    Caspar Armster
+copyright 2016 Caspar Armster, Freifunk Hennef
+license   Licensed under GPLv3

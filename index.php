@@ -47,12 +47,12 @@ function populateA(){
   var img_router_back = document.getElementById("img_router_back");
   s2.innerHTML = "";
 EOT;
-	for( $i=0; $i<count($hersteller); $i++) {
-		echo("\n  if(s1.value == \"".$hersteller[$i]."\"){\n");
+	for( $i=0; $i<$anzahl_hersteller; $i++) {
+		echo("\n  if(s1.value == \"".$hersteller[$i]['name']."\"){\n");
 		echo("    var optionArray = [\"|Modell auswählen\"");
 		$j=0;
 		while( $j<count($router) ) {
-			if($router[$j]->hersteller == $hersteller[$i]) {
+			if($router[$j]->hersteller == $hersteller[$i]['name']) {
 				echo(",\"".$router[$j]->modell."|".$router[$j]->modell."\"");
 				if( $j<count($router)-1 ) {
 					while($router[$j]->modell == $router[$j+1]->modell) {
@@ -106,11 +106,12 @@ function populateB(){
   var img_router_front = document.getElementById("img_router_front");
   var img_router_back = document.getElementById("img_router_back");
   s2.innerHTML = "";
+  switch(s1.value){\n
 EOT;
 	$i=0;
 	while( $i<count($router) ) {
-		echo("\n  if(s1.value == \"".$router[$i]->modell."\"){\n");
-		echo("    var optionArray = [\"|Version auswählen\"");
+		echo("    case \"".$router[$i]->modell."\":\n");
+		echo("      var optionArray = [\"|Version auswählen\"");
 		echo(",\"".$i."|".$router[$i]->version."\"");
 		if( $i<count($router)-1 ) {
 			while($router[$i]->modell == $router[$i+1]->modell) {
@@ -123,10 +124,13 @@ EOT;
 			}
 		}
 		echo("];\n");
-		echo("  }\n");
+		echo("      break;\n");
 		$i++;
 	}
 	echo <<<EOT
+    default:
+      break;
+  }
   for(var option in optionArray){
     var pair = optionArray[option].split("|");
     var newOption = document.createElement("option");
@@ -159,13 +163,14 @@ function populateC(){
   var img_router_front = document.getElementById("img_router_front");
   var img_router_back = document.getElementById("img_router_back");
   s2.innerHTML = "";
+  switch(s1.value){\n
 EOT;
 	$i=0;
 	while( $i<count($router) ) {
-		echo("\n  if(s1.value == \"".$i."\"){\n");
-		echo("    var newImageFront = \"".$router[$i]->imagefront."\";\n");
-		echo("    var newImageBack = \"".$router[$i]->imageback."\";\n");
-		echo("    var optionArray = [\"|Erstinstallation?\"");
+		echo("    case \"".$i."\":\n");
+		echo("      var newImageFront = \"".$router[$i]->imagefront."\";\n");
+		echo("      var newImageBack = \"".$router[$i]->imageback."\";\n");
+		echo("      var optionArray = [\"|Erstinstallation?\"");
 		if( ($router[$i]->betafactory == 1) || ($router[$i]->brokenfactory == 1) || ($router[$i]->experimentalfactory == 1) || ($router[$i]->stablefactory == 1) ) {
 			echo(",\"".$i."J|Ja\"");
 		}
@@ -173,10 +178,13 @@ EOT;
 			echo(",\"".$i."N|Nein\"");
 		}
 		echo("];\n");
-		echo("  }\n");
+		echo("      break;\n");
 		$i++;
 	}
 	echo <<<EOT
+    default:
+      break;
+  }
   for(var option in optionArray){
     var pair = optionArray[option].split("|");
     var newOption = document.createElement("option");
@@ -203,11 +211,12 @@ function populateD(){
   var s2 = document.getElementById("fw-dl-5");
   var s6 = document.getElementById("fw-dl-6");
   s2.innerHTML = "";
+  switch(s1.value){\n
 EOT;
 	$i=0;
 	while( $i<count($router) ) {
-		echo("\n  if(s1.value == \"".$i."J\"){\n");
-		echo("    var optionArray = [\"|Entwicklungsstadium?\"");
+		echo("    case \"".$i."J\":\n");
+		echo("      var optionArray = [\"|Entwicklungsstadium?\"");
 		if( ($router[$i]->betafactory == 1) ) {
 			echo(",\"".$i."Jbeta|Beta\"");
 		}
@@ -221,9 +230,9 @@ EOT;
 			echo(",\"".$i."Jstable|Stable\"");
 		}
 		echo("];\n");
-		echo("  }\n");
-		echo("\n  if(s1.value == \"".$i."N\"){\n");
-		echo("    var optionArray = [\"|Entwicklungsstadium?\"");
+		echo("      break\n");
+		echo("    case \"".$i."N\":\n");
+		echo("      var optionArray = [\"|Entwicklungsstadium?\"");
 		if( ($router[$i]->betasysupgrade == 1) ) {
 			echo(",\"".$i."Nbeta|Beta\"");
 		}
@@ -237,10 +246,13 @@ EOT;
 			echo(",\"".$i."Nstable|Stable\"");
 		}
 		echo("];\n");
-		echo("  }\n");
+		echo("      break\n");
 		$i++;
 	}
 	echo <<<EOT
+    default:
+      break;
+  }
   for(var option in optionArray){
     var pair = optionArray[option].split("|");
     var newOption = document.createElement("option");
@@ -261,60 +273,64 @@ function populateE(){
   var s1 = document.getElementById("fw-dl-5");
   var s2 = document.getElementById("fw-dl-6");
   s2.innerHTML = "";
+  switch(s1.value){\n
 EOT;
 	$i=0;
 	while( $i<count($router) ) {
 		if( ($router[$i]->betafactory == 1) ) {
-			echo("\n  if(s1.value == \"".$i."Jbeta\"){\n");
-			echo("    var link = \"".$router[$i]->betafactorylink."\";\n");
-			echo("    var linkclass = \" btn-warning\";\n");
-			echo("  }\n");
+			echo("    case \"".$i."Jbeta\":\n");
+			echo("      var link = \"".$router[$i]->betafactorylink."\";\n");
+			echo("      var linkclass = \" btn-warning\";\n");
+			echo("      break;\n");
 		}
 		if( ($router[$i]->brokenfactory == 1) ) {
-			echo("\n  if(s1.value == \"".$i."Jbroken\"){\n");
-			echo("    var link = \"".$router[$i]->brokenfactorylink."\";\n");
-			echo("    var linkclass = \" btn-danger\";\n");
-			echo("  }\n");
+			echo("    case \"".$i."Jbroken\":\n");
+			echo("      var link = \"".$router[$i]->brokenfactorylink."\";\n");
+			echo("      var linkclass = \" btn-danger\";\n");
+			echo("      break;\n");
 		}
 		if( ($router[$i]->experimentalfactory == 1) ) {
-			echo("\n  if(s1.value == \"".$i."Jexp\"){\n");
-			echo("    var link = \"".$router[$i]->experimentalfactorylink."\";\n");
-			echo("    var linkclass = \" btn-warning\";\n");
-			echo("  }\n");
+			echo("    case \"".$i."Jexp\":\n");
+			echo("      var link = \"".$router[$i]->experimentalfactorylink."\";\n");
+			echo("      var linkclass = \" btn-warning\";\n");
+			echo("      break;\n");
 		}
 		if( ($router[$i]->stablefactory == 1) ) {
-			echo("\n  if(s1.value == \"".$i."Jstable\"){\n");
-			echo("    var link = \"".$router[$i]->stablefactorylink."\";\n");
-			echo("    var linkclass = \" btn-success\";\n");
-			echo("  }\n");
+			echo("    case \"".$i."Jstable\":\n");
+			echo("      var link = \"".$router[$i]->stablefactorylink."\";\n");
+			echo("      var linkclass = \" btn-success\";\n");
+			echo("      break;\n");
 		}
 		if( ($router[$i]->betasysupgrade == 1) ) {
-			echo("\n  if(s1.value == \"".$i."Nbeta\"){\n");
-			echo("    var link = \"".$router[$i]->betasysupgradelink."\";\n");
-			echo("    var linkclass = \" btn-warning\";\n");
-			echo("  }\n");
+			echo("    case \"".$i."Nbeta\":\n");
+			echo("      var link = \"".$router[$i]->betasysupgradelink."\";\n");
+			echo("      var linkclass = \" btn-warning\";\n");
+			echo("      break;\n");
 		}
 		if( ($router[$i]->brokensysupgrade == 1) ) {
-			echo("\n  if(s1.value == \"".$i."Nbroken\"){\n");
-			echo("    var link = \"".$router[$i]->brokensysupgradelink."\";\n");
-			echo("    var linkclass = \" btn-danger\";\n");
-			echo("  }\n");
+			echo("    case \"".$i."Nbroken\":\n");
+			echo("      var link = \"".$router[$i]->brokensysupgradelink."\";\n");
+			echo("      var linkclass = \" btn-danger\";\n");
+			echo("      break;\n");
 		}
 		if( ($router[$i]->experimentalsysupgrade == 1) ) {
-			echo("\n  if(s1.value == \"".$i."Nexp\"){\n");
-			echo("    var link = \"".$router[$i]->experimentalsysupgradelink."\";\n");
-			echo("    var linkclass = \" btn-warning\";\n");
-			echo("  }\n");
+			echo("    case \"".$i."Nexp\":\n");
+			echo("      var link = \"".$router[$i]->experimentalsysupgradelink."\";\n");
+			echo("      var linkclass = \" btn-warning\";\n");
+			echo("      break;\n");
 		}
 		if( ($router[$i]->stablesysupgrade == 1) ) {
-			echo("\n  if(s1.value == \"".$i."Nstable\"){\n");
-			echo("    var link = \"".$router[$i]->stablesysupgradelink."\";\n");
-			echo("    var linkclass = \" btn-success\";\n");
-			echo("  }\n");
+			echo("    case \"".$i."Nstable\":\n");
+			echo("      var link = \"".$router[$i]->stablesysupgradelink."\";\n");
+			echo("      var linkclass = \" btn-success\";\n");
+			echo("      break;\n");
 		}
 		$i++;
 	}
 	echo <<<EOT
+    default:
+      break;
+  }
   s2.href = link;
   s2.className = s2.className.replace( /(?:^|\s)disabled(?!\S)/g , '' );
   s2.className = s2.className.replace( /(?:^|\s)btn-primary(?!\S)/g , '' );
@@ -374,8 +390,8 @@ EOT;
                     <select id="fw-dl-1" name="fw-dl-1" onchange="populateA()">
 						<option value="">Hersteller auswählen</option>
 EOT;
-	for( $i=0; $i<count($hersteller); $i++) {
-		echo("<option value=\"".$hersteller[$i]."\">".$hersteller[$i]."</option>");
+	for( $i=0; $i<$anzahl_hersteller; $i++) {
+		echo("<option value=\"".$hersteller[$i]['name']."\">".$hersteller[$i]['name']."</option>");
 	}
 	echo <<<EOT
 					</select>
@@ -463,7 +479,6 @@ EOT;
 </div>
     <script src="js/jquery-2.2.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/validator.min.js"></script>
     <!-- <script src="js/scripts.js"></script> -->
 </body>
 </html>
