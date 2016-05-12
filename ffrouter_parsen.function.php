@@ -13,10 +13,15 @@ if(is_dir($firmware_download_path."beta/")) {
 		$variante['beta']['factory'] = 1;
 		$files['beta']['factory'] = array_slice(scandir($firmware_download_path."beta/factory/"), 2);
 		for( $i=0; $i<count($files['beta']['factory']); $i++ ) {
-			$pos = stripos($files['beta']['factory'][$i], 'manifest');
-			if($pos !== false) {
+			if(is_dir($firmware_download_path."beta/factory/".$files['beta']['factory'][$i])) {
 				array_splice($files['beta']['factory'], $i, 1);
-				break;
+				$i--;
+			} else {
+				$pos = stripos($files['beta']['factory'][$i], 'manifest');
+				if($pos !== false) {
+					array_splice($files['beta']['factory'], $i, 1);
+					$i--;
+				}
 			}
 		}
 	}
@@ -24,10 +29,15 @@ if(is_dir($firmware_download_path."beta/")) {
 		$variante['beta']['sysupgrade'] = 1;
 		$files['beta']['sysupgrade'] = array_slice(scandir($firmware_download_path."beta/sysupgrade/"), 2);
 		for( $i=0; $i<count($files['beta']['sysupgrade']); $i++ ) {
-			$pos = stripos($files['beta']['sysupgrade'][$i], 'manifest');
-			if($pos !== false) {
+			if(is_dir($firmware_download_path."beta/sysupgrade/".$files['beta']['sysupgrade'][$i])) {
 				array_splice($files['beta']['sysupgrade'], $i, 1);
-				break;
+				$i--;
+			} else {
+				$pos = stripos($files['beta']['sysupgrade'][$i], 'manifest');
+				if($pos !== false) {
+					array_splice($files['beta']['sysupgrade'], $i, 1);
+					$i--;
+				}
 			}
 		}
 	}
@@ -37,10 +47,15 @@ if(is_dir($firmware_download_path."broken/")) {
 		$variante['broken']['factory'] = 1;
 		$files['broken']['factory'] = array_slice(scandir($firmware_download_path."broken/factory/"), 2);
 		for( $i=0; $i<count($files['broken']['factory']); $i++ ) {
-			$pos = stripos($files['broken']['factory'][$i], 'manifest');
-			if($pos !== false) {
+			if(is_dir($firmware_download_path."broken/factory/".$files['broken']['factory'][$i])) {
 				array_splice($files['broken']['factory'], $i, 1);
-				break;
+				$i--;
+			} else {
+				$pos = stripos($files['broken']['factory'][$i], 'manifest');
+				if($pos !== false) {
+					array_splice($files['broken']['factory'], $i, 1);
+					$i--;
+				}
 			}
 		}
 	}
@@ -48,10 +63,15 @@ if(is_dir($firmware_download_path."broken/")) {
 		$variante['broken']['sysupgrade'] = 1;
 		$files['broken']['sysupgrade'] = array_slice(scandir($firmware_download_path."broken/sysupgrade/"), 2);
 		for( $i=0; $i<count($files['broken']['sysupgrade']); $i++ ) {
-			$pos = stripos($files['broken']['sysupgrade'][$i], 'manifest');
-			if($pos !== false) {
+			if(is_dir($firmware_download_path."broken/sysupgrade/".$files['broken']['sysupgrade'][$i])) {
 				array_splice($files['broken']['sysupgrade'], $i, 1);
-				break;
+				$i--;
+			} else {
+				$pos = stripos($files['broken']['sysupgrade'][$i], 'manifest');
+				if($pos !== false) {
+					array_splice($files['broken']['sysupgrade'], $i, 1);
+					$i--;
+				}
 			}
 		}
 	}
@@ -61,10 +81,15 @@ if(is_dir($firmware_download_path."experimental/")) {
 		$variante['experimental']['factory'] = 1;
 		$files['experimental']['factory'] = array_slice(scandir($firmware_download_path."experimental/factory/"), 2);
 		for( $i=0; $i<count($files['experimental']['factory']); $i++ ) {
-			$pos = stripos($files['experimental']['factory'][$i], 'manifest');
-			if($pos !== false) {
+			if(is_dir($firmware_download_path."experimental/factory/".$files['experimental']['factory'][$i])) {
 				array_splice($files['experimental']['factory'], $i, 1);
-				break;
+				$i--;
+			} else {
+				$pos = stripos($files['experimental']['factory'][$i], 'manifest');
+				if($pos !== false) {
+					array_splice($files['experimental']['factory'], $i, 1);
+					$i--;
+				}
 			}
 		}
 	}
@@ -72,10 +97,15 @@ if(is_dir($firmware_download_path."experimental/")) {
 		$variante['experimental']['sysupgrade'] = 1;
 		$files['experimental']['sysupgrade'] = array_slice(scandir($firmware_download_path."experimental/sysupgrade/"), 2);
 		for( $i=0; $i<count($files['experimental']['sysupgrade']); $i++ ) {
-			$pos = stripos($files['experimental']['sysupgrade'][$i], 'manifest');
-			if($pos !== false) {
+			if(is_dir($firmware_download_path."experimental/sysupgrade/".$files['experimental']['sysupgrade'][$i])) {
 				array_splice($files['experimental']['sysupgrade'], $i, 1);
-				break;
+				$i--;
+			} else {
+				$pos = stripos($files['experimental']['sysupgrade'][$i], 'manifest');
+				if($pos !== false) {
+					array_splice($files['experimental']['sysupgrade'], $i, 1);
+					$i--;
+				}
 			}
 		}
 	}
@@ -86,9 +116,15 @@ if(is_dir($firmware_download_path."stable/")) {
 		$files['stable']['factory'] = array_slice(scandir($firmware_download_path."stable/factory/"), 2);
 		for( $i=0; $i<count($files['stable']['factory']); $i++ ) {
 			$pos = stripos($files['stable']['factory'][$i], 'manifest');
-			if($pos !== false) {
+			if(is_dir($firmware_download_path."stable/factory/".$files['stable']['factory'][$i])) {
 				array_splice($files['stable']['factory'], $i, 1);
-				break;
+				$i--;
+			} else {
+				$pos = stripos($files['stable']['factory'][$i], 'manifest');
+				if($pos !== false) {
+					array_splice($files['stable']['factory'], $i, 1);
+					$i--;
+				}
 			}
 		}
 	}
@@ -96,10 +132,15 @@ if(is_dir($firmware_download_path."stable/")) {
 		$variante['stable']['sysupgrade'] = 1;
 		$files['stable']['sysupgrade'] = array_slice(scandir($firmware_download_path."stable/sysupgrade/"), 2);
 		for( $i=0; $i<count($files['stable']['sysupgrade']); $i++ ) {
-			$pos = stripos($files['stable']['sysupgrade'][$i], 'manifest');
-			if($pos !== false) {
+			if(is_dir($firmware_download_path."stable/sysupgrade/".$files['stable']['sysupgrade'][$i])) {
 				array_splice($files['stable']['sysupgrade'], $i, 1);
-				break;
+				$i--;
+			} else {
+				$pos = stripos($files['stable']['sysupgrade'][$i], 'manifest');
+				if($pos !== false) {
+					array_splice($files['stable']['sysupgrade'], $i, 1);
+					$i--;
+				}
 			}
 		}
 	}
@@ -189,7 +230,7 @@ if($variante['beta']['factory'] == 1) {
 			$router_tmp[$i]['modell'] = strtoupper(substr($files['beta']['factory'][$i], $pos_hersteller+2, stripos($files['beta']['factory'][$i], ".", $pos_hersteller+2)-$pos_hersteller-2));
 		}
 		if(isset($router_tmp[$i]['hersteller']) != true) {
-			echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten!");
+			echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten! (".$files['beta']['factory'][$i].")<br />");
 		} else {
 			$router[$i] = new ffrouter();
 			$router[$i]->hersteller = $router_tmp[$i]['hersteller'];
@@ -274,7 +315,7 @@ if($variante['beta']['sysupgrade'] == 1) {
 			$router_tmp[$i]['modell'] = strtoupper(substr($files['beta']['sysupgrade'][$i], $pos_hersteller+2, stripos($files['beta']['sysupgrade'][$i], ".", $pos_hersteller+2)-$pos_hersteller-13));
 		}
 		if(isset($router_tmp[$i]['hersteller']) != true) {
-			echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten!");
+			echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten! (".$files['beta']['sysupgrade'][$i].")<br />");
 		} else {
 			$router_neu = 1;
 			for( $j=0; $j<count($router); $j++) {
@@ -369,7 +410,7 @@ if($variante['broken']['factory'] == 1) {
 			$router_tmp[$i]['modell'] = strtoupper(substr($files['broken']['factory'][$i], $pos_hersteller+4, stripos($files['broken']['factory'][$i], ".", $pos_hersteller+2)-$pos_hersteller-4));
 		}
 		if(isset($router_tmp[$i]['hersteller']) != true) {
-			echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten!");
+			echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten! (".$files['broken']['factory'][$i].")<br />");
 		} else {
 			$router_neu = 1;
 			for( $j=0; $j<count($router); $j++) {
@@ -464,7 +505,7 @@ if($variante['broken']['sysupgrade'] == 1) {
 			$router_tmp[$i]['modell'] = strtoupper(substr($files['broken']['sysupgrade'][$i], $pos_hersteller+4, stripos($files['broken']['sysupgrade'][$i], ".", $pos_hersteller+2)-$pos_hersteller-15));
 		}
 		if(isset($router_tmp[$i]['hersteller']) != true) {
-			echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten!");
+			echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten! (".$files['broken']['sysupgrade'][$i].")<br />");
 		} else {
 			$router_neu = 1;
 			for( $j=0; $j<count($router); $j++) {
@@ -559,7 +600,7 @@ if($variante['experimental']['factory'] == 1) {
 			$router_tmp[$i]['modell'] = strtoupper(substr($files['experimental']['factory'][$i], $pos_hersteller+1, stripos($files['experimental']['factory'][$i], ".", $pos_hersteller+2)-$pos_hersteller-1));
 		}
 		if(isset($router_tmp[$i]['hersteller']) != true) {
-			echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten!");
+			echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten! (".$files['experimental']['factory'][$i].")<br />");
 		} else {
 			$router_neu = 1;
 			for( $j=0; $j<count($router); $j++) {
@@ -654,7 +695,7 @@ if($variante['experimental']['sysupgrade'] == 1) {
 			$router_tmp[$i]['modell'] = strtoupper(substr($files['experimental']['sysupgrade'][$i], $pos_hersteller+1, stripos($files['experimental']['sysupgrade'][$i], ".", $pos_hersteller+2)-$pos_hersteller-12));
 		}
 		if(isset($router_tmp[$i]['hersteller']) != true) {
-			echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten!");
+			echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten! (".$files['experimental']['sysupgrade'][$i].")<br />");
 		} else {
 			$router_neu = 1;
 			for( $j=0; $j<count($router); $j++) {
@@ -703,10 +744,10 @@ if($variante['stable']['factory'] == 1) {
 			$router_tmp[$i]['version'] = substr($files['stable']['factory'][$i], strripos($files['stable']['factory'][$i], "v"), -4);
 			$router_tmp[$i]['modell'] = strtoupper(substr($files['stable']['factory'][$i], $pos_hersteller+8, strlen($files['stable']['factory'][$i])-strlen($router_tmp[$i]['version'])-$pos_hersteller-13));
 		}
-		if($pos = stripos($files['experimental']['factory'][$i], "lemaker", $pos_hersteller) !== false) {
+		if($pos = stripos($files['stable']['factory'][$i], "lemaker", $pos_hersteller) !== false) {
 			$router_tmp[$i]['hersteller'] = "LeMaker";
 			$router_tmp[$i]['version'] = "Alle";
-			$router_tmp[$i]['modell'] = strtoupper(substr($files['experimental']['factory'][$i], $pos_hersteller+8, strlen($files['experimental']['factory'][$i])-$pos_hersteller-15));
+			$router_tmp[$i]['modell'] = strtoupper(substr($files['stable']['factory'][$i], $pos_hersteller+8, strlen($files['stable']['factory'][$i])-$pos_hersteller-15));
 		}
 		if($pos = stripos($files['stable']['factory'][$i], "linksys", $pos_hersteller) !== false) {
 			$router_tmp[$i]['hersteller'] = "Linksys";
@@ -749,7 +790,7 @@ if($variante['stable']['factory'] == 1) {
 			$router_tmp[$i]['modell'] = strtoupper(substr($files['stable']['factory'][$i], $pos_hersteller+4, stripos($files['stable']['factory'][$i], ".", $pos_hersteller+2)-$pos_hersteller-4));
 		}
 		if(isset($router_tmp[$i]['hersteller']) != true) {
-			echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten!");
+			echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten! (".$files['stable']['factory'][$i].")<br />");
 		} else {
 			$router_neu = 1;
 			for( $j=0; $j<count($router); $j++) {
@@ -799,10 +840,10 @@ if($variante['stable']['sysupgrade'] == 1) {
 			$router_tmp[$i]['version'] = substr($files['stable']['sysupgrade'][$i], strripos($files['stable']['sysupgrade'][$i], "v"), -15);
 			$router_tmp[$i]['modell'] = strtoupper(substr($files['stable']['sysupgrade'][$i], $pos_hersteller+8, strlen($files['stable']['sysupgrade'][$i])-strlen($router_tmp[$i]['version'])-$pos_hersteller-24));
 		}
-		if($pos = stripos($files['experimental']['sysupgrade'][$i], "lemaker", $pos_hersteller) !== false) {
+		if($pos = stripos($files['stable']['sysupgrade'][$i], "lemaker", $pos_hersteller) !== false) {
 			$router_tmp[$i]['hersteller'] = "LeMaker";
 			$router_tmp[$i]['version'] = "Alle";
-			$router_tmp[$i]['modell'] = strtoupper(substr($files['experimental']['sysupgrade'][$i], $pos_hersteller+8, strlen($files['experimental']['sysupgrade'][$i])-$pos_hersteller-26));
+			$router_tmp[$i]['modell'] = strtoupper(substr($files['stable']['sysupgrade'][$i], $pos_hersteller+8, strlen($files['stable']['sysupgrade'][$i])-$pos_hersteller-26));
 		}
 		if($pos = stripos($files['stable']['sysupgrade'][$i], "linksys", $pos_hersteller) !== false) {
 			$router_tmp[$i]['hersteller'] = "Linksys";
@@ -845,7 +886,7 @@ if($variante['stable']['sysupgrade'] == 1) {
 			$router_tmp[$i]['modell'] = strtoupper(substr($files['stable']['sysupgrade'][$i], $pos_hersteller+4, stripos($files['stable']['sysupgrade'][$i], ".", $pos_hersteller+2)-$pos_hersteller-15));
 		}
 		if(isset($router_tmp[$i]['hersteller']) != true) {
-			echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten!");
+			echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten! (".$files['stable']['sysupgrade'][$i].")\n\r");
 		} else {
 			$router_neu = 1;
 			//echo("Hersteller: ".$router_tmp[$i]['hersteller']." Modell: ".$router_tmp[$i]['modell']." Version: ".$router_tmp[$i]['version']."<br />");
