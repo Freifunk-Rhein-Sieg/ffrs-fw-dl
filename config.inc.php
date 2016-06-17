@@ -25,7 +25,7 @@
 		}
 	}
 
-	$anzahl_hersteller = 16;
+	$anzahl_hersteller = 17;
 	$hersteller = array(
 		0  => array(
 			"name" => "8devices",
@@ -94,30 +94,36 @@
     		"offset_version" => 4
 		),
 		11 => array(
+    		"name" => "Openmesh",
+    		"filename" => "openmesh",
+    		"offset_modell" => 9,
+    		"offset_version" => 4
+		),
+		12 => array(
 			"name" => "Raspberry Pi",
 			"filename" => "raspberry-pi",
 			"offset_modell" => 13,
 			"offset_version" => 4
 		),
-    	12 => array(
+    	13 => array(
     		"name" => "TP-Link",
     		"filename" => "tp-link",
     		"offset_modell" => 8,
     		"offset_version" => -1
 		),
-    	13 => array(
+    	14 => array(
     		"name" => "Ubiquiti",
     		"filename" => "ubiquiti",
     		"offset_modell" => 9,
     		"offset_version" => 4
 		),
-    	14 => array(
+    	15 => array(
     		"name" => "Western Digital",
     		"filename" => "-wd-",
     		"offset_modell" => 3,
     		"offset_version" => 4
 		),
-    	15 => array(
+    	16 => array(
     		"name" => "x86",
     		"filename" => "x86",
     		"offset_modell" => 4,

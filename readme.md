@@ -24,6 +24,7 @@ Bisher werden Router der folgenden Hersteller automatisch erkannt:
 - Meraki
 - Netgear
 - Onion
+- Openmesh
 - Raspberry Pi
 - TP-Link
 - Ubiquiti
