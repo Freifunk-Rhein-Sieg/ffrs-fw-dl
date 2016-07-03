@@ -54,19 +54,19 @@ Den Freifunk Hennef Firmware Downloader in ein eigenes Unterverzeichnis des Webs
 - -> offset_version = Offset für das Parsen der Version im Dateinamen der Firmware
 - $offset_sysupgrade = Offset für "-sysupgrade" im Dateinamen der Firmware
 - Die Firmware liegt in folgenden Verzeichnissen:
-- firmware/
--- beta/
---- factory/
---- sysupgrade/
--- broken/
---- factory/
---- sysupgrade/
--- experimental/
---- factory/
---- sysupgrade/
--- stable/
---- factory/
---- sysupgrade/
+* firmware/
+	* beta/
+		* factory/
+		* sysupgrade/
+	* broken/
+		* factory/
+		* sysupgrade/
+	* experimental/
+		* factory/
+		* sysupgrade/
+	* stable/
+		* factory/
+		* sysupgrade/
 
 Code
 ----
