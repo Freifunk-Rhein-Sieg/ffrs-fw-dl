@@ -43,16 +43,30 @@ Installation
 
 Den Freifunk Hennef Firmware Downloader in ein eigenes Unterverzeichnis des Webservers packen, auf dem auch die Firmwares liegen. In der config.inc.php werden dann diverse Variablen gesetzt:
 
+- $text_h1/$text_h2/$link_h2_text/$link_h2_url/$logo_url/$logo_alt Texte & Logo im Header der Seite
 - $firmware_download_path = Pfad zum Hauptverzeichnis der Firmware
 - $entwicklung = Entwicklungsstufen der Firmware (beta/broken/experimental/stable) - (sollte man in Ruhe lassen normalerweise)
 - $installation = Art der Installation (factory/sysupgrade) - (sollte man in Ruhe lassen normalerweise)
-- $anzahl_hersteller = Anzahl der supporteten Hersteller
 - $hersteller = Array mit Informationen zu den Herstellern
 - -> name = Name des Herstellers
 - -> filename = Name des Herstellers wie er in den Dateinamen der Firmware auftaucht
 - -> offset_modell = Offset für das Parsen des Modells im Dateinamen der Firmware
 - -> offset_version = Offset für das Parsen der Version im Dateinamen der Firmware
 - $offset_sysupgrade = Offset für "-sysupgrade" im Dateinamen der Firmware
+- Die Firmware liegt in folgenden Verzeichnissen:
+- firmware/
+-- beta/
+--- factory/
+--- sysupgrade/
+-- broken/
+--- factory/
+--- sysupgrade/
+-- experimental/
+--- factory/
+--- sysupgrade/
+-- stable/
+--- factory/
+--- sysupgrade/
 
 Code
 ----

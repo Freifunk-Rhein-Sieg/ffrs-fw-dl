@@ -6,6 +6,13 @@
 * 
 */
 
+	$text_h1 = "Freifunk Hennef Firmware";
+	$text_h2 = "Auf dieser Seite können Sie die passende Firmware für ihren Router in Hennef auswählen und herunterladen!";
+	$link_h2_text = "Zurück zur Startseite";
+	$link_h2_url = "http://www.freifunk-hennef.de/";
+	$logo_url = "images/Freifunk-logo-hennef-klein-200.png";
+	$logo_alt = "Freifunk Hennef Logo";
+
 	$firmware_download_path = "../firmware/";
 
 	$entwicklung = array(
@@ -25,7 +32,6 @@
 		}
 	}
 
-	$anzahl_hersteller = 17;
 	$hersteller = array(
 		0  => array(
 			"name" => "8devices",
@@ -130,6 +136,7 @@
     		"offset_version" => 4
 		)
 	);
+	$anzahl_hersteller = count($hersteller);
 
 	$offset_sysupgrade = array(
 		0 => 0,

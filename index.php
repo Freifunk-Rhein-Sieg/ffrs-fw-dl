@@ -327,15 +327,23 @@ function populateE(){
     <div class="row">
         <div class="col-md-12">
             <div class="jumbotron">
-				<img src="images/Freifunk-logo-hennef-klein-200.png" alt="Freifunk Hennef Logo" style="float:right;">
+EOT;
+				echo("<img src=\"".$logo_url."\" alt=\"".$logo_alt."\" style=\"float:right;\">");
+echo <<<EOT
                 <h2>
-                    Freifunk Hennef Firmware
+EOT;
+                    echo($text_h1);
+echo <<<EOT
                 </h2>
                 <p>
-                    Auf dieser Seite können Sie die passende Firmware für ihren Router in Hennef auswählen und herunterladen!
+EOT;
+                    echo($text_h2);
+echo <<<EOT
                 </p>
                 <p>
-                    <a class="btn btn-primary btn-large" href="http://www.freifunk-hennef.de/">Zurück zur Startseite</a>
+EOT;
+                    echo("<a class=\"btn btn-primary btn-large\" href=\"".$link_h2_url."\">".$link_h2_text."</a>");
+echo <<<EOT
                 </p>
             </div>
         </div>
@@ -345,10 +353,14 @@ function populateE(){
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">
-                        Freifunk Hennef Firmware
+EOT;
+                        echo($text_h1);
+echo <<<EOT
                     </h3>
                 </div>
                 <div class="panel-body">
+                <img src="router_images/keinbild.jpg" id="img_router_back" alt="Router Rückseite" width=200px" style="float:right;">
+				<img src="router_images/keinbild.jpg" id="img_router_front" alt="Router Vorderseite" width=200px" style="float:right;">
                     Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />
 					Legen Sie anschließend fest, ob sie den Router zum ersten Mal mit einer Freifunk Firmware flashen und welches Entwicklungsstadium die Firmware haben soll.
                 </div>
@@ -446,8 +458,6 @@ EOT;
 					</h3>
                 </div>
                 <div class="panel-body">
-                	<img src="router_images/keinbild.jpg" id="img_router_back" alt="Router Rückseite" width=200px" style="float:right;">
-					<img src="router_images/keinbild.jpg" id="img_router_front" alt="Router Vorderseite" width=200px" style="float:right;">
 					<a href="#" id="fw-dl-6" name="fw-dl-6" role="button" class="btn btn-primary disabled">Download Firmware</a>
 				</div>
 				<div class="panel-footer">
