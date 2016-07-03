@@ -58,7 +58,7 @@ for( $i=0; $i<count($entwicklung); $i++ ) {
 							case "D-Link":
 								$router_tmp[$x]['version'] = substr($files[$entwicklung[$i]][$installation[$j]][$x], strripos($files[$entwicklung[$i]][$installation[$j]][$x], "rev"), -4-$offset_sysupgrade[$j]);
 								break;
-							case "D-Link":
+							case "GL-Inet":
 								$router_tmp[$x]['version'] = substr($files[$entwicklung[$i]][$installation[$j]][$x], strripos($files[$entwicklung[$i]][$installation[$j]][$x], "v"), -4-$offset_sysupgrade[$j]);
 								break;
 							case "TP-Link":
