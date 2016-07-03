@@ -25,6 +25,9 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 EOT;
 
 	try {
@@ -33,9 +36,23 @@ EOT;
 		echo("Fehler: ".$e->getMessage());
 		die();
 	}
+	$router_json = json_encode($router);
+	
+	echo("\n<script>\n");
+	echo("var router_text = '".$router_json."';\n");
+	echo("var router_json = JSON.parse(router_text);\n");
+	echo("var anzahl_hersteller = ".$anzahl_hersteller.";\n");
+
+	echo("var herstellername = [");
+	for( $i=0; $i<$anzahl_hersteller; $i++) {
+		echo("\"".$hersteller[$i]['name']."\"");
+		if( $i != $anzahl_hersteller-1) {
+			echo(", ");
+		}
+	}
+	echo("];\n");
 
 	echo <<<EOT
-	<script>
 function populateA(){
   var s1 = document.getElementById("fw-dl-1");
   var s2 = document.getElementById("fw-dl-2");
@@ -45,31 +62,29 @@ function populateA(){
   var s6 = document.getElementById("fw-dl-6");
   var img_router_front = document.getElementById("img_router_front");
   var img_router_back = document.getElementById("img_router_back");
+  var optionArray = new Array();
   s2.innerHTML = "";
-EOT;
-	for( $i=0; $i<$anzahl_hersteller; $i++) {
-		echo("\n  if(s1.value == \"".$hersteller[$i]['name']."\"){\n");
-		echo("    var optionArray = [\"|Modell auswählen\"");
-		$j=0;
-		while( $j<count($router) ) {
-			if($router[$j]->hersteller == $hersteller[$i]['name']) {
-				echo(",\"".$router[$j]->modell."|".$router[$j]->modell."\"");
-				if( $j<count($router)-1 ) {
-					while($router[$j]->modell == $router[$j+1]->modell) {
-						if( $j<count($router)-1 ) {
-							$j++;
-						} else {
-							break;
-						}
-					}
-				}
-			}
-			$j++;
-		}
-		echo("];\n");
-		echo("  }\n");
-	}
-	echo <<<EOT
+  for(i=0; i<anzahl_hersteller; i++) {
+  	if(s1.value == herstellername[i]) {
+  		optionArray[0] = "|Modell auswählen";
+  		var j = 0;
+  		while(j < router_json.length) {
+  			if(router_json[j].hersteller == herstellername[i]) {
+  				optionArray[j+1] = router_json[j].modell+"|"+router_json[j].modell;
+  				if(j<router_json.length-1) {
+	  				while(router_json[j].modell == router_json[j+1].modell) {
+	  					if(j<router_json.length-1) {
+	  						j++;
+	  					} else {
+	  						break;
+	  					}
+  					}
+  				}
+  			}
+  			j++;
+  		}
+  	}
+  }
   for(var option in optionArray){
     var pair = optionArray[option].split("|");
     var newOption = document.createElement("option");
@@ -105,31 +120,25 @@ function populateB(){
   var s6 = document.getElementById("fw-dl-6");
   var img_router_front = document.getElementById("img_router_front");
   var img_router_back = document.getElementById("img_router_back");
+  var optionArray = new Array();
+  optionArray[0] = "|Modell auswählen";
   s2.innerHTML = "";
-  switch(s1.value){\n
-EOT;
-	$i=0;
-	while( $i<count($router) ) {
-		echo("    case \"".$router[$i]->modell."\":\n");
-		echo("      var optionArray = [\"|Version auswählen\"");
-		echo(",\"".$i."|".$router[$i]->version."\"");
-		if( $i<count($router)-1 ) {
-			while($router[$i]->modell == $router[$i+1]->modell) {
-				if( $i<count($router)-1 ) {
-					$i++;
-					echo(",\"".$i."|".$router[$i]->version."\"");
-				} else {
-					break;
-				}
-			}
-		}
-		echo("];\n");
-		echo("      break;\n");
-		$i++;
-	}
-	echo <<<EOT
-    default:
-      break;
+  var i = 0;
+  while(i < router_json.length) {
+  	if(router_json[i].modell == s1.value) {
+  		optionArray[i+1] = i+"|"+router_json[i].version;
+  		if(i<router_json.length-1) {
+	  		while(router_json[i].modell == router_json[i+1].modell) {
+	  			if(i<router_json.length-1) {
+	  				i++;
+	  				optionArray[i+1] = i+"|"+router_json[i].version;
+	  			} else {
+	  				break;
+	  			}
+	  		}
+  		}
+  	}
+  	i++;
   }
   for(var option in optionArray){
     var pair = optionArray[option].split("|");
@@ -162,28 +171,18 @@ function populateC(){
   var s6 = document.getElementById("fw-dl-6");
   var img_router_front = document.getElementById("img_router_front");
   var img_router_back = document.getElementById("img_router_back");
+  var optionArray = new Array();
+  optionArray[0] = "|Erstinstallation?";
   s2.innerHTML = "";
-  switch(s1.value){\n
-EOT;
-	$i=0;
-	while( $i<count($router) ) {
-		echo("    case \"".$i."\":\n");
-		echo("      var newImageFront = \"".$router[$i]->imagefront."\";\n");
-		echo("      var newImageBack = \"".$router[$i]->imageback."\";\n");
-		echo("      var optionArray = [\"|Erstinstallation?\"");
-		if( ($router[$i]->betafactory == 1) || ($router[$i]->brokenfactory == 1) || ($router[$i]->experimentalfactory == 1) || ($router[$i]->stablefactory == 1) ) {
-			echo(",\"".$i."J|Ja\"");
-		}
-		if( ($router[$i]->betasysupgrade == 1) || ($router[$i]->brokensysupgrade == 1) || ($router[$i]->experimentalsysupgrade == 1) || ($router[$i]->stablesysupgrade == 1) ) {
-			echo(",\"".$i."N|Nein\"");
-		}
-		echo("];\n");
-		echo("      break;\n");
-		$i++;
-	}
-	echo <<<EOT
-    default:
-      break;
+  var newImageFront = router_json[s1.value].imagefront;
+  var newImageBack = router_json[s1.value].imageback;
+  var i = 1;
+  if((router_json[s1.value].betafactory == 1) || (router_json[s1.value].brokenfactory == 1) || (router_json[s1.value].experimentalfactory == 1) || (router_json[s1.value].stablefactory == 1)) {
+  	optionArray[i] = s1.value+"J|Ja";
+  	i++;
+  }
+  if((router_json[s1.value].betasysupgrade == 1) || (router_json[s1.value].brokensysupgrade == 1) || (router_json[s1.value].experimentalsysupgrade == 1) || (router_json[s1.value].stablesysupgrade == 1)) {
+  	optionArray[i] = s1.value+"N|Nein";
   }
   for(var option in optionArray){
     var pair = optionArray[option].split("|");
@@ -210,48 +209,47 @@ function populateD(){
   var s1 = document.getElementById("fw-dl-4");
   var s2 = document.getElementById("fw-dl-5");
   var s6 = document.getElementById("fw-dl-6");
+  var optionArray = new Array();
+  optionArray[0] = "|Entwicklungsstadium?";
   s2.innerHTML = "";
-  switch(s1.value){\n
-EOT;
-	$i=0;
-	while( $i<count($router) ) {
-		echo("    case \"".$i."J\":\n");
-		echo("      var optionArray = [\"|Entwicklungsstadium?\"");
-		if( ($router[$i]->betafactory == 1) ) {
-			echo(",\"".$i."Jbeta|Beta\"");
-		}
-		if( ($router[$i]->brokenfactory == 1) ) {
-			echo(",\"".$i."Jbroken|Broken\"");
-		}
-		if( ($router[$i]->experimentalfactory == 1) ) {
-			echo(",\"".$i."Jexp|Experimental\"");
-		}
-		if( ($router[$i]->stablefactory == 1) ) {
-			echo(",\"".$i."Jstable|Stable\"");
-		}
-		echo("];\n");
-		echo("      break\n");
-		echo("    case \"".$i."N\":\n");
-		echo("      var optionArray = [\"|Entwicklungsstadium?\"");
-		if( ($router[$i]->betasysupgrade == 1) ) {
-			echo(",\"".$i."Nbeta|Beta\"");
-		}
-		if( ($router[$i]->brokensysupgrade == 1) ) {
-			echo(",\"".$i."Nbroken|Broken\"");
-		}
-		if( ($router[$i]->experimentalsysupgrade == 1) ) {
-			echo(",\"".$i."Nexp|Experimental\"");
-		}
-		if( ($router[$i]->stablesysupgrade == 1) ) {
-			echo(",\"".$i."Nstable|Stable\"");
-		}
-		echo("];\n");
-		echo("      break\n");
-		$i++;
-	}
-	echo <<<EOT
-    default:
-      break;
+  var id = parseInt(s1.value.slice(0,s1.value.length));
+  var jein = s1.value.slice(-1);
+  var i = 1;
+  if(jein == "J") {
+	if(router_json[id].betafactory == 1) {
+  		optionArray[i] = id+"Jbeta|Beta";
+	  	i++;
+  	}
+	if(router_json[id].brokenfactory == 1) {
+  		optionArray[i] = id+"Jbroken|Broken";
+	  	i++;
+  	}
+	if(router_json[id].experimentalfactory == 1) {
+  		optionArray[i] = id+"Jexp|Experimental";
+	  	i++;
+  	}
+	if(router_json[id].stablefactory == 1) {
+  		optionArray[i] = id+"Jstable|Stable";
+	  	i++;
+  	}
+  }
+  if(jein == "N") {
+	if(router_json[id].betasysupgrade == 1) {
+  		optionArray[i] = id+"Nbeta|Beta";
+	  	i++;
+  	}
+	if(router_json[id].brokensysupgrade == 1) {
+  		optionArray[i] = id+"Nbroken|Broken";
+	  	i++;
+  	}
+	if(router_json[id].experimentalsysupgrade == 1) {
+  		optionArray[i] = id+"Nexp|Experimental";
+	  	i++;
+  	}
+	if(router_json[id].stablesysupgrade == 1) {
+  		optionArray[i] = id+"Nstable|Stable";
+	  	i++;
+  	}
   }
   for(var option in optionArray){
     var pair = optionArray[option].split("|");
@@ -273,63 +271,45 @@ function populateE(){
   var s1 = document.getElementById("fw-dl-5");
   var s2 = document.getElementById("fw-dl-6");
   s2.innerHTML = "";
-  switch(s1.value){\n
-EOT;
-	$i=0;
-	while( $i<count($router) ) {
-		if( ($router[$i]->betafactory == 1) ) {
-			echo("    case \"".$i."Jbeta\":\n");
-			echo("      var link = \"".$router[$i]->betafactorylink."\";\n");
-			echo("      var linkclass = \" btn-warning\";\n");
-			echo("      break;\n");
-		}
-		if( ($router[$i]->brokenfactory == 1) ) {
-			echo("    case \"".$i."Jbroken\":\n");
-			echo("      var link = \"".$router[$i]->brokenfactorylink."\";\n");
-			echo("      var linkclass = \" btn-danger\";\n");
-			echo("      break;\n");
-		}
-		if( ($router[$i]->experimentalfactory == 1) ) {
-			echo("    case \"".$i."Jexp\":\n");
-			echo("      var link = \"".$router[$i]->experimentalfactorylink."\";\n");
-			echo("      var linkclass = \" btn-warning\";\n");
-			echo("      break;\n");
-		}
-		if( ($router[$i]->stablefactory == 1) ) {
-			echo("    case \"".$i."Jstable\":\n");
-			echo("      var link = \"".$router[$i]->stablefactorylink."\";\n");
-			echo("      var linkclass = \" btn-success\";\n");
-			echo("      break;\n");
-		}
-		if( ($router[$i]->betasysupgrade == 1) ) {
-			echo("    case \"".$i."Nbeta\":\n");
-			echo("      var link = \"".$router[$i]->betasysupgradelink."\";\n");
-			echo("      var linkclass = \" btn-warning\";\n");
-			echo("      break;\n");
-		}
-		if( ($router[$i]->brokensysupgrade == 1) ) {
-			echo("    case \"".$i."Nbroken\":\n");
-			echo("      var link = \"".$router[$i]->brokensysupgradelink."\";\n");
-			echo("      var linkclass = \" btn-danger\";\n");
-			echo("      break;\n");
-		}
-		if( ($router[$i]->experimentalsysupgrade == 1) ) {
-			echo("    case \"".$i."Nexp\":\n");
-			echo("      var link = \"".$router[$i]->experimentalsysupgradelink."\";\n");
-			echo("      var linkclass = \" btn-warning\";\n");
-			echo("      break;\n");
-		}
-		if( ($router[$i]->stablesysupgrade == 1) ) {
-			echo("    case \"".$i."Nstable\":\n");
-			echo("      var link = \"".$router[$i]->stablesysupgradelink."\";\n");
-			echo("      var linkclass = \" btn-success\";\n");
-			echo("      break;\n");
-		}
-		$i++;
-	}
-	echo <<<EOT
-    default:
-      break;
+  if(s1.value.lastIndexOf("Jbeta") != -1) {
+  	var id = parseInt(s1.value.slice(0,s1.value.length-4));
+  	var link = router_json[id].betafactorylink;
+  	var linkclass = " btn-warning";
+  }
+  if(s1.value.lastIndexOf("Jbroken") != -1) {
+  	var id = parseInt(s1.value.slice(0,s1.value.length-6));
+  	var link = router_json[id].brokenfactorylink;
+  	var linkclass = " btn-danger";
+  }
+  if(s1.value.lastIndexOf("Jexp") != -1) {
+  	var id = parseInt(s1.value.slice(0,s1.value.length-3));
+  	var link = router_json[id].experimentalfactorylink;
+  	var linkclass = " btn-warning";
+  }
+  if(s1.value.lastIndexOf("Jstable") != -1) {
+  	var id = parseInt(s1.value.slice(0,s1.value.length-6));
+  	var link = router_json[id].stablefactorylink;
+  	var linkclass = " btn-success";
+  }
+  if(s1.value.lastIndexOf("Nbeta") != -1) {
+  	var id = parseInt(s1.value.slice(0,s1.value.length-4));
+  	var link = router_json[id].betasysupgradelink;
+  	var linkclass = " btn-warning";
+  }
+  if(s1.value.lastIndexOf("Nbroken") != -1) {
+  	var id = parseInt(s1.value.slice(0,s1.value.length-6));
+  	var link = router_json[id].brokensysupgradelink;
+  	var linkclass = " btn-danger";
+  }
+  if(s1.value.lastIndexOf("Nexp") != -1) {
+  	var id = parseInt(s1.value.slice(0,s1.value.length-3));
+  	var link = router_json[id].experimentalsysupgradelink;
+  	var linkclass = " btn-warning";
+  }
+  if(s1.value.lastIndexOf("Nstable") != -1) {
+  	var id = parseInt(s1.value.slice(0,s1.value.length-6));
+  	var link = router_json[id].stablesysupgradelink;
+  	var linkclass = " btn-success";
   }
   s2.href = link;
   s2.className = s2.className.replace( /(?:^|\s)disabled(?!\S)/g , '' );
