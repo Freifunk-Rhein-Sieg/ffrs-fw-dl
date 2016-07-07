@@ -1,13 +1,14 @@
 <?php
 /**
 * @author    Caspar Armster
-* @copyright 2016 Caspar Armster, Freifunk Hennef
+* @copyright 2016 Caspar Armster, Freifunk Hennef/Freie Netzwerker e.V. (www.freifunk-hennef.de / www.freie-netzwerker.de)
 * @license   Licensed under GPLv3
 * 
 */
 if(!is_dir($firmware_download_path)) {
 	throw new Exception("Firmwareverzeichnis existiert nicht!");
 }
+$err = 0;
 for( $i=0; $i<count($entwicklung); $i++ ) {
 	for( $j=0; $j<count($installation); $j++ ) {
 		if(is_dir($firmware_download_path.$entwicklung[$i]."/")) {
@@ -71,7 +72,8 @@ for( $i=0; $i<count($entwicklung); $i++ ) {
 					}
 				}
 				if(isset($router_tmp[$x]['hersteller']) != true) {
-					echo("Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten! (".$files[$entwicklung[$i]][$installation[$j]][$x].")<br />");
+					$error_text[$err]="Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten! (".$files[$entwicklung[$i]][$installation[$j]][$x].")";
+					$err++;
 				} else {
 					$router_neu = 1;
 					for( $z=0; $z<count($router); $z++) {

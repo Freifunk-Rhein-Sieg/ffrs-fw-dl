@@ -9,7 +9,7 @@ Der Freifunk Hennef Firmware Downloader soll es Laien ermöglichen schneller und
 Technik
 -------
 
-Der Freifunk Hennef Firmware Downloader scannt das in der config.inc.php angegebene Verzeichnis auf Firmwares in den Unterverzeichnissen (beta/broken/experimental/stable) und dort in (stable/sysupgrade). Aus dem Ergebnis baut das PHP Script ein interaktives Javascript für die Auswahl und verwendet dabei Bootstrap für das Layout.
+Der Freifunk Hennef Firmware Downloader scannt das in der community-config.inc.php angegebene Verzeichnis auf Firmwares in den Unterverzeichnissen (beta/broken/experimental/stable) und dort in (stable/sysupgrade). Aus dem Ergebnis baut das PHP Script ein interaktives Javascript für die Auswahl und verwendet dabei Bootstrap für das Layout.
 
 Bisher werden Router der folgenden Hersteller automatisch erkannt:
 
@@ -31,7 +31,7 @@ Bisher werden Router der folgenden Hersteller automatisch erkannt:
 - Western Digital
 - x86
 
-Soll eine Firmware für Router von anderen Herstellern angeboten werden muss erst das Script geändert werden!
+Soll eine Firmware für Router von anderen Herstellern angeboten werden muss erst das Script geändert werden! Bitte mich dann informieren über das github, oder caspar@freifunk-hennef.de.
 
 Bilder
 ------
@@ -41,10 +41,12 @@ Die Bilder der Router kommen von Daniel Krah und sind lizensiert unter einer Cre
 Installation
 ------------
 
-Den Freifunk Hennef Firmware Downloader in ein eigenes Unterverzeichnis des Webservers packen, auf dem auch die Firmwares liegen. In der config.inc.php werden dann diverse Variablen gesetzt:
+Den Freifunk Hennef Firmware Downloader in ein eigenes Unterverzeichnis des Webservers kopieren/entpacken, auf dem auch die Firmwares liegen. In der community-config.inc.php werden dann diverse Variablen gesetzt:
 
 - $text_h1/$text_h2/$link_h2_text/$link_h2_url/$logo_url/$logo_alt Texte & Logo im Header der Seite
 - $firmware_download_path = Pfad zum Hauptverzeichnis der Firmware
+
+In der config.inc.php sind die Angaben über die Hersteller, Entwicklungsstufen & Art der Firmware Installation. Hier muss man normalerweise nichts anpassen, außer man verwendet Firmwares für Router von Herstellern, die noch nicht integriert sind, dann bitte ich allerdings auch um Kontaktaufnahme (caspar@freifunk-hennef.de, bzw. im github).
 - $entwicklung = Entwicklungsstufen der Firmware (beta/broken/experimental/stable) - (sollte man in Ruhe lassen normalerweise)
 - $installation = Art der Installation (factory/sysupgrade) - (sollte man in Ruhe lassen normalerweise)
 - $hersteller = Array mit Informationen zu den Herstellern
@@ -53,7 +55,8 @@ Den Freifunk Hennef Firmware Downloader in ein eigenes Unterverzeichnis des Webs
 - -> offset_modell = Offset für das Parsen des Modells im Dateinamen der Firmware
 - -> offset_version = Offset für das Parsen der Version im Dateinamen der Firmware
 - $offset_sysupgrade = Offset für "-sysupgrade" im Dateinamen der Firmware
-- Die Firmware liegt in folgenden Verzeichnissen:
+
+Die Firmware liegt in folgenden Verzeichnissen:
 * firmware/
 	* beta/
 		* factory/
@@ -67,15 +70,17 @@ Den Freifunk Hennef Firmware Downloader in ein eigenes Unterverzeichnis des Webs
 	* stable/
 		* factory/
 		* sysupgrade/
+		
+Das Layout der Seite baut auf Bootstrap (http://getbootstrap.com/) auf und kann mittels eigener angepaster StyleSheets sehr einfach verändert werden. Dank Bootstrap ist das Layout von sich aus direkt responsive.
 
 Code
 ----
 
-Der Code ist nun halbwegs aufgeräumt und generiert aus dem PHP heraus "on the fly" einen Javascript Code. Das geht sicher noch besser (JSON erzeugen in PHP und wieder ins Javascript einladen), aber so läuft es erstmal. Mittlerweile existiert eine ffrouter Klasse, die über die ganzen Eigenschaften (Hersteller, Modell, etc.) verfügt und der Großteil des PHP Codes ist ausgelagert.
+Der Code ist nun halbwegs aufgeräumt und generiert aus dem PHP heraus ein Objekt ($router der Klasse: ffrouter) und übergibt ein daraus erzeugtes JSON an den Javascript Code zum erzeugen der Menustruktur.
 
 Lizenz
 ------
 
 author    Caspar Armster
-copyright 2016 Caspar Armster, Freifunk Hennef
+copyright 2016 Caspar Armster, [Freifunk Hennef](http://www.freifunk-hennef.de/ "Freifunk Hennef") / [Freie Netzwerker e.V.](http://www.freie-netzwerker.de/ "Freie Netzwerker e.V.")
 license   Licensed under GPLv3

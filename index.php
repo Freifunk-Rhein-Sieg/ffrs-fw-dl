@@ -1,12 +1,13 @@
 <?php
 /**
 * @author    Caspar Armster
-* @copyright 2016 Caspar Armster, Freifunk Hennef
+* @copyright 2016 Caspar Armster, Freifunk Hennef/Freie Netzwerker e.V. (www.freifunk-hennef.de / www.freie-netzwerker.de)
 * @license   Licensed under GPLv3
 * 
 */
 	error_reporting (E_ALL | E_STRICT);   
     ini_set ('display_errors', 'On');
+	require_once('community-config.inc.php');
     require_once('config.inc.php');
 	require_once('ffrouter.class.php');
 	require_once('ffrouter_parsen.function.php');
@@ -324,6 +325,16 @@ function populateE(){
 </head>
 <body>
 <div class="container-fluid">
+EOT;
+for($i=0; $i<$err; $i++) {
+	echo("<div class=\"alert alert-warning alert-dismissible\" role=\"alert\">\n");
+	echo("	<span class=\"glyphicon glyphicon-exclamation-sign\" aria-hidden=\"true\"></span>\n");
+	echo("	<span class=\"sr-only\">Warning:</span>\n");
+	echo("	<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n");
+	echo("	<strong>Warning!</strong> ".$error_text[$i]."\n");
+	echo("</div>\n");
+}
+echo <<<EOT
     <div class="row">
         <div class="col-md-12">
             <div class="jumbotron">
@@ -362,10 +373,12 @@ echo <<<EOT
                 <img src="router_images/keinbild.jpg" id="img_router_back" alt="Router Rückseite" width=200px" style="float:right;">
 				<img src="router_images/keinbild.jpg" id="img_router_front" alt="Router Vorderseite" width=200px" style="float:right;">
                     Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />
-					Legen Sie anschließend fest, ob sie den Router zum ersten Mal mit einer Freifunk Firmware flashen und welches Entwicklungsstadium die Firmware haben soll.
+					Legen Sie anschließend fest, ob sie den Router zum ersten Mal mit einer Freifunk Firmware flashen und welches Entwicklungsstadium die Firmware haben soll.<br />
+					<br />
+					Bitte wählen Sie "stable" im Entwicklungsstadium aus, wenn Sie nicht genau wissen was Sie sonst erwartet!
                 </div>
                 <div class="panel-footer">
-					Bitte wählen Sie "stable" im Entwicklungsstadium aus, wenn Sie nicht genau wissen was Sie sonst erwartet!
+					<img src="images/ccbyncsa.png" alt="CC BY-NC-SA" width="60px"> Die Router Bilder sind von Daniel Krah und sind lizensiert unter einer <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target:"_blank">Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz</a>
                 </div>
             </div>
 		</div>
@@ -382,7 +395,7 @@ echo <<<EOT
                     <select id="fw-dl-1" name="fw-dl-1" onchange="populateA()">
 						<option value="">Hersteller auswählen</option>
 EOT;
-	for( $i=0; $i<$anzahl_hersteller; $i++) {
+	for($i=0; $i<$anzahl_hersteller; $i++) {
 		echo("<option value=\"".$hersteller[$i]['name']."\">".$hersteller[$i]['name']."</option>");
 	}
 	echo <<<EOT
@@ -461,7 +474,7 @@ EOT;
 					<a href="#" id="fw-dl-6" name="fw-dl-6" role="button" class="btn btn-primary disabled">Download Firmware</a>
 				</div>
 				<div class="panel-footer">
-					<img src="images/ccbyncsa.png" alt="CC BY-NC-SA" width="60px"> Die Router Bilder sind von Daniel Krah und sind lizensiert unter einer <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target:"_blank">Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz</a>
+					Licensed under GPLv3 / Copyright 2016 by Caspar Armster, <a href="http://www.freifunk-hennef.de/">Freifunk Hennef</a> / <a href="http://www.freie-netzwerker.de/">Freie Netzwerker e.V.</a>
 				</div>
 			</div>
 		</div>
