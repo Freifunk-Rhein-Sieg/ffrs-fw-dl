@@ -14,3 +14,9 @@
 .panel-primary > .panel-heading {
   background-color: #000000 !important;
 }
+@media (min-width: 1200px) {
+    .container{
+    	width:auto;
+        max-width: 1550px;
+    }
+}
