@@ -6,12 +6,12 @@
 * 
 */
 	error_reporting (E_ALL | E_STRICT);   
-    ini_set ('display_errors', 'On');
+  ini_set ('display_errors', 'On');
 	require_once('community-config.inc.php');
-    require_once('config.inc.php');
+  require_once('config.inc.php');
 	require_once('ffrouter.class.php');
-	require_once('ffrouter_parsen.function.php');
-	
+	$community_id = $_REQUEST['id'];
+
 	echo <<<EOT
 <!DOCTYPE html>
 <html lang="de">
@@ -20,7 +20,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Freifunk Hennef Firmware Downloadseite</title>
+EOT;
+  echo("<title>".$community[$community_id]["head_titel"]."</title>");
+echo <<<EOT
 
     <meta name="author" content="Caspar Armster">
 
@@ -31,6 +33,8 @@
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 EOT;
 
+  $firmware_download_path = $community[$community_id]["download_path"];
+
 	try {
 		require_once('ffrouter_parsen.function.php');
 	} catch(Exception $e) {
@@ -38,10 +42,13 @@ EOT;
 		die();
 	}
 	$router_json = json_encode($router);
+  $texte_json = json_encode($texte);
 	
 	echo("\n<script>\n");
 	echo("var router_text = '".$router_json."';\n");
 	echo("var router_json = JSON.parse(router_text);\n");
+  echo("var texte_text = '".$texte_json."';\n");
+  echo("var texte_json = JSON.parse(texte_text);\n");
 	echo("var anzahl_hersteller = ".$anzahl_hersteller.";\n");
 
 	echo("var herstellername = [");
@@ -324,7 +331,7 @@ function populateE(){
 	</script>
 </head>
 <body>
-<div class="container-fluid">
+<div class="container">
 EOT;
 for($i=0; $i<$err; $i++) {
 	echo("<div class=\"alert alert-warning alert-dismissible\" role=\"alert\">\n");
@@ -339,21 +346,21 @@ echo <<<EOT
         <div class="col-md-12">
             <div class="jumbotron">
 EOT;
-				echo("<img src=\"".$logo_url."\" alt=\"".$logo_alt."\" style=\"float:right;\">");
+				echo("<img src=\"".$community[$community_id]["logo_url"]."\" alt=\"".$community[$community_id]["logo_alt"]."\" style=\"float:right;\">");
 echo <<<EOT
                 <h2>
 EOT;
-                    echo($text_h1);
+                    echo($community[$community_id]["head_titel"]);
 echo <<<EOT
                 </h2>
                 <p>
 EOT;
-                    echo($text_h2);
+                    echo($community[$community_id]["head_text"]);
 echo <<<EOT
                 </p>
                 <p>
 EOT;
-                    echo("<a class=\"btn btn-primary btn-large\" href=\"".$link_h2_url."\">".$link_h2_text."</a>");
+                    echo("<a class=\"btn btn-primary btn-large\" href=\"".$community[$community_id]["link_url"]."\">".$community[$community_id]["link_text"]."</a>");
 echo <<<EOT
                 </p>
             </div>
@@ -365,17 +372,16 @@ echo <<<EOT
                 <div class="panel-heading">
                     <h3 class="panel-title">
 EOT;
-                        echo($text_h1);
+                        echo($community[$community_id]["lang_titel"]);
 echo <<<EOT
                     </h3>
                 </div>
                 <div class="panel-body">
                 <img src="router_images/keinbild.jpg" id="img_router_back" alt="Router Rückseite" width=200px" style="float:right;">
 				<img src="router_images/keinbild.jpg" id="img_router_front" alt="Router Vorderseite" width=200px" style="float:right;">
-                    Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />
-					Legen Sie anschließend fest, ob sie den Router zum ersten Mal mit einer Freifunk Firmware flashen und welches Entwicklungsstadium die Firmware haben soll.<br />
-					<br />
-					Bitte wählen Sie "stable" im Entwicklungsstadium aus, wenn Sie nicht genau wissen was Sie sonst erwartet!
+EOT;
+                        echo($community[$community_id]["lang_text"]);
+echo <<<EOT
                 </div>
                 <div class="panel-footer">
 					<img src="images/ccbyncsa.png" alt="CC BY-NC-SA" width="60px"> Die Router Bilder sind von Daniel Krah und sind lizensiert unter einer <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target:"_blank">Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz</a>
@@ -392,7 +398,7 @@ echo <<<EOT
 					</h3>
                 </div>
                 <div class="panel-body">
-                    <select id="fw-dl-1" name="fw-dl-1" onchange="populateA()">
+                    <select id="fw-dl-1" name="fw-dl-1" class="form-control" onchange="populateA()">
 						<option value="">Hersteller auswählen</option>
 EOT;
 	for($i=0; $i<$anzahl_hersteller; $i++) {
@@ -413,7 +419,7 @@ EOT;
 					</h3>
                 </div>
                 <div class="panel-body">
-					<select id="fw-dl-2" name="fw-dl-2" onchange="populateB()"></select>
+					<select id="fw-dl-2" name="fw-dl-2" class="form-control" onchange="populateB()"></select>
 				</div>
 				<div class="panel-footer">
 				</div>
@@ -427,7 +433,7 @@ EOT;
 					</h3>
                 </div>
                 <div class="panel-body">
-					<select id="fw-dl-3" name="fw-dl-3" onchange="populateC()"></select>
+					<select id="fw-dl-3" name="fw-dl-3" class="form-control" onchange="populateC()"></select>
 				</div>
 				<div class="panel-footer">
 				</div>
@@ -443,7 +449,7 @@ EOT;
 					</h3>
                 </div>
                 <div class="panel-body">
-					<select id="fw-dl-4" name="fw-dl-4" onchange="populateD()"></select>
+					<select id="fw-dl-4" name="fw-dl-4" class="form-control" onchange="populateD()"></select>
 				</div>
 				<div class="panel-footer">
 				</div>
@@ -457,7 +463,7 @@ EOT;
 					</h3>
                 </div>
                 <div class="panel-body">
-					<select id="fw-dl-5" name="fw-dl-5" onchange="populateE()"></select>
+					<select id="fw-dl-5" name="fw-dl-5" class="form-control" onchange="populateE()"></select>
 				</div>
 				<div class="panel-footer">
 				</div>

@@ -117,7 +117,7 @@
     	15 => array(
     		"name" => "Western Digital",
     		"filename" => "-wd-",
-    		"offset_modell" => 3,
+    		"offset_modell" => 5,
     		"offset_version" => 4
 		),
     	16 => array(
