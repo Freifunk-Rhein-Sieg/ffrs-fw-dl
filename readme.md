@@ -4,12 +4,14 @@ Freifunk Hennef Firmware Downloader
 Beschreibung
 ------------
 
-Der Freifunk Hennef Firmware Downloader soll es Laien ermöglichen schneller und sicherer die zu ihrem Router passende Firmware zu finden. Der Freifunker kann nacheinander aus automatisch generierten Listen seinen Router auswählen: Hersteller -> Modell -> Version und dann festlegen ob es eine Erstinstallation ist oder nicht, sowie am Ende wählen welches Entwicklungsstadium die Firmware haben soll. Dabei wird automatisch gewarnt (Download Button verändert die Farbe) falls nicht "stable" ausgewählt wird. Zusätzlich werden etliche der Router auch als Grafik (Front & Back Ansicht) gezeigt, so dass der Freifunker auf den ersten Blick erkennen kann wenn er den falschen Router ausgewählt hat.
+Der Freifunk Hennef Firmware Downloader soll es Laien ermöglichen schneller und sicherer die zu ihrem Router passende Firmware zu finden. Der Freifunker kann nacheinander aus automatisch generierten Listen seinen Router auswählen: Hersteller -> Modell -> Version und dann festlegen ob es eine Erstinstallation ist oder nicht, sowie am Ende wählen welches Entwicklungsstadium die Firmware haben soll. Dabei wird automatisch gewarnt (Download Button verändert die Farbe) falls nicht "stable" ausgewählt wird. Zusätzlich werden etliche der Router auch als Grafik (Front & Back Ansicht) gezeigt, so dass der Freifunker auf den ersten Blick erkennen kann wenn er den falschen Router ausgewählt hat. Einmal anschauen kann man sich den Firmware Downlaoder unter http://images.freifunk-hennef.de/downloader/.
+
+Der Freifunk Hennef Firmware Downloader kann auch mit Metacommunities umgehen, bei der, vor der Auswahl der eigentlichen Firmware, noch eine Auswahl der Community/Subcommunity oder Technologie auszuwählen ist. Als Beispiel kann hier die Metacommunity Rhein-Sieg dienen, unter http://downloader.freifunk-rhein-sieg.de/downloader/ könnt ihr euch das anschauen.
 
 Technik
 -------
 
-Der Freifunk Hennef Firmware Downloader scannt das in der community-config.inc.php angegebene Verzeichnis auf Firmwares in den Unterverzeichnissen (beta/broken/experimental/stable) und dort in (stable/sysupgrade). Aus dem Ergebnis baut das PHP Script ein interaktives Javascript für die Auswahl und verwendet dabei Bootstrap für das Layout.
+Der Freifunk Hennef Firmware Downloader erzeugt auf Grund der angegebenen Metadaten in der community-config.inc.php eine Auswahlseite für die Metacommunity (oder bei nur einer vorhandenen Community Konfiguration überspringt er diese Vorauswahl). Nach der Auswahl der Community (plus optionaler Subauswahl) erscheint der Link der zum eigentlichen Firmware Downloader führt. Der Freifunk Hennef Firmware Downloader scannt dann das in der community-config.inc.php angegebene Verzeichnis auf Firmwares in den Unterverzeichnissen (beta/broken/experimental/stable) und dort in (stable/sysupgrade). Aus dem Ergebnis baut das PHP Script ein interaktives Javascript für die Auswahl und verwendet dabei Bootstrap für das Layout.
 
 Bisher werden Router der folgenden Hersteller automatisch erkannt:
 
@@ -43,8 +45,22 @@ Installation
 
 Den Freifunk Hennef Firmware Downloader in ein eigenes Unterverzeichnis des Webservers kopieren/entpacken, auf dem auch die Firmwares liegen. In der community-config.inc.php werden dann diverse Variablen gesetzt:
 
-- $text_h1/$text_h2/$link_h2_text/$link_h2_url/$logo_url/$logo_alt Texte & Logo im Header der Seite
-- $firmware_download_path = Pfad zum Hauptverzeichnis der Firmware
+- $texte ist das Array mit den einzelnen Überschriften/Texten für die Auswahlstufen
+- $community ist das Array mit den Metadaten für die Metacommunity und die einzelnen Subcommunites. Wenn hier nur eine Community angegeben wird wird die Communtiyauswahl übersprungen und direkt auf die Firmware Downloader Seite verwiesen.
+0 => array( // ID die bei 0 Anfängt und hochgezählt wird
+	"community_id" => 0, // ID der Community, wiederholt sich bei den zusammengehörigen Subcommunities
+	"name" => "Name der Community",
+	"head_titel" => "Header Titel",
+	"head_text" => "Header Text",
+	"link_text" => "Header Link Text",
+	"link_url" => "Header Link URL",
+	"logo_alt" => "Logo Alt Text",
+	"logo_url" => "Logo URL",
+	"lang_titel" => "Langtext Titel",
+	"lang_text" => "Langtext Text",
+	"download_path" => "Pfad zur Firmware", // Bleibt bei der Metacommunity leer
+	"sub_auswahl" => "Name der Subcommunity" // Wird nur verwendet wenn die Community Subcommunites/Technologien als Auswahl hat
+),
 
 In der config.inc.php sind die Angaben über die Hersteller, Entwicklungsstufen & Art der Firmware Installation. Hier muss man normalerweise nichts anpassen, außer man verwendet Firmwares für Router von Herstellern, die noch nicht integriert sind, dann bitte ich allerdings auch um Kontaktaufnahme (caspar@freifunk-hennef.de, bzw. im github).
 - $entwicklung = Entwicklungsstufen der Firmware (beta/broken/experimental/stable) - (sollte man in Ruhe lassen normalerweise)
@@ -56,7 +72,7 @@ In der config.inc.php sind die Angaben über die Hersteller, Entwicklungsstufen 
 - -> offset_version = Offset für das Parsen der Version im Dateinamen der Firmware
 - $offset_sysupgrade = Offset für "-sysupgrade" im Dateinamen der Firmware
 
-Die Firmware liegt in folgenden Verzeichnissen:
+Die Firmware liegt in folgenden Unterverzeichnissen:
 * firmware/
 	* beta/
 		* factory/

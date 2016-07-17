@@ -3,13 +3,15 @@
 * @author    Caspar Armster
 * @copyright 2016 Caspar Armster, Freifunk Hennef/Freie Netzwerker e.V. (www.freifunk-hennef.de / www.freie-netzwerker.de)
 * @license   Licensed under GPLv3
-* 
 */
 	error_reporting (E_ALL | E_STRICT);   
   ini_set ('display_errors', 'On');
 	require_once('community-config.inc.php');
   require_once('config.inc.php');
-	
+	if(count($community) == 1) {
+    header('Location: firmware.php?id=0');
+    exit;
+  }
 	echo <<<EOT
 <!DOCTYPE html>
 <html lang="de">

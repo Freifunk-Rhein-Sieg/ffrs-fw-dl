@@ -3,7 +3,6 @@
 * @author    Caspar Armster
 * @copyright 2016 Caspar Armster, Freifunk Hennef/Freie Netzwerker e.V. (www.freifunk-hennef.de / www.freie-netzwerker.de)
 * @license   Licensed under GPLv3
-* 
 */
 	error_reporting (E_ALL | E_STRICT);   
   ini_set ('display_errors', 'On');

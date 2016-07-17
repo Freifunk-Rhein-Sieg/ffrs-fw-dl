@@ -3,7 +3,6 @@
 * @author    Caspar Armster
 * @copyright 2016 Caspar Armster, Freifunk Hennef/Freie Netzwerker e.V. (www.freifunk-hennef.de / www.freie-netzwerker.de)
 * @license   Licensed under GPLv3
-* 
 */
 if(!is_dir($firmware_download_path)) {
 	throw new Exception("Firmwareverzeichnis existiert nicht!");
