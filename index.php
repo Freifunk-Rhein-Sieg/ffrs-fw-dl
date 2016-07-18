@@ -168,7 +168,7 @@ EOT;
 						echo("<option value=–\"\">".$texte["ebene1_text"]."</option>");
 	for($i=1; $i<count($community); $i++) {
 	    echo("<option value=\"".$community[$i]['name']."\">".$community[$i]['name']."</option>");
-      if($i<count($community)) {
+      if($i<count($community)-1) {
           while($community[$i]['name'] == $community[$i+1]['name']) {
               if($i<count($community)-1) {
                   $i++;
