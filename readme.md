@@ -6,7 +6,7 @@ Beschreibung
 
 Der Freifunk Hennef Firmware Downloader soll es Laien ermöglichen schneller und sicherer die zu ihrem Router passende Firmware zu finden. Der Freifunker kann nacheinander aus automatisch generierten Listen seinen Router auswählen: Hersteller -> Modell -> Version und dann festlegen ob es eine Erstinstallation ist oder nicht, sowie am Ende wählen welches Entwicklungsstadium die Firmware haben soll. Dabei wird automatisch gewarnt (Download Button verändert die Farbe) falls nicht "stable" ausgewählt wird. Zusätzlich werden etliche der Router auch als Grafik (Front & Back Ansicht) gezeigt, so dass der Freifunker auf den ersten Blick erkennen kann wenn er den falschen Router ausgewählt hat. Einmal anschauen kann man sich den Firmware Downlaoder unter http://images.freifunk-hennef.de/downloader/.
 
-Der Freifunk Hennef Firmware Downloader kann auch mit Metacommunities umgehen, bei der, vor der Auswahl der eigentlichen Firmware, noch eine Auswahl der Community/Subcommunity oder Technologie auszuwählen ist. Als Beispiel kann hier die Metacommunity Rhein-Sieg dienen, unter http://downloader.freifunk-rhein-sieg.de/downloader/ könnt ihr euch das anschauen.
+Der Freifunk Hennef Firmware Downloader kann auch mit Metacommunities umgehen, bei der, vor der Auswahl der eigentlichen Firmware, noch eine Auswahl der Community/Subcommunity oder Technologie auszuwählen ist. Als Beispiel kann hier die Metacommunity Rhein-Sieg dienen, unter http://downloader.freifunk-rhein-sieg.de/ könnt ihr euch das anschauen.
 
 Technik
 -------
