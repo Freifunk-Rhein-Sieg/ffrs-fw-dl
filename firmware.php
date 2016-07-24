@@ -99,7 +99,7 @@ $community_id = $_REQUEST['id'];
               }
               s6.href = '#'
               s6.classList.remove('disabled', 'btn-primary', 'btn-danger', 'btn-warning', 'btn-success')
-              s6.className.add('btn-primary', 'disabled')
+              s6.classList.add('btn-primary', 'disabled')
               s6.textContent = 'Download Firmware'
               img_router_front.src = 'router_images/keinbild.jpg'
               img_router_back.src = 'router_images/keinbild.jpg'
@@ -147,7 +147,7 @@ $community_id = $_REQUEST['id'];
               }
               s6.href = '#'
               s6.classList.remove('disabled', 'btn-primary', 'btn-danger', 'btn-warning', 'btn-success')
-              s6.className.add('btn-primary', 'disabled')
+              s6.classList.add('btn-primary', 'disabled')
               s6.textContent = 'Download Firmware'
               img_router_front.src = 'router_images/keinbild.jpg'
               img_router_back.src = 'router_images/keinbild.jpg'
@@ -184,7 +184,7 @@ $community_id = $_REQUEST['id'];
               }
               s6.href = '#'
               s6.classList.remove('disabled', 'btn-primary', 'btn-danger', 'btn-warning', 'btn-success')
-              s6.className.add('btn-primary', 'disabled')
+              s6.classList.add('btn-primary', 'disabled')
               s6.textContent = 'Download Firmware'
               img_router_front.src = newImageFront
               img_router_back.src = newImageBack
@@ -244,7 +244,7 @@ $community_id = $_REQUEST['id'];
               }
               s6.href = '#'
               s6.classList.remove('disabled', 'btn-primary', 'btn-danger', 'btn-warning', 'btn-success')
-              s6.className.add('btn-primary', 'disabled')
+              s6.classList.add('btn-primary', 'disabled')
               s6.textContent = 'Download Firmware'
             }
             function populateE () {
@@ -256,46 +256,46 @@ $community_id = $_REQUEST['id'];
               if (s5.value.lastIndexOf('Jbeta') != -1) {
                 id = parseInt(s5.value.slice(0, s5.value.length - 4))
                 link = router_json[id].betafactorylink
-                linkclass = ' btn-warning'
+                linkclass = 'btn-warning'
               }
               if (s5.value.lastIndexOf('Jbroken') != -1) {
                 id = parseInt(s5.value.slice(0, s5.value.length - 6))
                 link = router_json[id].brokenfactorylink
-                linkclass = ' btn-danger'
+                linkclass = 'btn-danger'
               }
               if (s5.value.lastIndexOf('Jexp') != -1) {
                 id = parseInt(s5.value.slice(0, s5.value.length - 3))
                 link = router_json[id].experimentalfactorylink
-                linkclass = ' btn-warning'
+                linkclass = 'btn-warning'
               }
               if (s5.value.lastIndexOf('Jstable') != -1) {
                 id = parseInt(s5.value.slice(0, s5.value.length - 6))
                 link = router_json[id].stablefactorylink
-                linkclass = ' btn-success'
+                linkclass = 'btn-success'
               }
               if (s5.value.lastIndexOf('Nbeta') != -1) {
                 id = parseInt(s5.value.slice(0, s5.value.length - 4))
                 link = router_json[id].betasysupgradelink
-                linkclass = ' btn-warning'
+                linkclass = 'btn-warning'
               }
               if (s5.value.lastIndexOf('Nbroken') != -1) {
                 id = parseInt(s5.value.slice(0, s5.value.length - 6))
                 link = router_json[id].brokensysupgradelink
-                linkclass = ' btn-danger'
+                linkclass = 'btn-danger'
               }
               if (s5.value.lastIndexOf('Nexp') != -1) {
                 id = parseInt(s5.value.slice(0, s5.value.length - 3))
                 link = router_json[id].experimentalsysupgradelink
-                linkclass = ' btn-warning'
+                linkclass = 'btn-warning'
               }
               if (s5.value.lastIndexOf('Nstable') != -1) {
                 id = parseInt(s5.value.slice(0, s5.value.length - 6))
                 link = router_json[id].stablesysupgradelink
-                linkclass = ' btn-success'
+                linkclass = 'btn-success'
               }
               s6.href = link
               s6.classList.remove('disabled', 'btn-primary', 'btn-danger', 'btn-warning', 'btn-success')
-              s6.className.add(linkclass)
+              s6.classList.add(linkclass)
               s6.textContent = 'Download Firmware'
             }
         </script>
@@ -349,7 +349,7 @@ $community_id = $_REQUEST['id'];
                             <h3 class="panel-title">Router Hersteller</h3>
                         </div>
                         <div class="panel-body">
-                            <select id="fw-dl-1" name="fw-dl-1" class="form-control" onchange="firmwarePage.onUpdate_1()">
+                            <select id="fw-dl-1" name="fw-dl-1" class="form-control" onchange="populateA()">
                                 <option value="">Hersteller auswählen</option>
                             <?php foreach ($hersteller as $value): ?>
                                 <option value="<?php echo $value['name']?>"><?php echo $value['name']?></option>
@@ -379,6 +379,7 @@ $community_id = $_REQUEST['id'];
                     </div>
                 </div>
             </div>
+            <div class="row">
                 <div class="col-md-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
