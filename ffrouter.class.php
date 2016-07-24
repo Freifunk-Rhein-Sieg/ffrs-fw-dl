@@ -12,7 +12,7 @@ class ffrouter {
 		$this->version = "";
 		$this->imagefront = "";
 		$this->imageback = "";
-		
+
 		$this->betafactory = 0;
 		$this->betasysupgrade = 0;
 		$this->brokenfactory = 0;
@@ -21,7 +21,7 @@ class ffrouter {
 		$this->experimentalsysupgrade = 0;
 		$this->stablefactory = 0;
 		$this->stablesysupgrade = 0;
-		
+
 		$this->betafactorylink = "";
 		$this->betasysupgradelink = "";
 		$this->brokenfactorylink = "";
@@ -32,4 +32,3 @@ class ffrouter {
 		$this->stablesysupgradelink = "";
 	}
 }
-?>
