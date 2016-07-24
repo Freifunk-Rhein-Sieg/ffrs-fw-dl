@@ -86,7 +86,7 @@ for( $i=0; $i<count($entwicklung); $i++ ) {
 								break;
 							}
 						}
-					} 
+					}
 					if($router_neu == 1) {
 						$z = count($router);
 						$router[$z] = new ffrouter();
@@ -121,4 +121,3 @@ for( $i=0; $i<count($router); $i++ ) { // Routerbilder einbauen
 		$router[$i]->imageback = "router_images/keinbild.jpg";
 	}
 }
-?>

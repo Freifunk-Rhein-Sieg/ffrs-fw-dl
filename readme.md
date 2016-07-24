@@ -47,6 +47,7 @@ Den Freifunk Hennef Firmware Downloader in ein eigenes Unterverzeichnis des Webs
 
 - $texte ist das Array mit den einzelnen Überschriften/Texten für die Auswahlstufen
 - $community ist das Array mit den Metadaten für die Metacommunity und die einzelnen Subcommunites. Wenn hier nur eine Community angegeben wird wird die Communtiyauswahl übersprungen und direkt auf die Firmware Downloader Seite verwiesen.
+```
 0 => array( // ID die bei 0 Anfängt und hochgezählt wird
 	"community_id" => 0, // ID der Community, wiederholt sich bei den zusammengehörigen Subcommunities
 	"name" => "Name der Community",
@@ -61,6 +62,7 @@ Den Freifunk Hennef Firmware Downloader in ein eigenes Unterverzeichnis des Webs
 	"download_path" => "Pfad zur Firmware", // Bleibt bei der Metacommunity leer
 	"sub_auswahl" => "Name der Subcommunity" // Wird nur verwendet wenn die Community Subcommunites/Technologien als Auswahl hat
 ),
+```
 
 In der config.inc.php sind die Angaben über die Hersteller, Entwicklungsstufen & Art der Firmware Installation. Hier muss man normalerweise nichts anpassen, außer man verwendet Firmwares für Router von Herstellern, die noch nicht integriert sind, dann bitte ich allerdings auch um Kontaktaufnahme (caspar@freifunk-hennef.de, bzw. im github).
 - $entwicklung = Entwicklungsstufen der Firmware (beta/broken/experimental/stable) - (sollte man in Ruhe lassen normalerweise)
