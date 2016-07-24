@@ -126,7 +126,7 @@ if (count($community) == 1) {
                             <select id="fw-dl-1" name="fw-dl-1" class="form-control" onchange="populateA()">
                                 <option value=""><?php echo $texte["ebene1_text"]?></option>
                                 <?php $lastName = "" ?>
-                                <?php foreach ($community as $i => $value): ?>
+                                <?php foreach (array_slice($community, 1) as $i => $value): ?>
                                     <?php if ($value['name'] != $lastName): ?>
                                         <option value="<?php echo $value['name']?>"><?php echo $value['name']?></option>
                                     <?php endif ?>
