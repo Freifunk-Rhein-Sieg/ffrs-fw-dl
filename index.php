@@ -95,7 +95,7 @@ if (count($community) == 1) {
         <div class="jumbotron">
             <div class="container">
                 <div class="col-xs-12">
-                    <img src="<?php echo $community[0]['logo_url']?>" alt="<?php echo $community[0]['logo_alt']?>" class="pull-right img-box" />
+                    <img src="<?php echo $community[0]['logo_url']?>" alt="<?php echo $community[0]['logo_alt']?>" class="pull-right logo-box" />
                     <h2><?php echo $community[0]['head_titel']?></h2>
                     <p><?php echo $community[0]['head_text']?></p>
                     <p>

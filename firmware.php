@@ -304,7 +304,7 @@ $community_id = $_REQUEST['id'];
         <div class="jumbotron">
             <div class="container">
                 <div class="col-xs-12">
-                    <img src="<?php echo $community[$community_id]['logo_url']?>" alt="<?php echo $community[$community_id]['logo_alt']?>" class="pull-right img-box" />
+                    <img src="<?php echo $community[$community_id]['logo_url']?>" alt="<?php echo $community[$community_id]['logo_alt']?>" class="pull-right logo-box" />
                     <h2><?php echo $community[$community_id]['head_titel']?></h2>
                     <p><?php echo $community[$community_id]['head_text']?></p>
                     <p>

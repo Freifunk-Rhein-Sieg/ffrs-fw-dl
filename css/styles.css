@@ -28,7 +28,15 @@ body {
 }
 
 .img-box {
+    height: 175px;
+    width: 175px;
+    object-fit: contain;
+    margin: 5px;
+}
+
+.logo-box {
     height: 200px;
+    width: 400px;
     object-fit: contain;
     margin: 5px;
 }
