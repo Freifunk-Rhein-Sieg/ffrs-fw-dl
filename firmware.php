@@ -328,7 +328,7 @@ $community_id = $_REQUEST['id'];
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><?php echo $community[$community_id]["lang_title"]?></h3>
+                            <h3 class="panel-title"><?php echo $community[$community_id]["lang_titel"]?></h3>
                         </div>
                         <div class="panel-body">
                             <img src="router_images/keinbild.jpg" class="pull-right img-box" id="img_router_back" alt="Router Rückseite" />
