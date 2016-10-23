@@ -188,7 +188,7 @@ if (filter_var($community[$community_id]["download_path"], FILTER_VALIDATE_URL) 
         for( $j=0; $j<$installation_count; $j++ ) {
             if($variante[$entwicklung[$i]][$installation[$j]] == 1) {
                 $file_count = count($files[$entwicklung[$i]][$installation[$j]]);
-                for( $x=0; $x<$some_count; $x++) {
+                for( $x=0; $x<$file_count; $x++) {
                     $anzahl_hersteller = count($hersteller);
                     for( $y=0; $y<$anzahl_hersteller; $y++) {
                         if($pos = stripos($files[$entwicklung[$i]][$installation[$j]][$x], $hersteller[$y]['filename'], $pos_hersteller[$entwicklung[$i]][$installation[$j]]-1) !== false) {
