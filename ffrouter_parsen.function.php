@@ -4,6 +4,31 @@
 * @copyright 2016 Caspar Armster, Freifunk Hennef/Freie Netzwerker e.V. (www.freifunk-hennef.de / www.freie-netzwerker.de)
 * @license   Licensed under GPLv3
 */
+function remoteFileExists($url) {
+    $curl = curl_init($url);
+
+    //don't fetch the actual page, you only want to check the connection is ok
+    curl_setopt($curl, CURLOPT_NOBODY, true);
+
+    //do request
+    $result = curl_exec($curl);
+
+    $ret = false;
+
+    //if request did not fail
+    if ($result !== false) {
+        //if request was ok, check response code
+        $statusCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);  
+
+        if ($statusCode == 200) {
+            $ret = true;
+        }
+    }
+
+    curl_close($curl);
+
+    return $ret;
+}
 if (filter_var($community[$community_id]["download_path"], FILTER_VALIDATE_URL) === FALSE) {
     if(!is_dir($firmware_download_path)) {
         throw new Exception("Firmwareverzeichnis existiert nicht!");
@@ -107,35 +132,39 @@ if (filter_var($community[$community_id]["download_path"], FILTER_VALIDATE_URL) 
     }
 }else{
     //Check if URL is reachable
-    if (!@fopen($firmware_download_path,"r")) {
+    if (!remoteFileExists($firmware_download_path)) {
         throw new Exception("Firmwareverzeichnis offline oder nicht existent!");
     }
     
     //Check if URL has index file (refer to https://forums.phpfreaks.com/topic/112764-using-scandir-on-other-websites/?p=579166  <- scandir has problem with index files)
-    if ((@fopen($firmware_download_path."/index.htm","r"))||(@fopen($firmware_download_path."/index.html","r"))||(@fopen($firmware_download_path."/index.php","r"))) {
+    if ((@remoteFileExists($firmware_download_path."/index.htm"))||(@remoteFileExists($firmware_download_path."/index.html"))||(@remoteFileExists($firmware_download_path."/index.php"))) {
         throw new Exception("Firmwareverzeichnis darf keine index files besitzen!");
     }
-    
+
     $err = 0;
     for( $i=0; $i<count($entwicklung); $i++ ) {
         for( $j=0; $j<count($installation); $j++ ) {
-            if(is_dir($firmware_download_path.$entwicklung[$i]."/")) {
-                if(is_dir($firmware_download_path.$entwicklung[$i]."/".$installation[$j]."/")) {
+            if(remoteFileExists($firmware_download_path.$entwicklung[$i]."/")) {
+                if(@remoteFileExists($firmware_download_path.$entwicklung[$i]."/".$installation[$j]."/")) {
                     //Check if URL has index file (refer to https://forums.phpfreaks.com/topic/112764-using-scandir-on-other-websites/?p=579166  <- scandir has problem with index files)
-                    if ((@fopen($firmware_download_path.$entwicklung[$i]."/".$installation[$j]."/index.htm","r"))||(@fopen($firmware_download_path.$entwicklung[$i]."/".$installation[$j]."/index.html","r"))||(@fopen($firmware_download_path.$entwicklung[$i]."/".$installation[$j]."/index.php","r"))) {
+                    if ((@remoteFileExists($firmware_download_path.$entwicklung[$i]."/".$installation[$j]."/index.htm"))||(@remoteFileExists($firmware_download_path.$entwicklung[$i]."/".$installation[$j]."/index.html"))||(@remoteFileExists($firmware_download_path.$entwicklung[$i]."/".$installation[$j]."/index.php"))) {
                         throw new Exception("Firmwareverzeichnis darf keine index files besitzen!");
                     }
                     $variante[$entwicklung[$i]][$installation[$j]] = 1;
-                    $files[$entwicklung[$i]][$installation[$j]] = array_slice(scandir($firmware_download_path.$entwicklung[$i]."/".$installation[$j]."/"), 2);
+                    preg_match_all('/href=[\'"]?([^\'" >]+)/', file_get_contents($firmware_download_path.$entwicklung[$i]."/".$installation[$j]."/"), $files_in_HTTP);
+                    foreach($files_in_HTTP["0"] as $key=>$value){
+                        $files_in_HTTP["0"][$key]=substr($value, 6);
+                    }
+                    $files[$entwicklung[$i]][$installation[$j]] = array_slice($files_in_HTTP["0"], 1);
                     for( $x=0; $x<count($files[$entwicklung[$i]][$installation[$j]]); $x++ ) {
-                        if(is_dir($firmware_download_path.$entwicklung[$i]."/".$installation[$j]."/".$files[$entwicklung[$i]][$installation[$j]][$x])) {
+                        if(@remoteFileExists($firmware_download_path.$entwicklung[$i]."/".$installation[$j]."/".$files[$entwicklung[$i]][$installation[$j]][$x])) {
                             array_splice($files[$entwicklung[$i]][$installation[$j]], $x, 1);
-                            $x--;
+                            // $x--;
                         } else {
                             $pos = stripos($files[$entwicklung[$i]][$installation[$j]][$x], 'manifest');
                             if($pos !== false) {
                                 array_splice($files[$entwicklung[$i]][$installation[$j]], $x, 1);
-                                $x--;
+                                // $x--;
                             }
                         }
                     }
