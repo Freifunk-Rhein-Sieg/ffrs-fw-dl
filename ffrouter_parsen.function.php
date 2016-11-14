@@ -48,11 +48,13 @@ if (filter_var($community[$community_id]["download_path"], FILTER_VALIDATE_URL) 
                         if(is_dir($firmware_download_path.$entwicklung[$i]."/".$installation[$j]."/".$files[$entwicklung[$i]][$installation[$j]][$x])) {
                             array_splice($files[$entwicklung[$i]][$installation[$j]], $x, 1);
                             $x--;
+                            $file_count--;
                         } else {
                             $pos = stripos($files[$entwicklung[$i]][$installation[$j]][$x], 'manifest');
                             if($pos !== false) {
                                 array_splice($files[$entwicklung[$i]][$installation[$j]], $x, 1);
                                 $x--;
+                                $file_count--;
                             }
                         }
                     }
@@ -141,7 +143,6 @@ if (filter_var($community[$community_id]["download_path"], FILTER_VALIDATE_URL) 
     if (!remoteFileExists($firmware_download_path)) {
         throw new Exception("Firmwareverzeichnis offline oder nicht existent!");
     }
-    
     $err = 0;
     $entwicklung_count = count($entwicklung);    
     $installation_count = count($installation);
@@ -155,7 +156,7 @@ if (filter_var($community[$community_id]["download_path"], FILTER_VALIDATE_URL) 
                 $variante[$entwicklung[$i]][$installation[$j]] = 1;
                 preg_match_all('/href=[\'"]?([^\'" >]+)/', file_get_contents($firmware_download_path.$entwicklung[$i]."/".$installation[$j]."/"), $files_in_HTTP);
                 foreach($files_in_HTTP["0"] as $key=>$value){
-                    if (strpos($value, 'manifest') !== false) {
+                    if ((strpos($value, 'manifest') !== false) || (strpos($value, '?C=M;O=A') !== false) || (strpos($value, '?C=S;O=A') !== false) || (strpos($value, '?C=S;O=A') !== false)) {
                         unset($files_in_HTTP["0"][$key]);
                     }
                 }
