@@ -27,7 +27,7 @@
             "name" => "8devices",
             "filename" => "8devices",
             "offset_modell" => 9,
-            "offset_version" => 3
+            "offset_version" => 4
         ),
         array(
             "name" => "Alfa",
