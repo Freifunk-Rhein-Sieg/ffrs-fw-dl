@@ -11,7 +11,7 @@ Der Freifunk Hennef Firmware Downloader kann auch mit Metacommunities umgehen, b
 Technik
 -------
 
-Der Freifunk Hennef Firmware Downloader erzeugt auf Grund der angegebenen Metadaten in der community-config.inc.php eine Auswahlseite für die Metacommunity (oder bei nur einer vorhandenen Community Konfiguration überspringt er diese Vorauswahl). Nach der Auswahl der Community (plus optionaler Subauswahl) erscheint der Link der zum eigentlichen Firmware Downloader führt. Der Freifunk Hennef Firmware Downloader scannt dann das in der community-config.inc.php angegebene Verzeichnis auf Firmwares in den Unterverzeichnissen (beta/broken/experimental/stable) und dort in (stable/sysupgrade). Aus dem Ergebnis baut das PHP Script ein interaktives Javascript für die Auswahl und verwendet dabei Bootstrap für das Layout.
+Der Freifunk Hennef Firmware Downloader erzeugt auf Grund der angegebenen Metadaten in der community-config.inc.php eine Auswahlseite für die Metacommunity (oder bei nur einer vorhandenen Community Konfiguration überspringt er diese Vorauswahl). Nach der Auswahl der Community (plus optionaler Subauswahl) erscheint der Link der zum eigentlichen Firmware Downloader führt. Der Freifunk Hennef Firmware Downloader scannt dann das in der community-config.inc.php angegebene Verzeichnis auf Firmwares in den Unterverzeichnissen (beta/broken/experimental/stable) und dort in (factory/sysupgrade). Aus dem Ergebnis baut das PHP Script ein interaktives Javascript für die Auswahl und verwendet dabei Bootstrap für das Layout.
 
 Bisher werden Router der folgenden Hersteller automatisch erkannt:
 
