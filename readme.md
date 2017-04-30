@@ -1,17 +1,17 @@
-Freifunk Hennef Firmware Downloader
-===================================
+Freifunk Firmware Downloader
+============================
 
 Beschreibung
 ------------
 
-Der Freifunk Hennef Firmware Downloader soll es Laien ermöglichen schneller und sicherer die zu ihrem Router passende Firmware zu finden. Der Freifunker kann nacheinander aus automatisch generierten Listen seinen Router auswählen: Hersteller -> Modell -> Version und dann festlegen ob es eine Erstinstallation ist oder nicht, sowie am Ende wählen welches Entwicklungsstadium die Firmware haben soll. Dabei wird automatisch gewarnt (Download Button verändert die Farbe) falls nicht "stable" ausgewählt wird. Zusätzlich werden etliche der Router auch als Grafik (Front & Back Ansicht) gezeigt, so dass der Freifunker auf den ersten Blick erkennen kann wenn er den falschen Router ausgewählt hat. Einmal anschauen kann man sich den Firmware Downlaoder unter http://images.freifunk-hennef.de/downloader/.
+Der Freifunk Firmware Downloader soll es Laien ermöglichen schneller und sicherer die zu ihrem Router passende Firmware zu finden. Der Freifunker kann nacheinander aus automatisch generierten Listen seinen Router auswählen: Hersteller -> Modell -> Version und dann festlegen ob es eine Erstinstallation ist oder nicht, sowie am Ende wählen welches Entwicklungsstadium die Firmware haben soll. Dabei wird automatisch gewarnt (Download Button verändert die Farbe) falls nicht "stable" ausgewählt wird. Zusätzlich werden etliche der Router auch als Grafik (Front & Back Ansicht) gezeigt, so dass der Freifunker auf den ersten Blick erkennen kann wenn er den falschen Router ausgewählt hat. Einmal anschauen kann man sich den Firmware Downlaoder unter http://downloader.freifunk-siegburg.de/.
 
-Der Freifunk Hennef Firmware Downloader kann auch mit Metacommunities umgehen, bei der, vor der Auswahl der eigentlichen Firmware, noch eine Auswahl der Community/Subcommunity oder Technologie auszuwählen ist. Als Beispiel kann hier die Metacommunity Rhein-Sieg dienen, unter http://downloader.freifunk-rhein-sieg.de/ könnt ihr euch das anschauen.
+Der Freifunk Firmware Downloader kann auch mit Metacommunities umgehen, bei der, vor der Auswahl der eigentlichen Firmware, noch eine Auswahl der Community/Subcommunity oder Technologie auszuwählen ist. Als Beispiel kann hier die Metacommunity Troisdorf dienen, unter http://downloader.freifunk-troisdorf.de/ könnt ihr euch das anschauen.
 
 Technik
 -------
 
-Der Freifunk Hennef Firmware Downloader erzeugt auf Grund der angegebenen Metadaten in der community-config.inc.php eine Auswahlseite für die Metacommunity (oder bei nur einer vorhandenen Community Konfiguration überspringt er diese Vorauswahl). Nach der Auswahl der Community (plus optionaler Subauswahl) erscheint der Link der zum eigentlichen Firmware Downloader führt. Der Freifunk Hennef Firmware Downloader scannt dann das in der community-config.inc.php angegebene Verzeichnis auf Firmwares in den Unterverzeichnissen (beta/broken/experimental/stable) und dort in (factory/sysupgrade). Aus dem Ergebnis baut das PHP Script ein interaktives Javascript für die Auswahl und verwendet dabei Bootstrap für das Layout.
+Der Freifunk Firmware Downloader erzeugt auf Grund der angegebenen Metadaten in der community-config.inc.php eine Auswahlseite für die Metacommunity (oder bei nur einer vorhandenen Community Konfiguration überspringt er diese Vorauswahl). Nach der Auswahl der Community (plus optionaler Subauswahl) erscheint der Link der zum eigentlichen Firmware Downloader führt. Der Freifunk Firmware Downloader scannt dann das in der community-config.inc.php angegebene Verzeichnis auf Firmwares in den Unterverzeichnissen (beta/broken/experimental/stable) und dort in (factory/sysupgrade). Aus dem Ergebnis baut das PHP Script ein interaktives Javascript für die Auswahl und verwendet dabei Bootstrap für das Layout.
 
 Bisher werden Router der folgenden Hersteller automatisch erkannt:
 
@@ -33,7 +33,7 @@ Bisher werden Router der folgenden Hersteller automatisch erkannt:
 - Western Digital
 - x86
 
-Soll eine Firmware für Router von anderen Herstellern angeboten werden muss erst das Script geändert werden! Bitte mich dann informieren über das github, oder caspar@freifunk-hennef.de.
+Soll eine Firmware für Router von anderen Herstellern angeboten werden muss erst das Script geändert werden! Bitte uns dann informieren über das github oder kontakt@freifunk-troisdorf.de.
 
 Bilder
 ------
@@ -43,7 +43,7 @@ Die Bilder der Router kommen von Daniel Krah und sind lizensiert unter einer Cre
 Installation
 ------------
 
-Den Freifunk Hennef Firmware Downloader in ein eigenes Unterverzeichnis des Webservers kopieren/entpacken, auf dem auch die Firmwares liegen. In der community-config.inc.php werden dann diverse Variablen gesetzt:
+Den Freifunk Firmware Downloader in ein eigenes Unterverzeichnis des Webservers kopieren/entpacken, auf dem auch die Firmwares liegen. In der community-config.inc.php werden dann diverse Variablen gesetzt:
 
 - $texte ist das Array mit den einzelnen Überschriften/Texten für die Auswahlstufen
 - $community ist das Array mit den Metadaten für die Metacommunity und die einzelnen Subcommunites. Wenn hier nur eine Community angegeben wird wird die Communtiyauswahl übersprungen und direkt auf die Firmware Downloader Seite verwiesen.
@@ -64,7 +64,7 @@ Den Freifunk Hennef Firmware Downloader in ein eigenes Unterverzeichnis des Webs
 ),
 ```
 
-In der config.inc.php sind die Angaben über die Hersteller, Entwicklungsstufen & Art der Firmware Installation. Hier muss man normalerweise nichts anpassen, außer man verwendet Firmwares für Router von Herstellern, die noch nicht integriert sind, dann bitte ich allerdings auch um Kontaktaufnahme (caspar@freifunk-hennef.de, bzw. im github).
+In der config.inc.php sind die Angaben über die Hersteller, Entwicklungsstufen & Art der Firmware Installation. Hier muss man normalerweise nichts anpassen, außer man verwendet Firmwares für Router von Herstellern, die noch nicht integriert sind, dann bitten wir allerdings auch um Kontaktaufnahme (kontakt@freifunk-troisdorf.de, bzw. im github).
 - $entwicklung = Entwicklungsstufen der Firmware (beta/broken/experimental/stable) - (sollte man in Ruhe lassen normalerweise)
 - $installation = Art der Installation (factory/sysupgrade) - (sollte man in Ruhe lassen normalerweise)
 - $hersteller = Array mit Informationen zu den Herstellern
@@ -99,6 +99,7 @@ Der Code ist nun halbwegs aufgeräumt und generiert aus dem PHP heraus ein Objek
 Lizenz
 ------
 
-* author    Caspar Armster
+* author    Caspar Armster, angepasst auf Rhein Sieg Bedürfnisse Roman Katrincak (kontakt@freifunk-troisdorf.de)
 * copyright 2016 by Caspar Armster, [Freifunk Hennef](http://www.freifunk-hennef.de/ "Freifunk Hennef") / [Freie Netzwerker e.V.](http://www.freie-netzwerker.de/ "Freie Netzwerker e.V.")
 * license   Licensed under GPLv3
+-
