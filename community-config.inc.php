@@ -186,7 +186,7 @@
             "link_text" => "Zurück zur Startseite",
             "link_url" => "http://www.freifunk-siegburg.de/",
             "logo_alt" => "Freifunk Rhein-Sieg Logo",
-            "logo_url" => "images/Freifunk-logo-rhein-sieg-klein-200.png",
+            "logo_url" => "images/Freifunk-logo-siegburg-klein-200.png",
             "lang_titel" => "Freifunk Siegburg Firmware Auswahl",
             "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal mit einer Freifunk Firmware flashen und welches Entwicklungsstadium die Firmware haben soll.<br /><br />Bitte wählen Sie -stable- im Entwicklungsstadium aus, wenn Sie nicht genau wissen was Sie sonst erwartet!",
             "download_path" => "../fwuploads/siegburg/",
