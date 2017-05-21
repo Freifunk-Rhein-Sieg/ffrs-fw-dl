@@ -33,7 +33,7 @@ Bisher werden Router der folgenden Hersteller automatisch erkannt:
 - Western Digital
 - x86
 
-Soll eine Firmware für Router von anderen Herstellern angeboten werden muss erst das Script geändert werden! Bitte uns dann informieren über das github oder kontakt@freifunk-troisdorf.de.
+Soll eine Firmware für Router von anderen Herstellern angeboten werden muss erst das Script geändert werden! Bitte informiere uns dann über GitHub oder kontakt@freifunk-troisdorf.de.
 
 Bilder
 ------
