@@ -60,7 +60,8 @@ Den Freifunk Firmware Downloader in ein eigenes Unterverzeichnis des Webservers 
 	"lang_titel" => "Langtext Titel",
 	"lang_text" => "Langtext Text",
 	"download_path" => "Pfad zur Firmware", // Bleibt bei der Metacommunity leer
-	"sub_auswahl" => "Name der Subcommunity" // Wird nur verwendet wenn die Community Subcommunites/Technologien als Auswahl hat
+	"sub_auswahl" => "Name der Subcommunity" // Wird nur verwendet wenn die Community Subcommunites/Technologien als Auswahl hat,
+	"geojson" => "geojson/filename.geojson"
 ),
 ```
 
@@ -100,5 +101,5 @@ Lizenz
 ------
 
 * author    Leo Maroni Ursprung: Caspar Armster
-* copyright 2016 by Leo Maroni, Caspar Armster, [Freifunk Hennef](http://www.freifunk-hennef.de/ "Freifunk Hennef") / [Freie Netzwerker e.V.](http://www.freie-netzwerker.de/ "Freie Netzwerker e.V.")
+* copyright 2017 by Leo Maroni, Caspar Armster, [Freifunk Hennef](http://www.freifunk-hennef.de/ "Freifunk Hennef") / [Freie Netzwerker e.V.](http://www.freie-netzwerker.de/ "Freie Netzwerker e.V.")
 * license   Licensed under GPLv3
