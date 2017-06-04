@@ -23,6 +23,13 @@ $(document).ready(function() {
                 }
             }).addTo(map)
             community.on('click', mapChangeCommunity);
+            community.bindPopup(i.name)
+            community.on('mouseover', function (e) {
+                this.openPopup();
+            });
+            community.on('mouseout', function (e) {
+                this.closePopup();
+            });
         })
     })
 });

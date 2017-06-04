@@ -76,7 +76,7 @@ if (count($community) == 1) {
 <script>
     var communityiesGeoJson = []
 	<?php foreach (array_slice($community, 0) as $i => $value):?>
-    communityiesGeoJson.push({"geojson": "<?php echo $value['geojson'] ?>"})
+    communityiesGeoJson.push({"geojson": "<?php echo $value['geojson'] ?>", "name": "<?php echo $value['name'] ?>"})
 	<?php endforeach ?>
 </script>
 <script src="js/comunitychoose.js"></script>
