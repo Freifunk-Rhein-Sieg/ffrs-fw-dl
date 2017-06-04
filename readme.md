@@ -99,7 +99,6 @@ Der Code ist nun halbwegs aufgeräumt und generiert aus dem PHP heraus ein Objek
 Lizenz
 ------
 
-* author    Caspar Armster, angepasst auf Rhein Sieg Bedürfnisse Roman Katrincak (kontakt@freifunk-troisdorf.de)
-* copyright 2016 by Caspar Armster, [Freifunk Hennef](http://www.freifunk-hennef.de/ "Freifunk Hennef") / [Freie Netzwerker e.V.](http://www.freie-netzwerker.de/ "Freie Netzwerker e.V.")
+* author    Leo Maroni Ursprung: Caspar Armster
+* copyright 2016 by Leo Maroni, Caspar Armster, [Freifunk Hennef](http://www.freifunk-hennef.de/ "Freifunk Hennef") / [Freie Netzwerker e.V.](http://www.freie-netzwerker.de/ "Freie Netzwerker e.V.")
 * license   Licensed under GPLv3
--

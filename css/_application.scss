@@ -1,0 +1,24 @@
+header {
+  min-height: 10vh;
+}
+#outer-container {
+  border-top: 5px solid $ff_color;
+  margin: 5vh auto 0 auto;
+  .row {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.dropdown-content li>a, .dropdown-content li>span {
+  color: $ff_color;
+}
+.input-field {
+  padding: 0 !important;
+}
+.thin {
+  font-weight: 100;
+}
+.page-footer {
+  padding-top: 0;
+  background-color: $ff_color;
+}

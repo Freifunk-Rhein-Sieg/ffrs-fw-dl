@@ -32,7 +32,8 @@ function remoteFileExists($url) {
 
 if (filter_var($community[$community_id]["download_path"], FILTER_VALIDATE_URL) === FALSE) {
     if(!is_dir($firmware_download_path)) {
-        throw new Exception("Firmwareverzeichnis existiert nicht!");
+//        throw new Exception("Firmwareverzeichnis existiert nicht!");
+	    throw new Exception($firmware_download_path);
     }
     $err = 0;
     $entwicklung_count = count($entwicklung);    

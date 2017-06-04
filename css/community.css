@@ -1,0 +1,39 @@
+header {
+  min-height: 10vh; }
+
+#outer-container {
+  border-top: 5px solid #dc0067;
+  margin: 5vh auto 0 auto; }
+  #outer-container .row {
+    margin-left: auto;
+    margin-right: auto; }
+
+.dropdown-content li > a, .dropdown-content li > span {
+  color: #dc0067; }
+
+.input-field {
+  padding: 0 !important; }
+
+.thin {
+  font-weight: 100; }
+
+.page-footer {
+  padding-top: 0;
+  background-color: #dc0067; }
+
+#backtohome {
+  background-color: #dc0067; }
+
+header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+
+.btn.navigation.next {
+  background-color: #dc0067; }
+
+#img_router_front, #img_router_back {
+  max-width: 200px; }
+
+#download {
+  background-color: #dc0067; }
+
+/*# sourceMappingURL=community.css.map */

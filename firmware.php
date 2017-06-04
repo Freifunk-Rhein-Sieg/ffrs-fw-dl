@@ -1,9 +1,9 @@
 <?php
 /**
-* @author    Caspar Armster
-* @copyright 2016 Caspar Armster, Freifunk Hennef/Freie Netzwerker e.V. (www.freifunk-hennef.de / www.freie-netzwerker.de)
-* @license   Licensed under GPLv3
-*/
+ * @author    Leo Maroni, Caspar Armster
+ * @copyright 2017 Leo Maroni, Caspar Armster, Freifunk Hennef/Freie Netzwerker e.V. (www.freifunk-hennef.de / www.freie-netzwerker.de)
+ * @license   Licensed under GPLv3
+ */
 error_reporting (E_ALL ^ E_NOTICE);
 require_once('community-config.inc.php');
 require_once('config.inc.php');
@@ -11,17 +11,22 @@ require_once('ffrouter.class.php');
 $community_id = $_REQUEST['id'];
 ?>
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" xmlns:target="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title><?php echo $community[$community_id]["head_titel"]?></title>
 
-        <meta name="author" content="Caspar Armster" />
+        <meta name="author" content="Leo Maroni, Caspar Armster" />
 
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/styles.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" integrity="sha256-xbQIJkhfOw0Dry1H9lawvXRi9XcqdE8jDBZx1Op/mz8=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="css/community.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js" integrity="sha256-lVmbGVbzHBkNHCUK0y+z2AyJei/v7jSNYppXTcq2FtU=" crossorigin="anonymous"></script>
+        <script src="js/firmware.js"></script>
 
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -47,380 +52,106 @@ $community_id = $_REQUEST['id'];
                 array_push($manufacturer, $value['name']);
             }
             echo "var herstellername    = ".json_encode($manufacturer)."\n";
-        ?>
 
-            function populateA () {
-              var s1 = document.getElementById('fw-dl-1')
-              var s2 = document.getElementById('fw-dl-2')
-              var s3 = document.getElementById('fw-dl-3')
-              var s4 = document.getElementById('fw-dl-4')
-              var s5 = document.getElementById('fw-dl-5')
-              var s6 = document.getElementById('fw-dl-6')
-              var img_router_front = document.getElementById('img_router_front')
-              var img_router_back = document.getElementById('img_router_back')
-              var optionArray = [ ]
-              s2.innerHTML = ''
-              for (var i = 0; i < anzahl_hersteller; i++) {
-                if (s1.value == herstellername[i]) {
-                  optionArray[0] = '|Modell auswählen'
-                  var j = 0
-                  while (j < router_json.length) {
-                    if (router_json[j].hersteller == herstellername[i]) {
-                      optionArray[j + 1] = router_json[j].modell + '|' + router_json[j].modell
-                      if (j < router_json.length - 1) {
-                        while (router_json[j].modell == router_json[j + 1].modell) {
-                          if (j < router_json.length - 1) {
-                            j++
-                          } else {
-                            break
-                          }
+            $modelle = array();
+            for ($i = 0; $anzahl_hersteller > $i; $i++) {
+                if($manufacturer == '<script>$("#hersteller").value</script>') {
+                    $x = 0;
+                    while ($x < sizeof($router)) {
+                        if($manufacturer[$i] == $router[$x]['hersteller']) {
+                            array_push($modelle, $router[$x]['modell']);
                         }
-                      }
                     }
-                    j++
-                  }
                 }
-              }
-              for (var option in optionArray) {
-                var pair = optionArray[option].split('|')
-                var newOption = document.createElement('option')
-                newOption.value = pair[0]
-                newOption.innerHTML = pair[1]
-                s2.options.add(newOption)
-              }
-              while (s3.length > 1) {
-                s3.remove(s3.length - 1)
-              }
-              while (s4.length > 1) {
-                s4.remove(s4.length - 1)
-              }
-              while (s5.length > 1) {
-                s5.remove(s5.length - 1)
-              }
-              s6.href = '#'
-              s6.classList.remove('disabled', 'btn-primary', 'btn-danger', 'btn-warning', 'btn-success')
-              s6.classList.add('btn-primary', 'disabled')
-              s6.textContent = 'Download Firmware'
-              img_router_front.src = 'router_images/keinbild.jpg'
-              img_router_back.src = 'router_images/keinbild.jpg'
             }
-            function populateB () {
-              var s2 = document.getElementById('fw-dl-2')
-              var s3 = document.getElementById('fw-dl-3')
-              var s4 = document.getElementById('fw-dl-4')
-              var s5 = document.getElementById('fw-dl-5')
-              var s6 = document.getElementById('fw-dl-6')
-              var img_router_front = document.getElementById('img_router_front')
-              var img_router_back = document.getElementById('img_router_back')
-              var optionArray = [ ]
-              optionArray[0] = '|Modell auswählen'
-              s3.innerHTML = ''
-              var i = 0
-              while (i < router_json.length) {
-                if (router_json[i].modell == s2.value) {
-                  optionArray[i + 1] = i + '|' + router_json[i].version
-                  if (i < router_json.length - 1) {
-                    while (router_json[i].modell == router_json[i + 1].modell) {
-                      if (i < router_json.length - 1) {
-                        i++
-                        optionArray[i + 1] = i + '|' + router_json[i].version
-                      } else {
-                        break
-                      }
-                    }
-                  }
-                }
-                i++
-              }
-              for (var option in optionArray) {
-                var pair = optionArray[option].split('|')
-                var newOption = document.createElement('option')
-                newOption.value = pair[0]
-                newOption.innerHTML = pair[1]
-                s3.options.add(newOption)
-              }
-              while (s4.length > 1) {
-                s4.remove(s4.length - 1)
-              }
-              while (s5.length > 1) {
-                s5.remove(s5.length - 1)
-              }
-              s6.href = '#'
-              s6.classList.remove('disabled', 'btn-primary', 'btn-danger', 'btn-warning', 'btn-success')
-              s6.classList.add('btn-primary', 'disabled')
-              s6.textContent = 'Download Firmware'
-              img_router_front.src = 'router_images/keinbild.jpg'
-              img_router_back.src = 'router_images/keinbild.jpg'
-            }
-            function populateC () {
-              var s3 = document.getElementById('fw-dl-3')
-              var s4 = document.getElementById('fw-dl-4')
-              var s5 = document.getElementById('fw-dl-5')
-              var s6 = document.getElementById('fw-dl-6')
-              var img_router_front = document.getElementById('img_router_front')
-              var img_router_back = document.getElementById('img_router_back')
-              var optionArray = [ ]
-              optionArray[0] = '|Erstinstallation?'
-              s4.innerHTML = ''
-              var newImageFront = router_json[s3.value].imagefront
-              var newImageBack = router_json[s3.value].imageback
-              var i = 1
-              if ((router_json[s3.value].betafactory == 1) || (router_json[s3.value].brokenfactory == 1) || (router_json[s3.value].experimentalfactory == 1) || (router_json[s3.value].stablefactory == 1)) {
-                optionArray[i] = s3.value + 'J|Ja'
-                i++
-              }
-              if ((router_json[s3.value].betasysupgrade == 1) || (router_json[s3.value].brokensysupgrade == 1) || (router_json[s3.value].experimentalsysupgrade == 1) || (router_json[s3.value].stablesysupgrade == 1)) {
-                optionArray[i] = s3.value + 'N|Nein'
-              }
-              for (var option in optionArray) {
-                var pair = optionArray[option].split('|')
-                var newOption = document.createElement('option')
-                newOption.value = pair[0]
-                newOption.innerHTML = pair[1]
-                s4.options.add(newOption)
-              }
-              while (s5.length > 1) {
-                s5.remove(s5.length - 1)
-              }
-              s6.href = '#'
-              s6.classList.remove('disabled', 'btn-primary', 'btn-danger', 'btn-warning', 'btn-success')
-              s6.classList.add('btn-primary', 'disabled')
-              s6.textContent = 'Download Firmware'
-              img_router_front.src = newImageFront
-              img_router_back.src = newImageBack
-            }
-            function populateD () {
-              var s4 = document.getElementById('fw-dl-4')
-              var s5 = document.getElementById('fw-dl-5')
-              var s6 = document.getElementById('fw-dl-6')
-              var optionArray = [ ]
-              optionArray[0] = '|Entwicklungsstadium?'
-              s5.innerHTML = ''
-              var id = parseInt(s4.value.slice(0, s4.value.length))
-              var jein = s4.value.slice(-1)
-              var i = 1
-              if (jein == 'J') {
-                if (router_json[id].betafactory == 1) {
-                  optionArray[i] = id + 'Jbeta|Beta'
-                  i++
-                }
-                if (router_json[id].brokenfactory == 1) {
-                  optionArray[i] = id + 'Jbroken|Broken'
-                  i++
-                }
-                if (router_json[id].experimentalfactory == 1) {
-                  optionArray[i] = id + 'Jexp|Experimental'
-                  i++
-                }
-                if (router_json[id].stablefactory == 1) {
-                  optionArray[i] = id + 'Jstable|Stable'
-                  i++
-                }
-              }
-              if (jein == 'N') {
-                if (router_json[id].betasysupgrade == 1) {
-                  optionArray[i] = id + 'Nbeta|Beta'
-                  i++
-                }
-                if (router_json[id].brokensysupgrade == 1) {
-                  optionArray[i] = id + 'Nbroken|Broken'
-                  i++
-                }
-                if (router_json[id].experimentalsysupgrade == 1) {
-                  optionArray[i] = id + 'Nexp|Experimental'
-                  i++
-                }
-                if (router_json[id].stablesysupgrade == 1) {
-                  optionArray[i] = id + 'Nstable|Stable'
-                  i++
-                }
-              }
-              for (var option in optionArray) {
-                var pair = optionArray[option].split('|')
-                var newOption = document.createElement('option')
-                newOption.value = pair[0]
-                newOption.innerHTML = pair[1]
-                s5.options.add(newOption)
-              }
-              s6.href = '#'
-              s6.classList.remove('disabled', 'btn-primary', 'btn-danger', 'btn-warning', 'btn-success')
-              s6.classList.add('btn-primary', 'disabled')
-              s6.textContent = 'Download Firmware'
-            }
-            function populateE () {
-              var s5 = document.getElementById('fw-dl-5')
-              var s6 = document.getElementById('fw-dl-6')
-              var id = 0
-              var link = '#'
-              var linkclass = ''
-              if (s5.value.lastIndexOf('Jbeta') != -1) {
-                id = parseInt(s5.value.slice(0, s5.value.length - 4))
-                link = router_json[id].betafactorylink
-                linkclass = 'btn-warning'
-              }
-              if (s5.value.lastIndexOf('Jbroken') != -1) {
-                id = parseInt(s5.value.slice(0, s5.value.length - 6))
-                link = router_json[id].brokenfactorylink
-                linkclass = 'btn-danger'
-              }
-              if (s5.value.lastIndexOf('Jexp') != -1) {
-                id = parseInt(s5.value.slice(0, s5.value.length - 3))
-                link = router_json[id].experimentalfactorylink
-                linkclass = 'btn-warning'
-              }
-              if (s5.value.lastIndexOf('Jstable') != -1) {
-                id = parseInt(s5.value.slice(0, s5.value.length - 6))
-                link = router_json[id].stablefactorylink
-                linkclass = 'btn-success'
-              }
-              if (s5.value.lastIndexOf('Nbeta') != -1) {
-                id = parseInt(s5.value.slice(0, s5.value.length - 4))
-                link = router_json[id].betasysupgradelink
-                linkclass = 'btn-warning'
-              }
-              if (s5.value.lastIndexOf('Nbroken') != -1) {
-                id = parseInt(s5.value.slice(0, s5.value.length - 6))
-                link = router_json[id].brokensysupgradelink
-                linkclass = 'btn-danger'
-              }
-              if (s5.value.lastIndexOf('Nexp') != -1) {
-                id = parseInt(s5.value.slice(0, s5.value.length - 3))
-                link = router_json[id].experimentalsysupgradelink
-                linkclass = 'btn-warning'
-              }
-              if (s5.value.lastIndexOf('Nstable') != -1) {
-                id = parseInt(s5.value.slice(0, s5.value.length - 6))
-                link = router_json[id].stablesysupgradelink
-                linkclass = 'btn-success'
-              }
-              s6.href = link
-              s6.classList.remove('disabled', 'btn-primary', 'btn-danger', 'btn-warning', 'btn-success')
-              s6.classList.add(linkclass)
-              s6.textContent = 'Download Firmware'
-            }
+        ?>
         </script>
     </head>
     <body>
-        <div class="jumbotron">
-            <div class="container">
-                <div class="col-xs-12">
-                    <img src="<?php echo $community[$community_id]['logo_url']?>" alt="<?php echo $community[$community_id]['logo_alt']?>" class="pull-right logo-box" />
-                    <h2><?php echo $community[$community_id]['head_titel']?></h2>
-                    <p><?php echo $community[$community_id]['head_text']?></p>
-                    <p>
-                        <a class="btn btn-primary btn-large" href="<?php echo $community[$community_id]['link_url']?>"><?php echo $community[$community_id]['link_text']?></a>
-                    </p>
+        <div class="container z-depth-3" id="outer-container">
+            <header class="center">
+                <h3 class="thin"><?php echo $community[$community_id]['head_titel']?></h3>
+                <p>
+                    <a id="backtohome" class="btn waves-effect waves-light" href="<?php echo $community[$community_id]['link_url']?>"><?php echo $community[$community_id]['link_text']?></a>
+    <!--                <img src="--><?php //echo $community[$community_id]['logo_url']?><!--" alt="--><?php //echo $community[$community_id]['logo_alt']?><!--" class="pull-right logo-box" />-->
+                </p>
+            </header>
+
+            <div class="container row" id="inner-container">
+            <?php for ($i = 0; $i < $err; $i++): ?>
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Warning:</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Warning!</strong> <?php echo $error_text[$i] ?>
                 </div>
-            </div>
-        </div>
-
-        <div class="container">
-        <?php for ($i = 0; $i < $err; $i++): ?>
-            <div class="alert alert-warning alert-dismissible" role="alert">
-                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                <span class="sr-only">Warning:</span>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <strong>Warning!</strong> <?php echo $error_text[$i] ?>
-            </div>
-        <?php endfor ?>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><?php echo $community[$community_id]["lang_titel"]?></h3>
+            <?php endfor ?>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <h5>Beschreibung</h5>
+                        <p><?php echo $community[$community_id]["lang_text"]?></p>
+                    </div>
+                    <div class="col s12 m6">
+                        <div class="row">
+                                <img class="col s6 m12" src="router_images/keinbild.jpg" id="img_router_front" alt="Router Vorderseite" />
+                                <img class="col s6 m12" src="router_images/keinbild.jpg" id="img_router_back" alt="Router Rückseite" />
                         </div>
-                        <div class="panel-body">
-                            <img src="router_images/keinbild.jpg" class="pull-right img-box" id="img_router_back" alt="Router Rückseite" />
-                            <img src="router_images/keinbild.jpg" class="pull-right img-box" id="img_router_front" alt="Router Vorderseite" />
-                            <p><?php echo $community[$community_id]["lang_text"]?></p>
-                        </div>
-                        <div class="panel-footer">
-                            <img src="images/ccbyncsa.png" alt="CC BY-NC-SA" class="pull-left" style="width: 60px; margin-right: 15px;" />
-                            <p>Die Router Bilder sind von Daniel Krah und unter <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target:"_blank">Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz</a>  lizensiert.</p>
+                        <div class="row">
+                            <img src="images/ccbyncsa.png" alt="CC BY-NC-SA" style="width: 60px; margin-right: 15px;" />
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Router Hersteller</h3>
-                        </div>
-                        <div class="panel-body">
-                            <select id="fw-dl-1" name="fw-dl-1" class="form-control" onchange="populateA()">
-                                <option value="">Hersteller auswählen</option>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <h5>Hersteller</h5>
+                        <select id="hersteller" onchange="change('hersteller', this)">
+                            <option disabled selected value="">Hersteller auswählen</option>
                             <?php foreach ($hersteller as $value): ?>
                                 <option value="<?php echo $value['name']?>"><?php echo $value['name']?></option>
                             <?php endforeach ?>
-					        </select>
-                        </div>
+                        </select>
+                    </div>
+                    <div class="col s12 m6">
+                        <h5>Modell</h5>
+                        <select disabled onchange="change('modell', this)" id="modell">
+                            <option disabled selected value="">Modell auswählen</option>
+                        </select>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Router Modell</h3>
-                        </div>
-                        <div class="panel-body">
-                            <select id="fw-dl-2" name="fw-dl-2" class="form-control" onchange="populateB()"></select>
-                        </div>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <h5>Version</h5>
+                        <select disabled onchange="change('version', this)" id="version">
+                            <option disabled selected value="">Version auswählen</option>
+                        </select>
+                    </div>
+                    <div class="col s12 m6">
+                        <h5>Erstinstallation</h5>
+                        <select disabled onchange="change('erstinstallation', this)" id="erstinstallation">
+                            <option disabled selected value="">Firmware Erstinstallation?</option>
+                        </select>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Router Version</h3>
-                        </div>
-                        <div class="panel-body">
-                            <select id="fw-dl-3" name="fw-dl-3" class="form-control" onchange="populateC()"></select>
-                        </div>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <h5>Entwicklungsstadium</h5>
+                        <select disabled onchange="change('entwicklungsstadium', this)" id="entwicklungsstadium">
+                            <option disabled selected value="">Entwicklungsstadium auswählen</option>
+                        </select>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Firmware Erstinstallation</h3>
-                        </div>
-                        <div class="panel-body">
-                            <select id="fw-dl-4" name="fw-dl-4" class="form-control" onchange="populateD()"></select>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Firmware Entwicklungsstadium</h3>
-                        </div>
-                        <div class="panel-body">
-                            <select id="fw-dl-5" name="fw-dl-5" class="form-control" onchange="populateE()"></select>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Firmware Download</h3>
-                        </div>
-                        <div class="panel-body">
-                            <a href="#" id="fw-dl-6" name="fw-dl-6" role="button" class="btn btn-primary btn-block disabled">Download Firmware</a>
-                        </div>
+                    <div class="col s12 m6">
+                        <h5>Herunterladen</h5>
+                        <a disabled id="download" class="waves-effect waves-light btn-large"><i class="material-icons left">file_download</i>Herunterladen</a>
                     </div>
                 </div>
             </div>
-
-            <hr />
-
-            <footer>
-                <div class="col-xs-12 text-muted text-center">
-                    <p>Licensed under GPLv3 / Copyright 2016 by Caspar Armster, <a href="http://www.freifunk-hennef.de/">Freifunk Hennef</a> / <a href="http://www.freie-netzwerker.de/">Freie Netzwerker e.V.</a></p>
+            <footer class="page-footer">
+                <div class="footer-copyright">
+                    <div class="container">
+                        Licensed under GPLv3 / © 2017 <a class="grey-text text-lighten-4" href="https://labcode.de">Leo Maroni</a>, Caspar Armster / Die Router Bilder sind von Daniel Krah und unter <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" class="grey-text text-lighten-4" target="_blank">Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz</a>  lizensiert.
+                    </div>
                 </div>
             </footer>
         </div>
-        <script src="js/jquery-2.2.3.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
     </body>
 </html>

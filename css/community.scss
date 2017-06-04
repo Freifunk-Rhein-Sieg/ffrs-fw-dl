@@ -1,0 +1,17 @@
+@import "variables";
+@import "application";
+#backtohome {
+  background-color: $ff_color;
+}
+header {
+  border-bottom: 1px solid rgba(0,0,0,.2);
+}
+.btn.navigation.next {
+  background-color: $ff_color;
+}
+#img_router_front, #img_router_back {
+  max-width: 200px;
+}
+#download {
+  background-color: $ff_color;
+}

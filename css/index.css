@@ -1,0 +1,30 @@
+header {
+  min-height: 10vh; }
+
+#outer-container {
+  border-top: 5px solid #dc0067;
+  margin: 5vh auto 0 auto; }
+  #outer-container .row {
+    margin-left: auto;
+    margin-right: auto; }
+
+.dropdown-content li > a, .dropdown-content li > span {
+  color: #dc0067; }
+
+.input-field {
+  padding: 0 !important; }
+
+.thin {
+  font-weight: 100; }
+
+.page-footer {
+  padding-top: 0;
+  background-color: #dc0067; }
+
+#inner-container {
+  padding: 1.5rem; }
+
+#map {
+  height: 40vh; }
+
+/*# sourceMappingURL=index.css.map */
