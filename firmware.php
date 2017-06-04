@@ -32,6 +32,10 @@ $community_id = $_REQUEST['id'];
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
         <?php
+        if($community[$community_id]["linktoseite"] != null) {
+	        header("Location: ".$community[$community_id]['linktoseite']);
+	        die();
+        }
         $firmware_download_path = $community[$community_id]["download_path"];
 
         try {
