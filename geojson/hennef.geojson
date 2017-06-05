@@ -10,9 +10,9 @@
   "features":[
     {
       "type":"Feature",
-      "properties":{
-        "community_id":"1",
-        "color":"#f44336"
+      "properties":{ 
+        "community_id":"2",
+        "color":"#607d8b"
       },
       "geometry":{
         "type":"Polygon",

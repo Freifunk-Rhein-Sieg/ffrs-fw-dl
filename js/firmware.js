@@ -159,7 +159,6 @@ function change (origin, select) {
             link = router_json[id].stablesysupgradelink
             linkclass = 'btn-success'
         }
-        console.log(link)
         $('#download').attr("href", link)
         $('#download').removeAttr('disabled')
     }
