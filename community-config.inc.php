@@ -163,7 +163,7 @@
 		    "link_url" => "http://downloader.freifunk-siegburg.de/",
 		    "lang_titel" => "Freifunk Troisdorf Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
-		    "download_path" => "../fwuploads/troisdorf/tdf",
+		    "download_path" => "../fwuploads/troisdorf/tdf/",
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/troisdorf.geojson"
 	    ),
@@ -175,7 +175,7 @@
 		    "link_url" => "http://downloader.freifunk-siegburg.de/",
 		    "lang_titel" => "Freifunk Troisdorf Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
-		    "download_path" => "../fwuploads/troisdorf/inn",
+		    "download_path" => "../fwuploads/troisdorf/inn/",
 		    "sub_auswahl" => "",
 		    "geojson" => ""
 	    ),
@@ -187,7 +187,7 @@
 		    "link_url" => "http://downloader.freifunk-siegburg.de/",
 		    "lang_titel" => "Freifunk Wachtberg Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
-		    "download_path" => "../fwuploads/wachtberg",
+		    "download_path" => "../fwuploads/wachtberg/",
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/wachtberg.geojson"
 	    ),
