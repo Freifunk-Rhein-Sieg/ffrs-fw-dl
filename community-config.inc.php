@@ -181,6 +181,18 @@
 	    ),
 	    14  => array(
 		    "community_id" => 14,
+		    "name" => "Troisdorf - Soziale Netzwerke",
+		    "head_titel" => "Freifunk für Troisdorfer Soziale Netzwerke Firmware",
+		    "link_text" => "Zurück zur Startseite",
+		    "link_url" => "http://downloader.freifunk-siegburg.de/",
+		    "lang_titel" => "Freifunk für Troisdorfer Soziale Netzwerke Firmware Auswahl",
+		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
+		    "download_path" => "../fwuploads/troisdorf/flu/",
+		    "sub_auswahl" => "",
+		    "geojson" => ""
+	    ),
+	    15  => array(
+		    "community_id" => 15,
 		    "name" => "Wachtberg",
 		    "head_titel" => "Freifunk Wachtberg Firmware",
 		    "link_text" => "Zurück zur Startseite",
