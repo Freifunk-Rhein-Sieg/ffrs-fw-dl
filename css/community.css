@@ -21,7 +21,7 @@ header {
   padding-top: 0;
   background-color: #df316c; }
 
-#backtohome {
+#backtohome, #backtomap, #download {
   background-color: #df316c; }
 
 header {
@@ -32,8 +32,5 @@ header {
 
 #img_router_front, #img_router_back {
   max-width: 200px; }
-
-#download {
-  background-color: #df316c; }
 
 /*# sourceMappingURL=community.css.map */

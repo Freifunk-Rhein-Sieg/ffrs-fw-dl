@@ -77,7 +77,7 @@ $community_id = $_REQUEST['id'];
                 <h3 class="thin"><?php echo $community[$community_id]['head_titel']?></h3>
                 <p>
                     <a id="backtohome" class="btn waves-effect waves-light" href="<?php echo $community[$community_id]['link_url']?>"><?php echo $community[$community_id]['link_text']?></a>
-    <!--                <img src="--><?php //echo $community[$community_id]['logo_url']?><!--" alt="--><?php //echo $community[$community_id]['logo_alt']?><!--" class="pull-right logo-box" />-->
+                    <a id="backtomap" class="btn waves-effect waves-light" href="/">Zur&uuml;ck zur Auswahl</a>
                 </p>
             </header>
 

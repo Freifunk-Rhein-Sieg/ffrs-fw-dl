@@ -1,6 +1,6 @@
 @import "variables";
 @import "application";
-#backtohome {
+#backtohome, #backtomap, #download {
   background-color: $ff_color;
 }
 header {
@@ -11,7 +11,4 @@ header {
 }
 #img_router_front, #img_router_back {
   max-width: 200px;
-}
-#download {
-  background-color: $ff_color;
 }
