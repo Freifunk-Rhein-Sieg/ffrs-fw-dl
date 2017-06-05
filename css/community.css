@@ -2,14 +2,14 @@ header {
   min-height: 10vh; }
 
 #outer-container {
-  border-top: 5px solid #dc0067;
+  border-top: 5px solid #df316c;
   margin: 5vh auto 0 auto; }
   #outer-container .row {
     margin-left: auto;
     margin-right: auto; }
 
 .dropdown-content li > a, .dropdown-content li > span {
-  color: #dc0067; }
+  color: #df316c; }
 
 .input-field {
   padding: 0 !important; }
@@ -19,21 +19,21 @@ header {
 
 .page-footer {
   padding-top: 0;
-  background-color: #dc0067; }
+  background-color: #df316c; }
 
 #backtohome {
-  background-color: #dc0067; }
+  background-color: #df316c; }
 
 header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
 
 .btn.navigation.next {
-  background-color: #dc0067; }
+  background-color: #df316c; }
 
 #img_router_front, #img_router_back {
   max-width: 200px; }
 
 #download {
-  background-color: #dc0067; }
+  background-color: #df316c; }
 
 /*# sourceMappingURL=community.css.map */

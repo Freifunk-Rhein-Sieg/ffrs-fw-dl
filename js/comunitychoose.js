@@ -13,11 +13,12 @@ $(document).ready(function() {
     }).addTo(map);
     communityiesGeoJson.forEach(function (i) {
         $.getJSON( i.geojson, function( data ) {
+            console.log(data)
             var community = L.geoJSON(data, {
                 style: {
-                    fillColor: "#dc0067",
+                    fillColor: data.features[0].properties.color,
                     fillOpacity: 0.25,
-                    color: '#dc0067',
+                    color: data.features[0].properties.color,
                     opacity: 1,
                     weight: 2
                 }

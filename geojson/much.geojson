@@ -11,7 +11,8 @@
     {
       "type":"Feature",
       "properties":{
-        "community_id":"4"
+        "community_id":"4",
+        "color":"#795548"
       },
       "geometry":{
         "type":"Polygon",
