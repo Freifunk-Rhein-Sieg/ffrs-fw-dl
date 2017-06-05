@@ -18,7 +18,7 @@ if (count($community) == 1) {
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title><?php echo $community[0]["head_titel"]?></title>
+    <title>Freifunk Rhein-Sieg Firmware Downloader</title>
 
     <meta name="author" content="Leo Maroni, Caspar Armster" />
 

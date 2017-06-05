@@ -11,7 +11,7 @@
     {
       "type":"Feature",
       "properties":{
-        "community_id":"0",
+        "community_id":"1",
         "color":"#f44336"
       },
       "geometry":{

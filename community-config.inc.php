@@ -19,12 +19,24 @@
     $community = array(
 	    0 => array(
 		    "community_id" => 0,
+		    "name" => "Altenkirchen",
+		    "head_titel" => "Freifunk Altenkirchen Firmware",
+		    "link_text" => "Zurück zur Startseite",
+		    "link_url" => "http://downloader.freifunk-siegburg.de/",
+		    "lang_titel" => "Freifunk Altenkirchen Firmware Auswahl",
+		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
+		    "download_path" => "../fwuploads/altenkirchen/",
+		    "sub_auswahl" => "",
+		    "geojson" => "geojson/altenkirchen.geojson"
+	    ),
+	    1 => array(
+		    "community_id" => 1,
 		    "name" => "Hennef",
 		    "linktoseite" => "https://images.freifunk-hennef.de/downloader/firmware.php?id=0",
 		    "geojson" => "geojson/hennef.geojson"
 	    ),
-	    1  => array(
-		    "community_id" => 1,
+	    2  => array(
+		    "community_id" => 2,
 		    "name" => "Königswinter",
 		    "head_titel" => "Freifunk Königswinter Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -35,8 +47,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/koenigswinter.geojson"
 	    ),
-	    2  => array(
-		    "community_id" => 2,
+	    3  => array(
+		    "community_id" => 3,
 		    "name" => "Lohmar",
 		    "head_titel" => "Freifunk Lohmar Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -47,8 +59,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/lohmar.geojson"
 	    ),
-	    3 => array(
-		    "community_id" => 3,
+	    4 => array(
+		    "community_id" => 4,
 		    "name" => "Meckenheim",
 		    "head_titel" => "Freifunk Meckenheim Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -59,8 +71,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/meckenheim.geojson"
 	    ),
-	    4 => array(
-		    "community_id" => 4,
+	    5 => array(
+		    "community_id" => 5,
 		    "name" => "Much",
 		    "head_titel" => "Freifunk Much Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -71,8 +83,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/much.geojson"
 	    ),
-	    5 => array(
-		    "community_id" => 5,
+	    6 => array(
+		    "community_id" => 6,
 		    "name" => "Neunkirchen",
 		    "head_titel" => "Freifunk Neunkirchen Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -83,8 +95,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/neunkirchen.geojson"
 	    ),
-	    6 => array(
-		    "community_id" => 6,
+	    7 => array(
+		    "community_id" => 7,
 		    "name" => "Niederkassel",
 		    "head_titel" => "Freifunk Niederkassel Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -95,8 +107,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/niederkassel.geojson"
 	    ),
-	    7 => array(
-		    "community_id" => 7,
+	    8 => array(
+		    "community_id" => 8,
 		    "name" => "Rheinbach",
 		    "head_titel" => "Freifunk Rheinbach Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -107,8 +119,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/rheinbach.geojson"
 	    ),
-	    8 => array(
-		    "community_id" => 8,
+	    9 => array(
+		    "community_id" => 9,
 		    "name" => "Ruppichteroth",
 		    "head_titel" => "Freifunk Ruppichteroth Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -119,8 +131,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/ruppichteroth.geojson"
 	    ),
-	    9  => array(
-		    "community_id" => 9,
+	    10  => array(
+		    "community_id" => 10,
 		    "name" => "Sankt Augustin",
 		    "head_titel" => "Freifunk Sankt Augustin Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -131,8 +143,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/staugustin.geojson"
 	    ),
-        10 => array(
-            "community_id" => 10,
+        11 => array(
+            "community_id" => 11,
             "name" => "Siegburg",
             "head_titel" => "Freifunk Siegburg Firmware",
             "link_text" => "Zurück zur Startseite",
@@ -143,8 +155,8 @@
             "sub_auswahl" => "",
 	        "geojson" => "geojson/siegburg.geojson"
         ),
-        11  => array(
-	        "community_id" => 11,
+        12  => array(
+	        "community_id" => 12,
 	        "name" => "Soziale Netzwerke",
 	        "head_titel" => "Freifunk für Soziale Netzwerke Firmware",
 	        "link_text" => "Zurück zur Startseite",
@@ -155,8 +167,8 @@
 	        "sub_auswahl" => "",
 	        "geojson" => ""
         ),
-	    12  => array(
-		    "community_id" => 12,
+	    13  => array(
+		    "community_id" => 13,
 		    "name" => "Troisdorf",
 		    "head_titel" => "Freifunk Troisdorf Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -167,8 +179,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/troisdorf.geojson"
 	    ),
-	    13  => array(
-		    "community_id" => 13,
+	    14  => array(
+		    "community_id" => 14,
 		    "name" => "Troisdorf - Fußgängerzone",
 		    "head_titel" => "Freifunk Troisdorf Fußgänerzone Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -179,8 +191,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => ""
 	    ),
-	    14  => array(
-		    "community_id" => 14,
+	    15  => array(
+		    "community_id" => 15,
 		    "name" => "Troisdorf - Soziale Netzwerke",
 		    "head_titel" => "Freifunk für Troisdorfer Soziale Netzwerke Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -191,8 +203,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => ""
 	    ),
-	    15  => array(
-		    "community_id" => 15,
+	    16  => array(
+		    "community_id" => 16,
 		    "name" => "Wachtberg",
 		    "head_titel" => "Freifunk Wachtberg Firmware",
 		    "link_text" => "Zurück zur Startseite",
