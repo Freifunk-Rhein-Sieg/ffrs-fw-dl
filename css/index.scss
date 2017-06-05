@@ -6,3 +6,6 @@
 #map {
   height: 40vh;
 }
+.leaflet-top, .leaflet-bottom {
+  z-index: 400;
+}
