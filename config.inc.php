@@ -7,7 +7,6 @@
 
     $entwicklung = array(
         "beta",
-        "broken",
         "experimental",
         "stable"
     );
