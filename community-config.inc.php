@@ -137,18 +137,18 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/ruppichteroth.geojson"
 	    ),
-//	    11  => array(
-//		    "community_id" => 11,
-//		    "name" => "Sankt Augustin",
-//		    "head_titel" => "Freifunk Sankt Augustin Firmware",
-//		    "link_text" => "Zurück zur Startseite",
-//		    "link_url" => "http://downloader.freifunk-siegburg.de/",
-//		    "lang_titel" => "Freifunk Sankt Augustin Firmware Auswahl",
-//		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
-//		    "download_path" => "../fwuploads/sanktaugustin/",
-//		    "sub_auswahl" => "",
-//		    "geojson" => "geojson/staugustin.geojson"
-//	    ),
+	    11  => array(
+		    "community_id" => 11,
+		    "name" => "Sankt Augustin",
+		    "head_titel" => "Freifunk Sankt Augustin Firmware",
+		    "link_text" => "Zurück zur Startseite",
+		    "link_url" => "http://downloader.freifunk-siegburg.de/",
+		    "lang_titel" => "Freifunk Sankt Augustin Firmware Auswahl",
+		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
+		    "download_path" => "../fwuploads/sanktaugustin/",
+		    "sub_auswahl" => "",
+		    "geojson" => "geojson/staugustin.geojson"
+	    ),
         12 => array(
             "community_id" => 12,
             "name" => "Siegburg",
@@ -161,18 +161,18 @@
             "sub_auswahl" => "",
 	        "geojson" => "geojson/siegburg.geojson"
         ),
-//        13  => array(
-//	        "community_id" => 13,
-//	        "name" => "Soziale Netzwerke",
-//	        "head_titel" => "Freifunk für Soziale Netzwerke Firmware",
-//	        "link_text" => "Zurück zur Startseite",
-//	        "link_url" => "http://downloader.freifunk-siegburg.de/",
-//	        "lang_titel" => "Freifunk Lohmar Firmware Auswahl",
-//	        "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
-//	        "download_path" => "../fwuploads/sozialenetze/",
-//	        "sub_auswahl" => "",
-//	        "geojson" => ""
-//        ),
+        13  => array(
+	        "community_id" => 13,
+	        "name" => "Soziale Netzwerke",
+	        "head_titel" => "Freifunk für SozLiale Netzwerke Firmware",
+	        "link_text" => "Zurück zur Startseite",
+	        "link_url" => "http://downloader.freifunk-siegburg.de/",
+	        "lang_titel" => "Freifunk Lohmar Firmware Auswahl",
+	        "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
+	        "download_path" => "../fwuploads/sozialenetze/",
+	        "sub_auswahl" => "",
+	        "geojson" => ""
+        ),
 	    14  => array(
 		    "community_id" => 14,
 		    "name" => "Troisdorf",
