@@ -13,7 +13,6 @@ $(document).ready(function() {
     }).addTo(map);
     communityiesGeoJson.forEach(function (i) {
         $.getJSON( i.geojson, function( data ) {
-            console.log(data)
             var community = L.geoJSON(data, {
                 style: {
                     fillColor: data.features[0].properties.color,
