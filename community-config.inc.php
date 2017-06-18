@@ -19,6 +19,12 @@
     $community = array(
 	    0 => array(
 		    "community_id" => 0,
+		    "name" => "Alfter",
+		    "linktoseite" => "https://images.ffkbu.de/umgebung/",
+		    "geojson" => "geojson/alfter.geojson"
+	    ),
+	    1 => array(
+		    "community_id" => 1,
 		    "name" => "Altenkirchen",
 		    "head_titel" => "Freifunk Altenkirchen Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -29,20 +35,32 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/altenkirchen.geojson"
 	    ),
-	    1 => array(
-		    "community_id" => 1,
-		    "name" => "Bonn",
-		    "linktoseite" => "https://kbu.freifunk.net/wiki/index.php?title=Firmware_herunterladen",
-		    "geojson" => "geojson/bonn.geojson"
-	    ),
 	    2 => array(
 		    "community_id" => 2,
+		    "name" => "Bad Honnef",
+		    "linktoseite" => "https://images.ffkbu.de/umgebung/",
+		    "geojson" => "geojson/badhonnef.geojson"
+	    ),
+	    3 => array(
+		    "community_id" => 3,
+		    "name" => "Bonn",
+		    "linktoseite" => "https://images.ffkbu.de/bonn/",
+		    "geojson" => "geojson/bonn.geojson"
+	    ),
+	    4 => array(
+		    "community_id" => 4,
+		    "name" => "Bornheim",
+		    "linktoseite" => "https://images.ffkbu.de/umgebung/",
+		    "geojson" => "geojson/bornheim.geojson"
+	    ),
+	    5 => array(
+		    "community_id" => 5,
 		    "name" => "Hennef",
 		    "linktoseite" => "https://images.freifunk-hennef.de/downloader/firmware.php?id=0",
 		    "geojson" => "geojson/hennef.geojson"
 	    ),
-	    3  => array(
-		    "community_id" => 3,
+	    6  => array(
+		    "community_id" => 6,
 		    "name" => "Königswinter",
 		    "head_titel" => "Freifunk Königswinter Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -53,8 +71,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/koenigswinter.geojson"
 	    ),
-	    4  => array(
-		    "community_id" => 4,
+	    7  => array(
+		    "community_id" => 7,
 		    "name" => "Lohmar",
 		    "head_titel" => "Freifunk Lohmar Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -65,8 +83,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/lohmar.geojson"
 	    ),
-	    5 => array(
-		    "community_id" => 5,
+	    8 => array(
+		    "community_id" => 8,
 		    "name" => "Meckenheim",
 		    "head_titel" => "Freifunk Meckenheim Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -77,8 +95,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/meckenheim.geojson"
 	    ),
-	    6 => array(
-		    "community_id" => 6,
+	    9 => array(
+		    "community_id" => 9,
 		    "name" => "Much",
 		    "head_titel" => "Freifunk Much Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -89,8 +107,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/much.geojson"
 	    ),
-	    7 => array(
-		    "community_id" => 7,
+	    10 => array(
+		    "community_id" => 10,
 		    "name" => "Neunkirchen",
 		    "head_titel" => "Freifunk Neunkirchen Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -101,8 +119,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/neunkirchen.geojson"
 	    ),
-	    8 => array(
-		    "community_id" => 8,
+	    11 => array(
+		    "community_id" => 11,
 		    "name" => "Niederkassel",
 		    "head_titel" => "Freifunk Niederkassel Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -113,8 +131,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/niederkassel.geojson"
 	    ),
-	    9 => array(
-		    "community_id" => 9,
+	    12 => array(
+		    "community_id" => 12,
 		    "name" => "Rheinbach",
 		    "head_titel" => "Freifunk Rheinbach Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -125,8 +143,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/rheinbach.geojson"
 	    ),
-	    10 => array(
-		    "community_id" => 10,
+	    13 => array(
+		    "community_id" => 13,
 		    "name" => "Ruppichteroth",
 		    "head_titel" => "Freifunk Ruppichteroth Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -137,8 +155,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/ruppichteroth.geojson"
 	    ),
-	    11  => array(
-		    "community_id" => 11,
+	    14  => array(
+		    "community_id" => 14,
 		    "name" => "Sankt Augustin",
 		    "head_titel" => "Freifunk Sankt Augustin Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -149,8 +167,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/staugustin.geojson"
 	    ),
-        12 => array(
-            "community_id" => 12,
+        15 => array(
+            "community_id" => 15,
             "name" => "Siegburg",
             "head_titel" => "Freifunk Siegburg Firmware",
             "link_text" => "Zurück zur Startseite",
@@ -161,8 +179,8 @@
             "sub_auswahl" => "",
 	        "geojson" => "geojson/siegburg.geojson"
         ),
-        13  => array(
-	        "community_id" => 13,
+        16  => array(
+	        "community_id" => 16,
 	        "name" => "Soziale Netzwerke",
 	        "head_titel" => "Freifunk für SozLiale Netzwerke Firmware",
 	        "link_text" => "Zurück zur Startseite",
@@ -173,8 +191,14 @@
 	        "sub_auswahl" => "",
 	        "geojson" => ""
         ),
-	    14  => array(
-		    "community_id" => 14,
+	    17 => array(
+		    "community_id" => 17,
+		    "name" => "Swisttal",
+		    "linktoseite" => "https://images.ffkbu.de/umgebung/",
+		    "geojson" => "geojson/swisttal.geojson"
+	    ),
+	    18  => array(
+		    "community_id" => 18,
 		    "name" => "Troisdorf",
 		    "head_titel" => "Freifunk Troisdorf Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -185,8 +209,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/troisdorf.geojson"
 	    ),
-	    15  => array(
-		    "community_id" => 15,
+	    19  => array(
+		    "community_id" => 19,
 		    "name" => "Troisdorf - Fußgängerzone",
 		    "head_titel" => "Freifunk Troisdorf Fußgänerzone Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -197,8 +221,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => ""
 	    ),
-	    16  => array(
-		    "community_id" => 16,
+	    20  => array(
+		    "community_id" => 20,
 		    "name" => "Troisdorf - Soziale Netzwerke",
 		    "head_titel" => "Freifunk für Troisdorfer Soziale Netzwerke Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -209,8 +233,8 @@
 		    "sub_auswahl" => "",
 		    "geojson" => ""
 	    ),
-	    17  => array(
-		    "community_id" => 17,
+	    21  => array(
+		    "community_id" => 21,
 		    "name" => "Wachtberg",
 		    "head_titel" => "Freifunk Wachtberg Firmware",
 		    "link_text" => "Zurück zur Startseite",
@@ -220,5 +244,11 @@
 		    "download_path" => "../fwuploads/wachtberg/",
 		    "sub_auswahl" => "",
 		    "geojson" => "geojson/wachtberg.geojson"
+	    ),
+	    22 => array(
+		    "community_id" => 22,
+		    "name" => "Windeck",
+		    "linktoseite" => "https://images.ffkbu.de/umgebung/",
+		    "geojson" => "geojson/windeck.geojson"
 	    ),
     );
