@@ -106,7 +106,7 @@ if (filter_var($community[$community_id]["download_path"], FILTER_VALIDATE_URL) 
                     }
                     if(isset($router_tmp[$x]['hersteller']) != true) {
 //                        $error_text[$err]="Unbekannten Hersteller im Dateinamen gefunden, bitte Script updaten! (".$files[$entwicklung[$i]][$installation[$j]][$x].")";
-                        $err++;
+//                        $err++;
                     } else {
                         $router_neu = 1;
                         $router_count = count($router);
