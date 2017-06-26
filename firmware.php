@@ -105,48 +105,41 @@ $community_id = $_REQUEST['id'];
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col s12 m6">
-                        <h5>Hersteller</h5>
-                        <select id="hersteller" onchange="change('hersteller', this)">
-                            <option disabled selected value="">Hersteller auswählen</option>
-                            <?php foreach ($hersteller as $value): ?>
-                                <option value="<?php echo $value['name']?>"><?php echo $value['name']?></option>
-                            <?php endforeach ?>
-                        </select>
-                    </div>
-                    <div class="col s12 m6">
-                        <h5>Modell</h5>
-                        <select disabled onchange="change('modell', this)" id="modell">
-                            <option disabled selected value="">Modell auswählen</option>
-                        </select>
-                    </div>
+                <div class="col s12 m6">
+                    <h5>Hersteller</h5>
+                    <select id="hersteller" disabled onchange="change('hersteller', this)">
+                        <option disabled selected value="">Hersteller auswählen</option>
+                        <?php foreach ($hersteller as $value): ?>
+                            <option value="<?php echo $value['name']?>"><?php echo $value['name']?></option>
+                        <?php endforeach ?>
+                    </select>
                 </div>
-                <div class="row">
-                    <div class="col s12 m6">
-                        <h5>Version</h5>
-                        <select disabled onchange="change('version', this)" id="version">
-                            <option disabled selected value="">Version auswählen</option>
-                        </select>
-                    </div>
-                    <div class="col s12 m6">
-                        <h5>Erstinstallation</h5>
-                        <select disabled onchange="change('erstinstallation', this)" id="erstinstallation">
-                            <option disabled selected value="">Firmware Erstinstallation?</option>
-                        </select>
-                    </div>
+                <div class="col s12 m6">
+                    <h5>Modell</h5>
+                    <select disabled onchange="change('modell', this)" id="modell">
+                        <option disabled selected value="">Modell auswählen</option>
+                    </select>
                 </div>
-                <div class="row">
-                    <div class="col s12 m6">
-                        <h5>Entwicklungsstadium</h5>
-                        <select disabled onchange="change('entwicklungsstadium', this)" id="entwicklungsstadium">
-                            <option disabled selected value="">Entwicklungsstadium auswählen</option>
-                        </select>
-                    </div>
-                    <div class="col s12 m6">
-                        <h5>Herunterladen</h5>
-                        <a disabled id="download" class="waves-effect waves-light btn-large"><i class="material-icons left">file_download</i>Herunterladen</a>
-                    </div>
+                <div class="col s12 m6">
+                    <h5>Version</h5>
+                    <select disabled onchange="change('version', this)" id="version">
+                        <option disabled selected value="">Version auswählen</option>
+                    </select>
+                </div>
+                <div class="col s12 m6">
+                    <h5>Erstinstallation</h5>
+                    <select disabled onchange="change('erstinstallation', this)" id="erstinstallation">
+                        <option disabled selected value="">Firmware Erstinstallation?</option>
+                    </select>
+                </div>
+                <div class="col s12 m6">
+                    <h5>Entwicklungsstadium</h5>
+                    <select disabled onchange="change('entwicklungsstadium', this)" id="entwicklungsstadium">
+                        <option disabled selected value="">Entwicklungsstadium auswählen</option>
+                    </select>
+                </div>
+                <div class="col s12 center">
+                    <a disabled id="download" class="waves-effect waves-light btn-large"><i class="material-icons left">file_download</i>Herunterladen</a>
                 </div>
             </div>
             <footer class="page-footer">

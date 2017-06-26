@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('select').material_select();
     var mapChangeCommunity = function (event) {
         var communityid = event.layer.feature.properties.community_id
-        location.href = 'firmware.php?id=' + communityid
+        location.href = 'subauswahl.php?id=' + communityid
     }
     var map = L.map('map').setView([50.75600670286445, 7.390810699462891], 9.5)
 

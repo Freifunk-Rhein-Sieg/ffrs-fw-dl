@@ -8,6 +8,6 @@ require_once('community-config.inc.php');
 $community_shortlink = $_REQUEST['name'];
 foreach ($community as $item) {
 	if ($community_shortlink == $item['shortlinkname']) {
-		header("Location: firmware.php?id=" . $item['community_id']);
+		header("Location: subauswahl.php?id=" . $item['community_id']);
 	}
 }

@@ -22,7 +22,8 @@
 		    "shortlinkname" => 'alfter',
 		    "name" => "Alfter",
 		    "linktoseite" => "https://images.ffkbu.de/umgebung/",
-		    "geojson" => "geojson/alfter.geojson"
+		    "geojson" => "geojson/alfter.geojson",
+		    "show" => true
 	    ),
 	    1 => array(
 		    "community_id" => 1,
@@ -34,36 +35,40 @@
 		    "lang_titel" => "Freifunk Altenkirchen Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/altenkirchen/",
-		    "sub_auswahl" => "",
-		    "geojson" => "geojson/altenkirchen.geojson"
+		    "geojson" => "geojson/altenkirchen.geojson",
+		    "show" => true
 	    ),
 	    2 => array(
 		    "community_id" => 2,
 		    "shortlinkname" => 'badhonnef',
 		    "name" => "Bad Honnef",
 		    "linktoseite" => "https://images.ffkbu.de/umgebung/",
-		    "geojson" => "geojson/badhonnef.geojson"
+		    "geojson" => "geojson/badhonnef.geojson",
+		    "show" => true
 	    ),
 	    3 => array(
 		    "community_id" => 3,
 		    "shortlinkname" => 'bonn',
 		    "name" => "Bonn",
 		    "linktoseite" => "https://images.ffkbu.de/bonn/",
-		    "geojson" => "geojson/bonn.geojson"
+		    "geojson" => "geojson/bonn.geojson",
+		    "show" => true
 	    ),
 	    4 => array(
 		    "community_id" => 4,
 		    "name" => "Bornheim",
 		    "shortlinkname" => 'bornheim',
 		    "linktoseite" => "https://images.ffkbu.de/umgebung/",
-		    "geojson" => "geojson/bornheim.geojson"
+		    "geojson" => "geojson/bornheim.geojson",
+		    "show" => true
 	    ),
 	    5 => array(
 		    "community_id" => 5,
 		    "name" => "Hennef",
 		    "shortlinkname" => 'hennef',
 		    "linktoseite" => "https://images.freifunk-hennef.de/downloader/firmware.php?id=0",
-		    "geojson" => "geojson/hennef.geojson"
+		    "geojson" => "geojson/hennef.geojson",
+		    "show" => true
 	    ),
 	    6  => array(
 		    "community_id" => 6,
@@ -75,8 +80,8 @@
 		    "lang_titel" => "Freifunk Königswinter Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/königswinter/",
-		    "sub_auswahl" => "",
-		    "geojson" => "geojson/koenigswinter.geojson"
+		    "geojson" => "geojson/koenigswinter.geojson",
+		    "show" => true
 	    ),
 	    7  => array(
 		    "community_id" => 7,
@@ -88,8 +93,8 @@
 		    "lang_titel" => "Freifunk Lohmar Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/lohmar/",
-		    "sub_auswahl" => "",
-		    "geojson" => "geojson/lohmar.geojson"
+		    "geojson" => "geojson/lohmar.geojson",
+		    "show" => true
 	    ),
 	    8 => array(
 		    "community_id" => 8,
@@ -101,8 +106,8 @@
 		    "lang_titel" => "Freifunk Meckenheim Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/meckenheim/",
-		    "sub_auswahl" => "",
-		    "geojson" => "geojson/meckenheim.geojson"
+		    "geojson" => "geojson/meckenheim.geojson",
+		    "show" => true
 	    ),
 	    9 => array(
 		    "community_id" => 9,
@@ -114,8 +119,8 @@
 		    "lang_titel" => "Freifunk Much Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/much/",
-		    "sub_auswahl" => "",
-		    "geojson" => "geojson/much.geojson"
+		    "geojson" => "geojson/much.geojson",
+		    "show" => true
 	    ),
 	    10 => array(
 		    "community_id" => 10,
@@ -127,8 +132,8 @@
 		    "lang_titel" => "Freifunk Neunkirchen Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/neunkirchen/",
-		    "sub_auswahl" => "",
-		    "geojson" => "geojson/neunkirchen.geojson"
+		    "geojson" => "geojson/neunkirchen.geojson",
+		    "show" => true
 	    ),
 	    11 => array(
 		    "community_id" => 11,
@@ -140,8 +145,8 @@
 		    "lang_titel" => "Freifunk Niederkassel Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/niederkassel/",
-		    "sub_auswahl" => "",
-		    "geojson" => "geojson/niederkassel.geojson"
+		    "geojson" => "geojson/niederkassel.geojson",
+		    "show" => true
 	    ),
 	    12 => array(
 		    "community_id" => 12,
@@ -153,8 +158,8 @@
 		    "lang_titel" => "Freifunk Niederkassel Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/rheinbach/",
-		    "sub_auswahl" => "",
-		    "geojson" => "geojson/rheinbach.geojson"
+		    "geojson" => "geojson/rheinbach.geojson",
+		    "show" => true
 	    ),
 	    13 => array(
 		    "community_id" => 13,
@@ -166,8 +171,8 @@
 		    "lang_titel" => "Freifunk Ruppichteroth Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/ruppichteroth/",
-		    "sub_auswahl" => "",
-		    "geojson" => "geojson/ruppichteroth.geojson"
+		    "geojson" => "geojson/ruppichteroth.geojson",
+		    "show" => true
 	    ),
 	    14  => array(
 		    "community_id" => 14,
@@ -179,8 +184,8 @@
 		    "lang_titel" => "Freifunk Sankt Augustin Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/sanktaugustin/",
-		    "sub_auswahl" => "",
-		    "geojson" => "geojson/staugustin.geojson"
+		    "geojson" => "geojson/staugustin.geojson",
+		    "show" => true
 	    ),
         15 => array(
             "community_id" => 15,
@@ -192,8 +197,8 @@
             "lang_titel" => "Freifunk Siegburg Firmware Auswahl",
             "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
             "download_path" => "../fwuploads/siegburg/",
-            "sub_auswahl" => "",
-	        "geojson" => "geojson/siegburg.geojson"
+	        "geojson" => "geojson/siegburg.geojson",
+            "show" => true
         ),
         16  => array(
 	        "community_id" => 16,
@@ -205,15 +210,16 @@
 	        "lang_titel" => "Freifunk Lohmar Firmware Auswahl",
 	        "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 	        "download_path" => "../fwuploads/sozialenetze/",
-	        "sub_auswahl" => "",
-	        "geojson" => ""
+	        "geojson" => "",
+	        "show" => true
         ),
 	    17 => array(
 		    "community_id" => 17,
 		    "shortlinkname" => 'swisttal',
 		    "name" => "Swisttal",
 		    "linktoseite" => "https://images.ffkbu.de/umgebung/",
-		    "geojson" => "geojson/swisttal.geojson"
+		    "geojson" => "geojson/swisttal.geojson",
+		    "show" => true
 	    ),
 	    18  => array(
 		    "community_id" => 18,
@@ -225,8 +231,9 @@
 		    "lang_titel" => "Freifunk Troisdorf Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/troisdorf/tdf/",
-		    "sub_auswahl" => "",
-		    "geojson" => "geojson/troisdorf.geojson"
+		    "sub_auswahl" => array(18,19,20),
+		    "geojson" => "geojson/troisdorf.geojson",
+		    "show" => true
 	    ),
 	    19  => array(
 		    "community_id" => 19,
@@ -238,9 +245,10 @@
 		    "lang_titel" => "Freifunk Troisdorf Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/troisdorf/inn/",
-		    "sub_auswahl" => "",
+		    "show" => false,
 		    "geojson" => ""
 	    ),
+
 	    20  => array(
 		    "community_id" => 20,
 		    "shortlinkname" => 'troisdorf-snw',
@@ -251,7 +259,7 @@
 		    "lang_titel" => "Freifunk für Troisdorfer Soziale Netzwerke Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/troisdorf/flu/",
-		    "sub_auswahl" => "",
+		    "show" => false,
 		    "geojson" => ""
 	    ),
 	    21  => array(
@@ -264,14 +272,15 @@
 		    "lang_titel" => "Freifunk Wachtberg Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/wachtberg/",
-		    "sub_auswahl" => "",
-		    "geojson" => "geojson/wachtberg.geojson"
+		    "geojson" => "geojson/wachtberg.geojson",
+		    "show" => true
 	    ),
 	    22 => array(
 		    "community_id" => 22,
 		    "shortlinkname" => 'windeck',
 		    "name" => "Windeck",
 		    "linktoseite" => "https://images.ffkbu.de/umgebung/",
-		    "geojson" => "geojson/windeck.geojson"
+		    "geojson" => "geojson/windeck.geojson",
+		    "show" => true
 	    ),
     );

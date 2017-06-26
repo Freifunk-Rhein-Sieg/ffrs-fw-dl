@@ -31,7 +31,7 @@ if (count($community) == 1) {
     <script>
         function selectChangeCommunity(x) {
             var id = $(x).find('option:selected').attr("id")
-            location.href = 'firmware.php?id=' + id
+            location.href = 'subauswahl.php?id=' + id
         }
     </script>
 </head>
@@ -54,7 +54,7 @@ if (count($community) == 1) {
                     <option disabled selected value=""><?php echo $texte["ebene1_text"]?></option>
                     <?php $lastName = "" ?>
                     <?php foreach (array_slice($community, 0) as $i => $value): ?>
-                        <?php if ($value['name'] != $lastName): ?>
+                        <?php if ($value['name'] != $lastName and $value['show']): ?>
                             <option id="<?php echo $value['community_id'] ?>" value="<?php echo $value['name']?>"><?php echo $value['name']?></option>
                         <?php endif ?>
                         <?php $lastName = $value['name'] ?>

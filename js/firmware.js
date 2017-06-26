@@ -162,6 +162,9 @@ function change (origin, select) {
         $('#download').attr("href", link)
         $('#download').removeAttr('disabled')
     }
+    else if (origin === "stadtteil") {
+        location.href = "firmware.php?id=" + $(select).val()
+    }
 }
 
 $(function () {
