@@ -107,7 +107,7 @@ $community_id = $_REQUEST['id'];
                 </div>
                 <div class="col s12 m6">
                     <h5>Hersteller</h5>
-                    <select id="hersteller" disabled onchange="change('hersteller', this)">
+                    <select id="hersteller" onchange="change('hersteller', this)">
                         <option disabled selected value="">Hersteller auswählen</option>
                         <?php foreach ($hersteller as $value): ?>
                             <option value="<?php echo $value['name']?>"><?php echo $value['name']?></option>
