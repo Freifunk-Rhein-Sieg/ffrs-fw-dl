@@ -145,7 +145,7 @@ $community_id = $_REQUEST['id'];
             <footer class="page-footer">
                 <div class="footer-copyright">
                     <div class="container">
-                        Licensed under GPLv3 / © 2017 <a class="grey-text text-lighten-4" href="https://labcode.de">Leo Maroni</a>, Caspar Armster / Die Router Bilder sind von Daniel Krah und unter <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" class="grey-text text-lighten-4" target="_blank">Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz</a>  lizensiert.
+                        © 2017 <a class="grey-text text-lighten-4" href="https://labcode.de">Leo Maroni</a>, Caspar Armster / Licensed under GPLv3 / Die Router Bilder sind von Daniel Krah und unter <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" class="grey-text text-lighten-4" target="_blank">Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz</a>  lizensiert.
                     </div>
                 </div>
             </footer>

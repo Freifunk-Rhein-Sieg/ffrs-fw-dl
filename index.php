@@ -65,7 +65,7 @@ if (count($community) == 1) {
     <footer class="page-footer">
         <div class="footer-copyright">
             <div class="container">
-                Licensed under GPLv3 / © 2017 <a class="grey-text text-lighten-4" href="https://labcode.de">Leo Maroni</a>, Caspar Armster
+                © 2017 <a class="grey-text text-lighten-4" href="https://labcode.de">Leo Maroni</a>, Caspar Armster / Licensed under GPLv3
             </div>
         </div>
     </footer>
