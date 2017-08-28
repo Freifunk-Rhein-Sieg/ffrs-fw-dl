@@ -43,7 +43,6 @@ if (count($community) == 1) {
         </header>
         <div class="row">
             <h5>W&auml;hle von der Karte: </h5>
-            <p>Die Versionen Soziale Netzwerke und Troisdorf - Fu&szlig;g&auml;ngerzone sind nur unten in der Auswahl verf&uuml;gbar</p>
             <div id="map"></div>
         </div>
         <div class="row">
