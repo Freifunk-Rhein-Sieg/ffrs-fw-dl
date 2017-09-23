@@ -140,6 +140,7 @@ $community_id = $_REQUEST['id'];
                 </div>
                 <div class="col s12 center">
                     <a disabled id="download" class="waves-effect waves-light btn-large"><i class="material-icons left">file_download</i>Herunterladen</a>
+                    <span>Passende Kernelmodule bitte seperat laden von <a href="<?php $community[$community_id]['modules_path']?>"><?php $community[$community_id]['modules_path']?> ?></a></span>
                 </div>
             </div>
             <footer class="page-footer">
