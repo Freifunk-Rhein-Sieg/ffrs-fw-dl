@@ -54,7 +54,7 @@
         ),
         array(
             "name" => "GL-Inet",
-            "filename" => "-gl-",
+            "filename" => "gl",
             "offset_modell" => 3,
             "offset_version" => 4
         ),

@@ -96,8 +96,9 @@ function change (origin, select) {
     }
     else if (origin === 'erstinstallation') {
         var stadium = $('#entwicklungsstadium')
-        stadium.html("<option disabled value=''>Firmware Erstinstallation?</option>")
+        stadium.html("<option disabled value=''>Firmware Entwicklungsstadium?</option>")
         var id = $('#version').val()
+        console.log(router_json[id])
         if (router_json[id].stablefactory == 1) {
             stadium.append("<option selected value='" + $(select).val() +"stable'>Stabil &#040;empfohlen&#041;</option>")
         }
