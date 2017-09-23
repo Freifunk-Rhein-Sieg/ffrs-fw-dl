@@ -83,12 +83,17 @@ function change (origin, select) {
             .material_select();
     }
     else if(origin === 'version') {
+        var id = $('#version').val()
         $('#entwicklungsstadium')
             .attr('disabled', '')
             .material_select()
-        $('#erstinstallation').html("<option disabled selected value=''>Firmware Erstinstallation?</option>" +
-            "<option value='" + $(select).val() +"J'>Ja</option>" +
-            "<option value='" + $(select).val() +"N'>Nein</option>")
+        $('#erstinstallation').html("<option disabled selected value=''>Firmware Erstinstallation?</option>")
+        if(router_json[id].stablefactory === 1) {
+            $('#erstinstallation').append('<option value="' + $(select).val() + 'J" data-value="yes">Ja</option>');
+        }
+        if(router_json[id].stablesysupgrade === 1) {
+            $('#erstinstallation').append('<option value="' + $(select).val() + 'N" data-value="no">Nein</option>');
+        }
         $('#erstinstallation').removeAttr('disabled')
         $('#erstinstallation').material_select()
         $('#img_router_front').attr("src", router_json[$(select).val()].imagefront)
@@ -98,7 +103,6 @@ function change (origin, select) {
         var stadium = $('#entwicklungsstadium')
         stadium.html("<option disabled value=''>Firmware Entwicklungsstadium?</option>")
         var id = $('#version').val()
-        console.log(router_json[id])
         if (router_json[id].stablefactory == 1) {
             stadium.append("<option selected value='" + $(select).val() +"stable'>Stabil &#040;empfohlen&#041;</option>")
         }
