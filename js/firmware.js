@@ -89,10 +89,10 @@ function change (origin, select) {
             .material_select()
         $('#erstinstallation').html("<option disabled selected value=''>Firmware Erstinstallation?</option>")
         if(router_json[id].stablefactory === 1) {
-            $('#erstinstallation').append('<option value="' + $(select).val() + 'J" data-value="yes">Ja</option>');
+            $('#erstinstallation').append('<option value="' + $(select).val() + 'J">Ja</option>');
         }
         if(router_json[id].stablesysupgrade === 1) {
-            $('#erstinstallation').append('<option value="' + $(select).val() + 'N" data-value="no">Nein</option>');
+            $('#erstinstallation').append('<option value="' + $(select).val() + 'N">Nein</option>');
         }
         $('#erstinstallation').removeAttr('disabled')
         $('#erstinstallation').material_select()
@@ -100,20 +100,41 @@ function change (origin, select) {
         $('#img_router_back').attr("src", router_json[$(select).val()].imageback)
     }
     else if (origin === 'erstinstallation') {
+        var erstinstallation;
+        if($('#erstinstallation').val().lastIndexOf('N') < 0) {
+            erstinstallation = true;
+        } else if($('#erstinstallation').val().lastIndexOf('Y') < 0) {
+            erstinstallation = false;
+        }
         var stadium = $('#entwicklungsstadium')
         stadium.html("<option disabled value=''>Firmware Entwicklungsstadium?</option>")
         var id = $('#version').val()
-        if (router_json[id].stablefactory == 1) {
-            stadium.append("<option selected value='" + $(select).val() +"stable'>Stabil &#040;empfohlen&#041;</option>")
-        }
-        if (router_json[id].betafactory == 1) {
-            stadium.append("<option value='" + $(select).val() +"beta'>Beta</option>")
-        }
-        if (router_json[id].experimentalfactory == 1) {
-            stadium.append("<option value='" + $(select).val() +"exp'>Experimental</option>")
-        }
-        if (router_json[id].brokenfactory == 1) {
-            stadium.append("<option value='" + $(select).val() +"broken'>Fehlerhaft</option>")
+        if(erstinstallation) {
+            if (router_json[id].stablefactory === 1) {
+                stadium.append("<option selected value='" + $(select).val() +"stable'>Stabil &#040;empfohlen&#041;</option>")
+            }
+            if (router_json[id].betafactory === 1) {
+                stadium.append("<option value='" + $(select).val() +"beta'>Beta</option>")
+            }
+            if (router_json[id].experimentalfactory === 1) {
+                stadium.append("<option value='" + $(select).val() +"exp'>Experimental</option>")
+            }
+            if (router_json[id].brokenfactory === 1) {
+                stadium.append("<option value='" + $(select).val() +"broken'>Fehlerhaft</option>")
+            }
+        } else if (!erstinstallation) {
+            if (router_json[id].stablesysupgrade === 1) {
+                stadium.append("<option selected value='" + $(select).val() +"stable'>Stabil &#040;empfohlen&#041;</option>")
+            }
+            if (router_json[id].betasysupgrade === 1) {
+                stadium.append("<option value='" + $(select).val() +"beta'>Beta</option>")
+            }
+            if (router_json[id].experimentalsysupgrade === 1) {
+                stadium.append("<option value='" + $(select).val() +"exp'>Experimental</option>")
+            }
+            if (router_json[id].brokensysupgrade === 1) {
+                stadium.append("<option value='" + $(select).val() +"broken'>Fehlerhaft</option>")
+            }
         }
         stadium.removeAttr('disabled')
         stadium.material_select()
