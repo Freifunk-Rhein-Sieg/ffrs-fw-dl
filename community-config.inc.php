@@ -34,7 +34,7 @@
 		    "link_url" => "http://downloader.freifunk-siegburg.de/",
 		    "lang_titel" => "Freifunk Altenkirchen Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
-		    "download_path" => "../fwuploads/altenkirchen/images",
+		    "download_path" => "../fwuploads/altenkirchen/",
 		    "modules_path" => "http://images.freifunk-rhein-sieg.de/altenkirchen/packages",
 		    "geojson" => "geojson/altenkirchen.geojson",
 		    "show" => true
