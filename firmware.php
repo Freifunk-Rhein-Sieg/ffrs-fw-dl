@@ -42,6 +42,7 @@ $community_id = $_REQUEST['id'];
             require_once('ffrouter_parsen.function.php');
         } catch(Exception $e) {
             echo("Fehler: ".$e->getMessage());
+            echo("Bitte kontaktiere leo@freifunk-siegburg.de");
             die();
         }
         ?>
