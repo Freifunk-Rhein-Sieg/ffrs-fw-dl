@@ -13,13 +13,13 @@ function change (origin, select) {
             .material_select()
         var modelle = []
         for (var i = 0; i < anzahl_hersteller; i++) {
-            if ($(select).find('option:selected').html() == herstellername[i]) {
+            if ($(select).find('option:selected').html() === herstellername[i]) {
                 var j = 0
                 while (j < router_json.length) {
-                    if (router_json[j].hersteller == herstellername[i]) {
+                    if (router_json[j].hersteller === herstellername[i]) {
                         modelle[j] = router_json[j].modell
                         if (j < router_json.length - 1) {
-                            while (router_json[j].modell == router_json[j + 1].modell) {
+                            while (router_json[j].modell === router_json[j + 1].modell) {
                                 if (j < router_json.length - 1) {
                                     j++
                                 } else {

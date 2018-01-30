@@ -56,9 +56,9 @@ $community_id = $_REQUEST['id'];
 			</div>
 		<?php endfor ?>
 		<div class="col s12">
-			<h5>Stadtteilauswahl</h5>
+			<h5>Auswahl Stadtteilnetz</h5>
 			<select id="stadtteil" onchange="change('stadtteil', this)">
-				<option disabled selected value="">Stadtteil ausw&auml;hlen</option>
+				<option disabled selected value="">Stadtteilnetz ausw&auml;hlen</option>
 				<?php foreach ($community[$community_id]["sub_auswahl"] as $value): ?>
 					<option value="<?php echo $value ?>"><?php echo $community[$value]['name']?></option>
 				<?php endforeach ?>
