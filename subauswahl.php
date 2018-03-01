@@ -68,7 +68,7 @@ $community_id = $_REQUEST['id'];
 	<footer class="page-footer">
 		<div class="footer-copyright">
 			<div class="container">
-				Licensed under GPLv3 / © 2017 <a class="grey-text text-lighten-4" href="https://labcode.de">Leo Maroni</a>
+				Licensed under GPLv3 / © 2017 <a class="grey-text text-lighten-4" href="https://labcode.de">Leo Maroni</a>. Dies ist ein Community-Projekt von Freifunk Siegburg und Freifunk Troisdorf. Alle Firmwares sind Eigenentwicklungen der jeweiligen Communities. <a href="http://www.freifunk-siegburg.de/impressum/" class="grey-text text-lighten-4">Impressum</a>
 			</div>
 		</div>
 	</footer>
