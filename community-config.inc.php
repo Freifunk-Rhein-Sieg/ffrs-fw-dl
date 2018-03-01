@@ -97,6 +97,7 @@
 		    "download_path" => "../fwuploads/lohmar/",
 		    "modules_path" => "http://images.freifunk-rhein-sieg.de/lohmar/packages",
 		    "geojson" => "geojson/lohmar.geojson",
+		    "sub_auswahl" => array(7,16),
 		    "show" => true
 	    ),
 	    8 => array(
@@ -209,21 +210,22 @@
             "download_path" => "../fwuploads/siegburg/",
             "modules_path" => "http://images.freifunk-rhein-sieg.de/siegburg/packages",
 	        "geojson" => "geojson/siegburg.geojson",
+            "sub_auswahl" => array(15,16),
             "show" => true
         ),
         16  => array(
 	        "community_id" => 16,
 	        "shortlinkname" => 'snw',
 	        "name" => "Soziale Netzwerke",
-	        "head_titel" => "Freifunk für SozLiale Netzwerke Firmware",
+	        "head_titel" => "Freifunk für Soziale Netzwerke Firmware",
 	        "link_text" => "Zurück zur Startseite",
 	        "link_url" => "http://downloader.freifunk-siegburg.de/",
-	        "lang_titel" => "Freifunk Lohmar Firmware Auswahl",
+	        "lang_titel" => "Freifunk SULO SNW Firmware Auswahl",
 	        "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 	        "download_path" => "../fwuploads/sozialenetzwerke/",
 	        "modules_path" => "http://images.freifunk-rhein-sieg.de/sozialenetzwerke/packages",
 	        "geojson" => "",
-	        "show" => true
+	        "show" => false
         ),
 	    17 => array(
 		    "community_id" => 17,
@@ -246,7 +248,8 @@
 		    "modules_path" => "http://images.freifunk-rhein-sieg.de/troisdorf/tdf/packages",
 		    "sub_auswahl" => array(18,19,20),
 		    "geojson" => "geojson/troisdorf.geojson",
-		    "show" => true
+		    "show" => true,
+
 	    ),
 	    19  => array(
 		    "community_id" => 19,

@@ -57,6 +57,7 @@ $community_id = $_REQUEST['id'];
 		<?php endfor ?>
 		<div class="col s12">
 			<h5>Auswahl Stadtteilnetz</h5>
+            <p>Wähle die Firmware 'Soziale Netze' für Freifunk in öffentlichen- und sozialen Einrichtungen</p>
 			<select id="stadtteil" onchange="change('stadtteil', this)">
 				<option disabled selected value="">Stadtteilnetz ausw&auml;hlen</option>
 				<?php foreach ($community[$community_id]["sub_auswahl"] as $value): ?>

@@ -47,7 +47,6 @@ if (count($community) == 1) {
         </div>
         <div class="row">
             <h5>oder :</h5>
-            <p>Wähle die Firmware 'Soziale Netze' für Freifunk in öffentlichen- und sozialen Einrichtungen</p>
             <div class="input-field col s12">
                 <select onchange="selectChangeCommunity(this)">
                     <option disabled selected value=""><?php echo $texte["ebene1_text"]?></option>
