@@ -147,7 +147,7 @@ $community_id = $_REQUEST['id'];
             <footer class="page-footer">
                 <div class="footer-copyright">
                     <div class="container">
-                        © 2017 <a class="grey-text text-lighten-4" href="https://labcode.de">Leo Maroni</a>, Caspar Armster / Licensed under GPLv3 / Die Router Bilder sind von Daniel Krah und unter <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" class="grey-text text-lighten-4" target="_blank">Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz</a>  lizensiert. Dies ist ein Community-Projekt von Freifunk Siegburg und Freifunk Troisdorf. Alle Firmwares sind Eigenentwicklungen der jeweiligen Communities. <a href="http://www.freifunk-siegburg.de/impressum/" class="grey-text text-lighten-4">Impressum</a>
+                        © 2018 <a class="grey-text text-lighten-4" href="https://labcode.de">Leo Maroni</a>, Caspar Armster / Licensed under GPLv3 / Die Router Bilder sind von Daniel Krah und unter <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" class="grey-text text-lighten-4" target="_blank">Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz</a>  lizensiert. Dies ist ein Community-Projekt von Freifunk Siegburg und Freifunk Troisdorf. Alle Firmwares sind Eigenentwicklungen der jeweiligen Communities. <a href="http://www.freifunk-siegburg.de/impressum/" class="grey-text text-lighten-4">Impressum</a>
                     </div>
                 </div>
             </footer>
