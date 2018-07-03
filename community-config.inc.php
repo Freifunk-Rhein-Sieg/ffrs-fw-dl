@@ -21,7 +21,7 @@
 		    "community_id" => 0,
 		    "shortlinkname" => 'alfter',
 		    "name" => "Alfter",
-		    "linktoseite" => "https://images.ffkbu.de/umgebung/",
+		    "linktoseite" => "https://kbu.freifunk.net/",
 		    "geojson" => "geojson/alfter.geojson",
 		    "show" => true
 	    ),
@@ -43,7 +43,7 @@
 		    "community_id" => 2,
 		    "shortlinkname" => 'badhonnef',
 		    "name" => "Bad Honnef",
-		    "linktoseite" => "https://images.ffkbu.de/umgebung/",
+		    "linktoseite" => "https://kbu.freifunk.net/",
 		    "geojson" => "geojson/badhonnef.geojson",
 		    "show" => true
 	    ),
@@ -51,7 +51,7 @@
 		    "community_id" => 3,
 		    "shortlinkname" => 'bonn',
 		    "name" => "Bonn",
-		    "linktoseite" => "https://images.ffkbu.de/bonn/",
+		    "linktoseite" => "https://kbu.freifunk.net/",
 		    "geojson" => "geojson/bonn.geojson",
 		    "show" => true
 	    ),
@@ -59,7 +59,7 @@
 		    "community_id" => 4,
 		    "name" => "Bornheim",
 		    "shortlinkname" => 'bornheim',
-		    "linktoseite" => "https://images.ffkbu.de/umgebung/",
+		    "linktoseite" => "https://kbu.freifunk.net/",
 		    "geojson" => "geojson/bornheim.geojson",
 		    "show" => true
 	    ),
@@ -225,7 +225,7 @@
 		    "community_id" => 17,
 		    "shortlinkname" => 'swisttal',
 		    "name" => "Swisttal",
-		    "linktoseite" => "https://images.ffkbu.de/umgebung/",
+		    "linktoseite" => "https://kbu.freifunk.net/",
 		    "geojson" => "geojson/swisttal.geojson",
 		    "show" => true
 	    ),
@@ -292,7 +292,7 @@
 		    "community_id" => 22,
 		    "shortlinkname" => 'windeck',
 		    "name" => "Windeck",
-		    "linktoseite" => "https://images.ffkbu.de/umgebung/",
+		    "linktoseite" => "https://kbu.freifunk.net/",
 		    "geojson" => "geojson/windeck.geojson",
 		    "show" => true
 	    ),
