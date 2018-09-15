@@ -63,7 +63,6 @@ for( $i=0; $i<count($entwicklung); $i++ ) {
                                 break;
                             case "TP-Link":
                                 $router_tmp[$x]['version'] = substr($files[$entwicklung[$i]][$installation[$j]][$x], strripos($files[$entwicklung[$i]][$installation[$j]][$x], "v"), -4-$offset_sysupgrade[$j]);
-                                echo($router_tmp[$x]['version']);
                                 if(strlen($router_tmp[$x]['version']) >= 5) {
                                     $router_tmp[$x]['version'] = "Alle";
                                 }
