@@ -55,7 +55,7 @@
         array(
             "name" => "China",
             "filename" => "zbt",
-            "offset_modell" => 6,
+            "offset_modell" => 4,
             "offset_version" => 4
         ),
         array(
@@ -133,7 +133,7 @@
         array(
             "name" => "UBNT",
             "filename" => "ubnt",
-            "offset_modell" => 9,
+            "offset_modell" => 5,
             "offset_version" => 4
         ),
         array(
