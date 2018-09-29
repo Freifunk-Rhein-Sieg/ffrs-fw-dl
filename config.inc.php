@@ -53,6 +53,12 @@
             "offset_version" => 4
         ),
         array(
+            "name" => "China",
+            "filename" => "zbt",
+            "offset_modell" => 6,
+            "offset_version" => 4
+        ),
+        array(
             "name" => "D-Link",
             "filename" => "d-link",
             "offset_modell" => 7,
@@ -125,11 +131,11 @@
             "offset_version" => 4
         ),
         array(
-            "name" => "Ubiquiti",
+            "name" => "UBNT",
             "filename" => "ubnt",
             "offset_modell" => 9,
             "offset_version" => 4
-        )
+        ),
         array(
             "name" => "Western Digital",
             "filename" => "-wd-",
