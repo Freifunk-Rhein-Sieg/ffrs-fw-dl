@@ -6,7 +6,7 @@ $(document).ready(function() {
     }
     var map = L.map('map').setView([50.75600670286445, 7.390810699462891], 9.5)
 
-    L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/{style}/{z}/{x}/{y}.png', {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/{style}/{z}/{x}/{y}.png', {
              attribution: 'Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap-Mitwirkende</a>, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://carto.com/location-data-services/basemaps">Carto</a>',
         maxZoom: 18,
         style: 'light_all'
