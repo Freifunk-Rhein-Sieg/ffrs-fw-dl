@@ -35,7 +35,7 @@
 		    "lang_titel" => "Freifunk Altenkirchen Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/altenkirchen/",
-		    "modules_path" => "http://images.freifunk-rhein-sieg.de/altenkirchen/packages",
+		    "modules_path" => "http://images.freifunk-rhein-sieg.net/altenkirchen/packages",
 		    "geojson" => "geojson/altenkirchen.geojson",
 		    "show" => true
 	    ),
@@ -89,7 +89,7 @@
 		    "lang_titel" => "Freifunk Lohmar Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/lohmar/",
-		    "modules_path" => "http://images.freifunk-rhein-sieg.de/lohmar/packages",
+		    "modules_path" => "http://images.freifunk-rhein-sieg.net/lohmar/packages",
 		    "geojson" => "geojson/lohmar.geojson",
 		    "sub_auswahl" => array(7,16),
 		    "show" => true
@@ -104,7 +104,7 @@
 		    "lang_titel" => "Freifunk Meckenheim Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/meckenheim/",
-		    "modules_path" => "http://images.freifunk-rhein-sieg.de/meckenheim/packages",
+		    "modules_path" => "http://images.freifunk-rhein-sieg.net/meckenheim/packages",
 		    "geojson" => "geojson/meckenheim.geojson",
 		    "show" => true
 	    ),
@@ -118,7 +118,7 @@
 		    "lang_titel" => "Freifunk Much Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/much/",
-		    "modules_path" => "http://images.freifunk-rhein-sieg.de/much/packages",
+		    "modules_path" => "http://images.freifunk-rhein-sieg.net/much/packages",
 		    "geojson" => "geojson/much.geojson",
 		    "show" => true
 	    ),
@@ -132,7 +132,7 @@
 		    "lang_titel" => "Freifunk Neunkirchen Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/neunkirchen/",
-		    "modules_path" => "http://images.freifunk-rhein-sieg.de/neunkirchen/packages",
+		    "modules_path" => "http://images.freifunk-rhein-sieg.net/neunkirchen/packages",
 		    "geojson" => "geojson/neunkirchen.geojson",
 		    "show" => true
 	    ),
@@ -146,7 +146,7 @@
 		    "lang_titel" => "Freifunk Niederkassel Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/niederkassel/",
-		    "modules_path" => "http://images.freifunk-rhein-sieg.de/niederkassel/packages",
+		    "modules_path" => "http://images.freifunk-rhein-sieg.net/niederkassel/packages",
 		    "geojson" => "geojson/niederkassel.geojson",
 		    "show" => true
 	    ),
@@ -160,7 +160,7 @@
 		    "lang_titel" => "Freifunk Niederkassel Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/rheinbach/",
-		    "modules_path" => "http://images.freifunk-rhein-sieg.de/rheinbach/packages",
+		    "modules_path" => "http://images.freifunk-rhein-sieg.net/rheinbach/packages",
 		    "geojson" => "geojson/rheinbach.geojson",
 		    "show" => true
 	    ),
@@ -174,7 +174,7 @@
 		    "lang_titel" => "Freifunk Ruppichteroth Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/ruppichteroth/",
-		    "modules_path" => "http://images.freifunk-rhein-sieg.de/ruppichteroth/packages",
+		    "modules_path" => "http://images.freifunk-rhein-sieg.net/ruppichteroth/packages",
 		    "geojson" => "geojson/ruppichteroth.geojson",
 		    "show" => true
 	    ),
@@ -188,7 +188,7 @@
 		    "lang_titel" => "Freifunk Sankt Augustin Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/sanktaugustin/",
-		    "modules_path" => "http://images.freifunk-rhein-sieg.de/sanktaugustin/packages",
+		    "modules_path" => "http://images.freifunk-rhein-sieg.net/sanktaugustin/packages",
 		    "geojson" => "geojson/staugustin.geojson",
 		    "show" => true
 	    ),
@@ -202,7 +202,7 @@
             "lang_titel" => "Freifunk Siegburg Firmware Auswahl",
             "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
             "download_path" => "../fwuploads/siegburg/",
-            "modules_path" => "http://images.freifunk-rhein-sieg.de/siegburg/packages",
+            "modules_path" => "http://images.freifunk-rhein-sieg.net/siegburg/packages",
 	        "geojson" => "geojson/siegburg.geojson",
             "sub_auswahl" => array(15,16),
             "show" => true
@@ -217,7 +217,7 @@
 	        "lang_titel" => "Freifunk SULO SNW Firmware Auswahl",
 	        "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 	        "download_path" => "../fwuploads/sozialenetzwerke/",
-	        "modules_path" => "http://images.freifunk-rhein-sieg.de/sozialenetzwerke/packages",
+	        "modules_path" => "http://images.freifunk-rhein-sieg.net/sozialenetzwerke/packages",
 	        "geojson" => "",
 	        "show" => false
         ),
@@ -239,7 +239,7 @@
 		    "lang_titel" => "Freifunk Troisdorf Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/troisdorf/tdf/",
-		    "modules_path" => "http://images.freifunk-rhein-sieg.de/troisdorf/tdf/packages",
+		    "modules_path" => "http://images.freifunk-rhein-sieg.net/troisdorf/tdf/packages",
 		    "sub_auswahl" => array(18,19,20),
 		    "geojson" => "geojson/troisdorf.geojson",
 		    "show" => true,
@@ -255,7 +255,7 @@
 		    "lang_titel" => "Freifunk Troisdorf Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/troisdorf/inn/",
-		    "modules_path" => "http://images.freifunk-rhein-sieg.de/troisdorf/inn/packages",
+		    "modules_path" => "http://images.freifunk-rhein-sieg.net/troisdorf/inn/packages",
 		    "show" => false,
 		    "geojson" => ""
 	    ),
@@ -270,7 +270,7 @@
 		    "lang_titel" => "Freifunk für Troisdorfer Soziale Netzwerke Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/troisdorf/flu/",
-		    "modules_path" => "http://images.freifunk-rhein-sieg.de/troisdorf/flu/packages",
+		    "modules_path" => "http://images.freifunk-rhein-sieg.net/troisdorf/flu/packages",
 		    "show" => false,
 		    "geojson" => ""
 	    ),
@@ -284,7 +284,7 @@
 		    "lang_titel" => "Freifunk Wachtberg Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/wachtberg/",
-		    "modules_path" => "http://images.freifunk-rhein-sieg.de/wachtberg/packages",
+		    "modules_path" => "http://images.freifunk-rhein-sieg.net/wachtberg/packages",
 		    "geojson" => "geojson/wachtberg.geojson",
 		    "show" => true
 	    ),
