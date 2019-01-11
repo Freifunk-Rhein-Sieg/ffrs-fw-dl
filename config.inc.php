@@ -101,6 +101,12 @@
             "offset_version" => 4
         ),
         array(
+            "name" => "Ocedo",
+            "filename" => "ocedo",
+            "offset_modell" => 6,
+            "offset_version" => 4
+        ),
+        array(
             "name" => "Onion",
             "filename" => "onion",
             "offset_modell" => 6,
@@ -134,6 +140,12 @@
             "name" => "UBNT",
             "filename" => "ubnt",
             "offset_modell" => 5,
+            "offset_version" => 4
+        ),
+        array(
+            "name" => "VoCore",
+            "filename" => "vocore2",
+            "offset_modell" => 0,
             "offset_version" => 4
         ),
         array(
