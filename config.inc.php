@@ -104,7 +104,7 @@
             "name" => "Nexx",
             "filename" => "nexx",
             "offset_modell" => 5,
-            "offset_version" => 3
+            "offset_version" => -1
         ),
         array(
             "name" => "Ocedo",
