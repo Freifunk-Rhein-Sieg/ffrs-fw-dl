@@ -18,6 +18,7 @@ Bisher werden Router der folgenden Hersteller automatisch erkannt:
 - 8devices
 - Alfa
 - Allnet
+- AVM
 - Buffalo
 - D-Link
 - GL-Inet
@@ -25,6 +26,7 @@ Bisher werden Router der folgenden Hersteller automatisch erkannt:
 - Linksys
 - Meraki
 - Netgear
+- Nexx
 - Onion
 - Openmesh
 - Raspberry Pi
