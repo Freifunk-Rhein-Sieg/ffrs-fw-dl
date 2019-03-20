@@ -100,6 +100,12 @@
             "offset_modell" => 8,
             "offset_version" => 4
         ),
+        rray(
+            "name" => "Nexx",
+            "filename" => "nexx",
+            "offset_modell" => 5,
+            "offset_version" => 4
+        ),
         array(
             "name" => "Ocedo",
             "filename" => "ocedo",
