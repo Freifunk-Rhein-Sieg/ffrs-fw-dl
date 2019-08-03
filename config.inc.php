@@ -62,7 +62,7 @@
             "name" => "China (alt)",
             "filename" => "-a5-",
             "offset_modell" => 0,
-            "offset_version" => 4
+            "offset_version" => 0
         ),
         array(
             "name" => "D-Link",
