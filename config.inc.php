@@ -109,7 +109,7 @@
         array(
             "name" => "Noname",
             "filename" => "-a5-",
-            "offset_modell" => 3,
+            "offset_modell" => 0,
             "offset_version" => 4
         ),
         array(
