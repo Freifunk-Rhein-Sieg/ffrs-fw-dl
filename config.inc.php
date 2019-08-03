@@ -110,7 +110,7 @@
             "name" => "Noname",
             "filename" => "-a5-",
             "offset_modell" => 0,
-            "offset_version" => 4
+            "offset_version" => 2
         ),
         array(
             "name" => "Ocedo",
