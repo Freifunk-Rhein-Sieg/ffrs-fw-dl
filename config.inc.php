@@ -59,6 +59,12 @@
             "offset_version" => 4
         ),
         array(
+            "name" => "China (alt)",
+            "filename" => "-a5-",
+            "offset_modell" => 0,
+            "offset_version" => 2
+        ),
+        array(
             "name" => "D-Link",
             "filename" => "d-link",
             "offset_modell" => 7,
@@ -105,12 +111,6 @@
             "filename" => "nexx",
             "offset_modell" => 5,
             "offset_version" => 4
-        ),
-        array(
-            "name" => "Noname",
-            "filename" => "-a5-",
-            "offset_modell" => 0,
-            "offset_version" => -1
         ),
         array(
             "name" => "Ocedo",
