@@ -107,6 +107,12 @@
             "offset_version" => 4
         ),
         array(
+            "name" => "Noname",
+            "filename" => "-a5-",
+            "offset_modell" => 3,
+            "offset_version" => 4
+        ),
+        array(
             "name" => "Ocedo",
             "filename" => "ocedo",
             "offset_modell" => 6,
@@ -150,7 +156,7 @@
         ),
         array(
             "name" => "VoCore",
-            "filename" => "vocore2",
+            "filename" => "vocore",
             "offset_modell" => 0,
             "offset_version" => 4
         ),
