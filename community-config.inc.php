@@ -67,7 +67,7 @@
 		    "community_id" => 5,
 		    "name" => "Hennef",
 		    "shortlinkname" => 'hennef',
-		    "linktoseite" => "https://images.freifunk-hennef.de/downloader/firmware.php?id=0",
+		    "linktoseite" => "https://firmware.freifunk-hennef.de/firmware.php?id=0",
 		    "geojson" => "geojson/hennef.geojson",
 		    "show" => true
 	    ),
