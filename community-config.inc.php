@@ -249,7 +249,7 @@
 		    "community_id" => 19,
 		    "shortlinkname" => 'troisdorf-inn',
 		    "name" => "Troisdorf - Fußgängerzone",
-		    "head_titel" => "Freifunk Troisdorf Fußgänerzone Firmware",
+		    "head_titel" => "Freifunk Troisdorf Fußgängerzone Firmware",
 		    "link_text" => "Zurück zur Startseite",
 		    "link_url" => "http://downloader.freifunk-siegburg.de/",
 		    "lang_titel" => "Freifunk Troisdorf Firmware Auswahl",
