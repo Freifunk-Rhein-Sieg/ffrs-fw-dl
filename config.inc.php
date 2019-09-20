@@ -31,7 +31,7 @@
         array(
             "name" => "Aerohive",
             "filename" => "aerohive",
-            "offset_modell" => 7,
+            "offset_modell" => 9,
             "offset_version" => 4
         ),
         array(
