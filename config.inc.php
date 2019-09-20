@@ -29,6 +29,12 @@
             "offset_version" => 4
         ),
         array(
+            "name" => "Aerohive",
+            "filename" => "aerohive",
+            "offset_modell" => 7,
+            "offset_version" => 4
+        ),
+        array(
             "name" => "Alfa",
             "filename" => "alfa",
             "offset_modell" => 5,
