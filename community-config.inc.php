@@ -245,8 +245,8 @@
 		    "show" => true,
 
 	    ),
-	    21  => array(
-		    "community_id" => 21,
+	    19  => array(
+		    "community_id" => 19,
 		    "shortlinkname" => 'wachtberg',
 		    "name" => "Wachtberg",
 		    "head_titel" => "Freifunk Wachtberg Firmware",
@@ -259,8 +259,8 @@
 		    "geojson" => "geojson/wachtberg.geojson",
 		    "show" => true
 	    ),
-	    22 => array(
-		    "community_id" => 22,
+	    20 => array(
+		    "community_id" => 20,
 		    "shortlinkname" => 'windeck',
 		    "name" => "Windeck",
 		    "head_titel" => "Freifunk Windeck Firmware",
