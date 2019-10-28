@@ -240,7 +240,6 @@
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
 		    "download_path" => "../fwuploads/troisdorf/multi/",
 		    "modules_path" => "http://images.freifunk-rhein-sieg.net/troisdorf/multi/packages",
-		    "sub_auswahl" => array(18),
 		    "geojson" => "geojson/troisdorf.geojson",
 		    "show" => true,
 
