@@ -95,6 +95,12 @@
             "offset_version" => -1
         ),
         array(
+            "name" => "Enterasys",
+            "filename" => "enterasys",
+            "offset_modell" => 7,
+            "offset_version" => -1
+        ),
+        array(
             "name" => "GL-Inet",
             "filename" => "gl",
             "offset_modell" => 3,
