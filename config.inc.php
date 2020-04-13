@@ -47,6 +47,12 @@
             "offset_version" => 4
         ),
         array(
+            "name" => "Aruba",
+            "filename" => "aruba",
+            "offset_modell" => 6,
+            "offset_version" => 4
+        ),
+        array(
             "name" => "Asus",
             "filename" => "asus",
             "offset_modell" => 4,
