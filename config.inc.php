@@ -89,8 +89,8 @@
             "offset_version" => -1
         ),
         array(
-            "name" => "Develo",
-            "filename" => "develo",
+            "name" => "Devolo",
+            "filename" => "devolo",
             "offset_modell" => 7,
             "offset_version" => -1
         ),
