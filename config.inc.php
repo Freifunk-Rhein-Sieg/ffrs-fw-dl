@@ -83,6 +83,12 @@
             "offset_version" => -1
         ),
         array(
+            "name" => "Develo",
+            "filename" => "develo",
+            "offset_modell" => 7,
+            "offset_version" => -1
+        ),
+        array(
             "name" => "GL-Inet",
             "filename" => "gl",
             "offset_modell" => 3,
