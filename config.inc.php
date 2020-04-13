@@ -85,7 +85,7 @@
         array(
             "name" => "Develo",
             "filename" => "develo",
-            "offset_modell" => 8,
+            "offset_modell" => 7,
             "offset_version" => -1
         ),
         array(
@@ -152,6 +152,12 @@
             "name" => "Raspberry Pi",
             "filename" => "raspberry-pi",
             "offset_modell" => 13,
+            "offset_version" => 4
+        ),
+        array(
+            "name" => "Raspberry Pi",
+            "filename" => "raspberrypi",
+            "offset_modell" => 12,
             "offset_version" => 4
         ),
         array(
