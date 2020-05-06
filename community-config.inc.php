@@ -196,7 +196,7 @@
             "community_id" => 15,
             "shortlinkname" => 'siegburg-inn',
             "name" => "Siegburg Innenstadt",
-            "head_titel" => "Freifunk Siegburg Innenstadt Firmware",
+            "head_titel" => "Freifunk Siegburg Firmware",
             "link_text" => "Zurück zur Startseite",
             "link_url" => "http://www.freifunk-siegburg.de/",
             "lang_titel" => "Freifunk Siegburg Firmware Auswahl",
