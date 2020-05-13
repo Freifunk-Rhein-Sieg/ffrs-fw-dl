@@ -37,6 +37,7 @@
 		    "download_path" => "../fwuploads/altenkirchen/",
 		    "modules_path" => "http://images.freifunk-rhein-sieg.net/altenkirchen/packages",
 		    "geojson" => "geojson/altenkirchen.geojson",
+		    "sub_auswahl" => array(1,16),
 		    "show" => true
 	    ),
 	    2 => array(
@@ -106,6 +107,7 @@
 		    "download_path" => "../fwuploads/meckenheim/",
 		    "modules_path" => "http://images.freifunk-rhein-sieg.net/meckenheim/packages",
 		    "geojson" => "geojson/meckenheim.geojson",
+		    "sub_auswahl" => array(8,22),
 		    "show" => true
 	    ),
 	    9 => array(
@@ -120,6 +122,7 @@
 		    "download_path" => "../fwuploads/siegburg/uml/",
 		    "modules_path" => "http://images.freifunk-rhein-sieg.net/siegburg/uml/packages",
 		    "geojson" => "geojson/much.geojson",
+		    "sub_auswahl" => array(9,22),
 		    "show" => true
 	    ),
 	    10 => array(
@@ -134,6 +137,7 @@
 		    "download_path" => "../fwuploads/siegburg/uml/",
 		    "modules_path" => "http://images.freifunk-rhein-sieg.net/siegburg/uml/packages",
 		    "geojson" => "geojson/neunkirchen.geojson",
+		    "sub_auswahl" => array(10,22),
 		    "show" => true
 	    ),
 	    11 => array(
@@ -148,6 +152,7 @@
 		    "download_path" => "../fwuploads/niederkassel/",
 		    "modules_path" => "http://images.freifunk-rhein-sieg.net/niederkassel/packages",
 		    "geojson" => "geojson/niederkassel.geojson",
+		    "sub_auswahl" => array(11,16),
 		    "show" => true
 	    ),
 	    12 => array(
@@ -162,6 +167,7 @@
 		    "download_path" => "../fwuploads/rheinbach/",
 		    "modules_path" => "http://images.freifunk-rhein-sieg.net/rheinbach/packages",
 		    "geojson" => "geojson/rheinbach.geojson",
+		    "sub_auswahl" => array(12,22),
 		    "show" => true
 	    ),
 	    13 => array(
@@ -176,6 +182,7 @@
 		    "download_path" => "../fwuploads/siegburg/uml/",
 		    "modules_path" => "http://images.freifunk-rhein-sieg.net/siegburg/uml/packages",
 		    "geojson" => "geojson/ruppichteroth.geojson",
+		    "sub_auswahl" => array(13,22),
 		    "show" => true
 	    ),
 	    14  => array(
@@ -190,6 +197,7 @@
 		    "download_path" => "../fwuploads/sanktaugustin/",
 		    "modules_path" => "http://images.freifunk-rhein-sieg.net/sanktaugustin/packages",
 		    "geojson" => "geojson/staugustin.geojson",
+		    "sub_auswahl" => array(14,16),
 		    "show" => true
 	    ),
         15 => array(
@@ -256,6 +264,7 @@
 		    "download_path" => "../fwuploads/siegburg/uml/",
 		    "modules_path" => "http://images.freifunk-rhein-sieg.net/siegburg/uml/packages",
 		    "geojson" => "geojson/wachtberg.geojson",
+		    "sub_auswahl" => array(19,22),
 		    "show" => true
 	    ),
 	    20 => array(
@@ -270,6 +279,7 @@
 		    "download_path" => "../fwuploads/siegburg/uml/",
 		    "modules_path" => "http://images.freifunk-rhein-sieg.net/siegburg/uml/packages",
 		    "geojson" => "geojson/windeck.geojson",
+		    "sub_auswahl" => array(20,22),
 		    "show" => true
 	    ),
 	    21  => array(
