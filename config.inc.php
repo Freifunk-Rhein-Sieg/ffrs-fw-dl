@@ -83,6 +83,12 @@
             "offset_version" => 4
         ),
         array(
+            "name" => "Cudy",
+            "filename" => "cudy",
+            "offset_modell" => 5,
+            "offset_version" => 4
+        ),
+        array(
             "name" => "D-Link",
             "filename" => "d-link",
             "offset_modell" => 7,
@@ -93,6 +99,12 @@
             "filename" => "devolo",
             "offset_modell" => 7,
             "offset_version" => -1
+        ),
+        array(
+            "name" => "Engenius",
+            "filename" => "engenius",
+            "offset_modell" => 9,
+            "offset_version" => 4
         ),
         array(
             "name" => "Enterasys",
