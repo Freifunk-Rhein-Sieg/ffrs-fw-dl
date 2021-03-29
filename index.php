@@ -22,9 +22,9 @@ if (count($community) == 1) {
 
     <meta name="author" content="Leo Maroni, Caspar Armster" />
 
-    <link rel="stylesheet" href="css/materialize.min.css" integrity="sha256-e22BQKCF7bb/h/4MFJ1a4lTRR2OuAe8Hxa/3tgU5Taw=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/leaflet.css" integrity="sha256-bOWY8F32FGGbNDMPAnwWl/Lv9CKen4IQsNZ4RU9rcs0=" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/materialize.min.css" />
+    <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="css/index.css" />
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -70,9 +70,9 @@ if (count($community) == 1) {
         </div>
     </footer>
 </div>
-<script src="js/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="js/leaflet.js" integrity="sha256-GXUdrV9FHGDyzoSGD3O+jR3eYZaZZsjbsMvFhK3C0qg=" crossorigin="anonymous"></script>
-<script src="js/materialize.min.js" integrity="sha256-uWtSXRErwH9kdJTIr1swfHFJn/d/WQ6s72gELOHXQGM=" crossorigin="anonymous"></script><script>
+<script src="js/jquery.min.js"></script>
+<script src="js/leaflet.js"></script>
+<script src="js/materialize.min.js"></script><script>
     var communityiesGeoJson = []
 	<?php foreach (array_slice($community, 0) as $i => $value):?>
     communityiesGeoJson.push({"geojson": "<?php echo $value['geojson'] ?>", "name": "<?php echo $value['name'] ?>"})
