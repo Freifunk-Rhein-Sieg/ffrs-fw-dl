@@ -104,8 +104,8 @@
 		    "link_url" => "https://downloader.freifunk-siegburg.de/",
 		    "lang_titel" => "Freifunk Meckenheim Firmware Auswahl",
 		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
-		    "download_path" => "../fwuploads/meckenheim/",
-		    "modules_path" => "https://images.freifunk-rhein-sieg.net/meckenheim/packages",
+		    "download_path" => "../fwuploads/troisdorf/multi/",
+		    "modules_path" => "https://images.freifunk-rhein-sieg.net/troisdorf/multi/packages",
 		    "geojson" => "geojson/meckenheim.geojson",
 		    "sub_auswahl" => array(8,22),
 		    "show" => true
