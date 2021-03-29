@@ -1,7 +1,7 @@
 <?php
 /**
 * @author    Caspar Armster
-* @copyright 2016 Caspar Armster, Freifunk Hennef/Freie Netzwerker e.V. (www.freifunk-hennef.de / www.freie-netzwerker.de)
+* @copyright 2016 Caspar Armster
 * @license   Licensed under GPLv3
 */
 class ffrouter {

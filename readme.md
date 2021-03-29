@@ -103,5 +103,5 @@ Lizenz
 ------
 
 * author    Leo Maroni Ursprung: Caspar Armster
-* copyright 2017 by Leo Maroni, Caspar Armster, [Freifunk Hennef](http://www.freifunk-hennef.de/ "Freifunk Hennef") / [Freie Netzwerker e.V.](http://www.freie-netzwerker.de/ "Freie Netzwerker e.V.")
+* copyright 2017 by Leo Maroni, Caspar Armster
 * license   Licensed under GPLv3

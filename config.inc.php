@@ -1,7 +1,7 @@
 <?php
 /**
 * @author    Caspar Armster, Leo Maroni
-* @copyright 2017 Leo Maroni, Caspar Armster Freifunk Hennef/Freie Netzwerker e.V. (www.freifunk-hennef.de / www.freie-netzwerker.de), Freifunk Siegburg (www.frefunk-siegburg.de)
+* @copyright 2017 Leo Maroni, Caspar Armster
 * @license   Licensed under GPLv3
 */
 

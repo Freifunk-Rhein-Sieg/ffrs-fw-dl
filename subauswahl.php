@@ -21,11 +21,11 @@ $community_id = $_REQUEST['id'];
 	<meta name="author" content="Leo Maroni" />
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.labcode.de/libs/materialize/0.100.2/css/materialize.min.css" integrity="sha256-e22BQKCF7bb/h/4MFJ1a4lTRR2OuAe8Hxa/3tgU5Taw=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/materialize.min.css" integrity="sha256-e22BQKCF7bb/h/4MFJ1a4lTRR2OuAe8Hxa/3tgU5Taw=" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/community.css">
 
-    <script src="https://cdn.labcode.de/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdn.labcode.de/libs/materialize/0.100.2/js/materialize.min.js" integrity="sha256-uWtSXRErwH9kdJTIr1swfHFJn/d/WQ6s72gELOHXQGM=" crossorigin="anonymous"></script>
+    <script src="js/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/materialize.min.js" integrity="sha256-uWtSXRErwH9kdJTIr1swfHFJn/d/WQ6s72gELOHXQGM=" crossorigin="anonymous"></script>
 	<script src="js/firmware.js"></script>
 
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -69,7 +69,7 @@ $community_id = $_REQUEST['id'];
 	<footer class="page-footer">
 		<div class="footer-copyright">
 			<div class="container">
-				Licensed under GPLv3 / © 2017 <a class="grey-text text-lighten-4" href="https://labcode.de">Leo Maroni</a>. Dies ist ein Community-Projekt von Freifunk Siegburg und Freifunk Troisdorf. Alle Firmwares sind Eigenentwicklungen der jeweiligen Communities. <a href="http://www.freifunk-siegburg.de/impressum/" class="grey-text text-lighten-4">Impressum</a>
+				Licensed under GPLv3 / © 2017 <a class="grey-text text-lighten-4" href="https://labcode.de">Leo Maroni</a>. Dies ist ein Community-Projekt von Freifunk Rhein-Sieg. Alle Firmwares sind Eigenentwicklungen der jeweiligen Communities. <a href="https://www.freifunk-rhein-sieg.net/impressum/" class="grey-text text-lighten-4">Impressum</a>
 			</div>
 		</div>
 	</footer>
