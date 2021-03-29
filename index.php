@@ -64,7 +64,7 @@ if (count($community) == 1) {
     <footer class="page-footer">
         <div class="footer-copyright">
             <div class="container">
-                © 2017 <a class="grey-text text-lighten-4" href="https://labcode.de">Leo Maroni</a>, Caspar Armster / Licensed under GPLv3. Dies ist ein Community-Projekt von Freifunk Rhein-Sieg. Alle Firmwares sind Eigenentwicklungen der jeweiligen Communities.
+                © 2017 <a class="grey-text text-lighten-4" href="https://labcode.de">Leo Maroni</a>, Caspar Armster / Licensed under GPLv3. Dies ist ein Community-Projekt von Freifunk Rhein-Sieg. Alle Firmwares sind Eigenentwicklungen der jeweiligen Communities. Direkten Zugriff auf die Firmwares des Freifunk Rhein-Sieg e.V. gibt es auch über <a href="http://images.freifunk-rhein-sieg.net/" class="grey-text text-lighten-4">images.freifunk-rhein-sieg.net</a>. 
                 <a href="https://freifunk-rhein-sieg.net/impressum/" class="grey-text text-lighten-4">Impressum</a>
             </div>
         </div>
