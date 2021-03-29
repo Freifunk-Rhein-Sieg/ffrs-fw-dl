@@ -107,7 +107,6 @@
 		    "download_path" => "../fwuploads/troisdorf/multi/",
 		    "modules_path" => "https://images.freifunk-rhein-sieg.net/troisdorf/multi/packages",
 		    "geojson" => "geojson/meckenheim.geojson",
-		    "sub_auswahl" => array(8,22),
 		    "show" => true
 	    ),
 	    9 => array(
