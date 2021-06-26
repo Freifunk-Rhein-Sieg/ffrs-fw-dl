@@ -173,6 +173,12 @@
             "offset_version" => 4
         ),
         array(
+            "name" => "Plasma Cloud",
+            "filename" => "plasma-cloud",
+            "offset_modell" => 13,
+            "offset_version" => 4
+        ),
+        array(
             "name" => "Raspberry Pi",
             "filename" => "raspberry-pi",
             "offset_modell" => 13,
