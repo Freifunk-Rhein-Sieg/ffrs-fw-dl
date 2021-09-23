@@ -127,7 +127,7 @@
         array(
             "name" => "Joy",
             "filename" => "joy-it-jt",
-            "offset_modell" => 8,
+            "offset_modell" => 9,
             "offset_version" => -1
         ),
         array(
