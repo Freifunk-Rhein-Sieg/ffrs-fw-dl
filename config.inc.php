@@ -127,8 +127,8 @@
         array(
             "name" => "Joy",
             "filename" => "joy-it-jt",
-            "offset_modell" => 9,
-            "offset_version" => -1
+            "offset_modell" => 10,
+            "offset_version" => 4
         ),
         array(
             "name" => "LeMaker",
