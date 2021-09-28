@@ -305,7 +305,7 @@
 	    20 => array(
 		    "community_id" => 23,
 		    "shortlinkname" => 'porz',
-		    "name" => "Windeck",
+		    "name" => "Porz",
 		    "head_titel" => "Freifunk Porz Firmware",
 		    "link_text" => "Zurück zur Startseite",
 		    "link_url" => "https://downloader.freifunk-siegburg.de/",
