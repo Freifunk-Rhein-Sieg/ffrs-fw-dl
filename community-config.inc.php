@@ -158,15 +158,8 @@
 		    "community_id" => 12,
 		    "name" => "Rheinbach",
 		    "shortlinkname" => 'rheinbach',
-		    "head_titel" => "Freifunk Rheinbach Firmware",
-		    "link_text" => "Zurück zur Startseite",
-		    "link_url" => "https://downloader.freifunk-siegburg.de/",
-		    "lang_titel" => "Freifunk Niederkassel Firmware Auswahl",
-		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
-		    "download_path" => "../fwuploads/rheinbach/",
-		    "modules_path" => "https://images.freifunk-rhein-sieg.net/rheinbach/packages",
+		    "linktoseite" => "http://images.freifunk-rheinbach.de/",
 		    "geojson" => "geojson/rheinbach.geojson",
-		    "sub_auswahl" => array(12,22),
 		    "show" => true
 	    ),
 	    13 => array(
