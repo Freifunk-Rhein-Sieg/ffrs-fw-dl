@@ -301,5 +301,20 @@
 		    "modules_path" => "https://images.freifunk-rhein-sieg.net/siegburg/snw/packages",
 		    "show" => false,
 		    "geojson" => ""
-	    ),		
+	    ),
+	    20 => array(
+		    "community_id" => 23,
+		    "shortlinkname" => 'porz',
+		    "name" => "Windeck",
+		    "head_titel" => "Freifunk Porz Firmware",
+		    "link_text" => "Zurück zur Startseite",
+		    "link_url" => "https://downloader.freifunk-siegburg.de/",
+		    "lang_titel" => "Freifunk Porz Firmware Auswahl",
+		    "lang_text" => "Bitte suchen Sie den passenden Router aus, indem Sie den Hersteller, das Modell und die Version auswählen.<br />Legen Sie anschließend fest, ob sie den Router zum ersten Mal auf dem Router eine Freifunk Firmware installieren und welches Entwicklungsstadium die Firmware haben soll.",
+		    "download_path" => "../fwuploads/porz/",
+		    "modules_path" => "https://images.freifunk-rhein-sieg.net/porz/uml/packages",
+		    "geojson" => "geojson/windeck.geojson",
+		    "sub_auswahl" => array(23,16),
+		    "show" => true
+	    ),
     );
