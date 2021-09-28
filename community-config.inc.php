@@ -302,7 +302,7 @@
 		    "show" => false,
 		    "geojson" => ""
 	    ),
-	    20 => array(
+	    23 => array(
 		    "community_id" => 23,
 		    "shortlinkname" => 'porz',
 		    "name" => "Porz",
