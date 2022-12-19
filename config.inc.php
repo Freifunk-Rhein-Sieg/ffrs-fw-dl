@@ -227,6 +227,12 @@
             "offset_version" => 4
         ),
         array(
+            "name" => "Sophos",
+            "filename" => "sophos",
+            "offset_modell" => 7,
+            "offset_version" => 4
+        ),
+        array(
             "name" => "TP-Link",
             "filename" => "tp-link",
             "offset_modell" => 8,
