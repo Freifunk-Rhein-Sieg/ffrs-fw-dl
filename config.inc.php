@@ -221,6 +221,12 @@
             "offset_version" => 4
         ),
         array(
+            "name" => "Siemens",
+            "filename" => "siemens",
+            "offset_modell" => 8,
+            "offset_version" => 4
+        ),
+        array(
             "name" => "TP-Link",
             "filename" => "tp-link",
             "offset_modell" => 8,
