@@ -149,6 +149,12 @@
             "offset_version" => 4
         ),
         array(
+            "name" => "Microtik",
+            "filename" => "microtik",
+            "offset_modell" => 9,
+            "offset_version" => 4
+        ),
+        array(
             "name" => "Netgear",
             "filename" => "netgear",
             "offset_modell" => 8,
