@@ -119,6 +119,12 @@
             "offset_version" => -1
         ),
         array(
+            "name" => "Friendlyelec",
+            "filename" => "friendlyelec",
+            "offset_modell" => 13,
+            "offset_version" => -1
+        ),
+        array(
             "name" => "GL-Inet",
             "filename" => "gl",
             "offset_modell" => 3,
@@ -156,8 +162,8 @@
         ),
         array(
             "name" => "Microtik",
-            "filename" => "microtik-routerboard",
-            "offset_modell" => 21,
+            "filename" => "microtik",
+            "offset_modell" => 9,
             "offset_version" => 4
         ),
         array(
