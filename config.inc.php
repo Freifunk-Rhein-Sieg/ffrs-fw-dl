@@ -150,8 +150,8 @@
         ),
         array(
             "name" => "Microtik",
-            "filename" => "microtik",
-            "offset_modell" => 9,
+            "filename" => "microtik-routerboard",
+            "offset_modell" => 21,
             "offset_version" => 4
         ),
         array(
