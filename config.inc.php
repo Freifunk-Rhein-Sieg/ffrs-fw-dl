@@ -203,6 +203,12 @@
             "offset_version" => 4
         ),
         array(
+            "name" => "Ravpower",
+            "filename" => "ravpower",
+            "offset_modell" => 9,
+            "offset_version" => 4
+        ),
+        array(
             "name" => "TP-Link",
             "filename" => "tp-link",
             "offset_modell" => 8,
