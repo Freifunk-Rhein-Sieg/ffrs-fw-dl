@@ -47,6 +47,12 @@
             "offset_version" => 4
         ),
         array(
+            "name" => "Arcadyan",
+            "filename" => "arcadyan",
+            "offset_modell" => 8,
+            "offset_version" => 4
+        ),
+        array(
             "name" => "Aruba",
             "filename" => "aruba",
             "offset_modell" => 6,
