@@ -155,7 +155,7 @@
             "offset_version" => 4
         ),
         array(
-            "name" => "librerouter",
+            "name" => "Librerouter",
             "filename" => "librerouter",
             "offset_modell" => 11,
             "offset_version" => 4
@@ -194,6 +194,12 @@
             "name" => "Nexx",
             "filename" => "nexx",
             "offset_modell" => 5,
+            "offset_version" => 4
+        ),
+        array(
+            "name" => "O2",
+            "filename" => "o2",
+            "offset_modell" => 2,
             "offset_version" => 4
         ),
         array(
