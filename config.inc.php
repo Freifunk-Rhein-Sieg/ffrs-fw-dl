@@ -161,6 +161,12 @@
             "offset_version" => 4
         ),
         array(
+            "name" => "Mercusys",
+            "filename" => "mercusys",
+            "offset_modell" => 8,
+            "offset_version" => 4
+        ),
+        array(
             "name" => "Meraki",
             "filename" => "meraki",
             "offset_modell" => 7,
