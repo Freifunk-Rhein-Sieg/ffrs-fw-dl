@@ -155,6 +155,12 @@
             "offset_version" => 4
         ),
         array(
+            "name" => "librerouter",
+            "filename" => "librerouter",
+            "offset_modell" => 11,
+            "offset_version" => 4
+        ),
+        array(
             "name" => "Linksys",
             "filename" => "linksys",
             "offset_modell" => 8,
