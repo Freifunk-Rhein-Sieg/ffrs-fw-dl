@@ -289,7 +289,7 @@
         array(
             "name" => "Wavlink",
             "filename" => "-wavlink-",
-            "offset_modell" => 3,
+            "offset_modell" => 9,
             "offset_version" => 4
         ),
         array(
