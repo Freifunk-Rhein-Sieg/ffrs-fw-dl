@@ -149,6 +149,12 @@
             "offset_version" => -1
         ),
         array(
+            "name" => "Hewlett-Packard",
+            "filename" => "hewlett-packard",
+            "offset_modell" => 8,
+            "offset_version" => -1
+        ),
+        array(
             "name" => "Joy",
             "filename" => "joy-it-jt",
             "offset_modell" => 10,
