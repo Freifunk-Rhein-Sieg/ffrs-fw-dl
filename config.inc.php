@@ -152,7 +152,7 @@
             "name" => "Hewlett-Packard",
             "filename" => "hewlett-packard",
             "offset_modell" => 16,
-            "offset_version" => -1
+            "offset_version" => 6
         ),
         array(
             "name" => "Joy",
