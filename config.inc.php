@@ -137,6 +137,12 @@
             "offset_version" => -1
         ),
         array(
+            "name" => "Genexis",
+            "filename" => "genexis",
+            "offset_modell" => 8,
+            "offset_version" => 4
+        ),
+        array(
             "name" => "GL-Inet",
             "filename" => "gl",
             "offset_modell" => 3,
