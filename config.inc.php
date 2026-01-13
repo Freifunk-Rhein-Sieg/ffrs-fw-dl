@@ -95,6 +95,12 @@
             "offset_version" => 4
         ),
         array(
+            "name" => "Comfast",
+            "filename" => "comfast",
+            "offset_modell" => 8,
+            "offset_version" => 4
+        ),
+        array(
             "name" => "Cudy",
             "filename" => "cudy",
             "offset_modell" => 5,
@@ -236,6 +242,12 @@
             "name" => "Openmesh",
             "filename" => "openmesh",
             "offset_modell" => 9,
+            "offset_version" => 4
+        ),
+        array(
+            "name" => "Openwrt",
+            "filename" => "openwrt-one",
+            "offset_modell" => 12,
             "offset_version" => 4
         ),
         array(
